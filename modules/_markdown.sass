@@ -1,0 +1,181 @@
+$_color-accent: #222
+$_contents-width: 500px
+$_break-point: 500px
+$_margin-contents-bottom: 30px
+
+// .md系
+.md-img-left,
+.md-img-right
+  clear: both
+.md-img-left + p img,
+.md-img-right + p img
+  width: 300px
+  margin-bottom: 20px
+  @media screen and (max-width: $_break-point + 300px)
+    position: relative
+    width: auto !important
+    margin-left: 0 !important
+    margin-right: 0 !important
+    float: none !important
+    width: 100% !important
+.md-img-left + p img
+  float: left
+  margin-left: -100px
+  margin-right: 30px
+.md-img-right + p img
+  float: right
+  margin-right: -100px
+  margin-left: 30px
+
+// .md-step
+.md-step + ul
+  $accent: #000
+  $background: #f2f2f2
+  $border: #fff
+  $h: 30px
+  list-style: none
+  padding: 0
+  margin: 0 0 20px 0
+  border: 1px solid $border
+  overflow: hidden
+  display: inline-block
+  background-color: $background
+  border: 1px solid $border
+  // +border-radius(4px)
+  li
+    float: left
+    color: #ccc
+    line-height: $h
+    padding: 0 10px 0 15px
+    font-size: 12px
+    text-align: center
+    position: relative
+    list-style: none
+    & + li
+      padding: 0 7px 0 $h*0.8
+    &:last-child
+      padding-right: 15px
+    &:after,
+    &:before
+      left: 100%
+      border: solid transparent
+      content: " "
+      height: 0
+      width: 0
+      position: absolute
+      pointer-events: none
+      z-index: 5
+    &:after
+      border-left-color: $background
+      border-width: $h/2
+      top: 50%
+      margin-top: -$h/2
+    &:before
+      border-left-color: $border
+      border-width: $h/2 + 1px
+      top: 50%
+      margin-top: -$h/2 - 1px
+  li
+    background-color: $accent
+    color: #fff
+    margin-bottom: 0
+    &:after
+      border-left-color: $accent
+    &:before
+      border-left-color: #ffffff
+
+// .md-large + script + link + .gist,
+.md-large + p,
+.md-large + div
+  $_ml: 100px
+  width: auto !important
+  margin-left: -$_ml !important
+  margin-right: -$_ml !important
+  position: relative
+  img
+    width: 100%
+    height: auto
+  @media screen and (max-width: $_contents-width + ($_ml*2) + 20px)
+    margin-left: 0 !important
+    margin-right: 0 !important
+  @media screen and (max-width: $_break-point)
+    margin-left: 0 !important
+    margin-right: 0 !important
+
+.md-frame-learge + p,
+.md-frame + p
+  background: #f2f2f2
+  padding: 10px
+  margin-bottom: $_margin-contents-bottom
+.md-frame-learge + p
+  $_ml: 100px
+  width: auto !important
+  margin-left: -$_ml !important
+  margin-right: -$_ml !important
+  margin-top: 30px
+  margin-bottom: 30px
+  position: relative
+
+// .md-large
+.md-photo + p
+  $_ml: 100px
+  $_ml2: 200px
+  $_ml3: 300px
+  width: auto !important
+  margin-left: -$_ml3 !important
+  margin-right: -$_ml3 !important
+  position: relative
+  img
+    width: 100%
+    height: auto
+  @media screen and (max-width: $_contents-width + ($_ml3*2) + 20px)
+    margin-left: -$_ml2 !important
+    margin-right: -$_ml2 !important
+  @media screen and (max-width: $_contents-width + ($_ml2*2) + 20px)
+    margin-left: -$_ml !important
+    margin-right: -$_ml !important
+  @media screen and (max-width: $_contents-width + ($_ml*2) + 20px)
+    margin-left: 0 !important
+    margin-right: 0 !important
+  @media screen and (max-width: $_break-point)
+    margin-left: 0 !important
+    margin-right: 0 !important
+
+// footnote系
+%footnote
+  font-size: 10px !important
+  background: $_color-accent
+  color: #000
+  text-decoration: none
+  padding: 2px
+  line-height: 1em
+a[rel="footnote"]
+  @extend %footnote
+.footnotes
+  ol
+    margin-bottom: $_margin-contents-bottom
+    padding: 10px 10px 10px 0px
+    border: 1px solid #dedede
+    // +border-radius(4px)
+    li
+      font-weight: normal
+      list-style: decimal
+      border-top: 1px dotted #dedede
+      padding: 5px 0 5px 0
+      margin-left: 30px
+      font-size: 12px !important
+      &:first-child
+        border-top: none
+      +transition(background-color 1s ease-out)
+      &.active
+        background-color: $_color-accent + 200
+      p
+        margin: 0
+        font-size: 12px !important
+        a, strong
+          font-size: 12px !important
+        a.reversefootnote,
+        a[rev="footnote"]
+          @extend %footnote
+
+

@@ -1,0 +1,82 @@
+$_break-point: 640px
+
+%_table
+  width: 100%
+  border-collapse: collapse
+  th
+    font-weight: bold
+  th, td
+    padding: 5px 10px 5px 10px
+
+
+=table-frame($_border-top: 2px solid #eee, $_border: 1px solid #eee)
+  @extend %_table
+  thead
+    tr
+      th, td
+        border: $_border
+        border-bottom: $_border-top !important
+  tbody
+    tr
+      &:first-child
+        th, td
+          border-top: none
+    th
+      border: $_border
+    td
+      border: $_border
+
+//----------------------------------------------------------------------
+
+=table-line($_border-top: 2px solid #eee, $_border: 1px solid #eee)
+  @extend %_table
+  thead
+    tr
+      th, td
+        border-bottom: $_border-top !important
+  tr
+    &:first-child
+      th, td
+        border: none
+  th, td
+    border-top: $_border
+
+//responcive
+=table-line-stacktable
+  @extend .table-line
+  @media screen and (max-width: $_break-point)
+    display: none
+=table-line-stacktable-small
+  @extend .table-line
+  display: none
+  @media screen and (max-width: $_break-point)
+    $_margin-top: 20px
+    display: table
+    margin-top: -$_margin-top
+    th, td
+      border-top: none
+    .st-head-row-main
+      display: none
+    .st-head-row
+      text-align: center
+      padding-top: $_margin-top
+      border-bottom: $_border-top !important
+    .st-key, .st-val
+      padding-top: 5px
+      padding-bottom: 5px
+      border-bottom: $_border !important
+
+//----------------------------------------------------------------------
+
+=table-stripe($_color-thead: #fff2f2, $_color-even: #f6f6f6, $_color-odd: #ffffff)
+  @extend %_table
+  thead
+    tr
+      background-color: $_color-thead
+  tbody
+    tr:nth-child(even)
+      background-color: $_color-even
+    tr:nth-child(odd)
+      background-color: $_color-odd
+
+

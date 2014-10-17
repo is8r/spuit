@@ -1,0 +1,25 @@
+=tri($c: #2dd, $w:20px, $t: 10px, $l: 10px, $direction: "right")
+  position: relative
+  @if $direction == "right"
+    &:after
+      +rotate(-90deg)
+  @if $direction == "left"
+    &:after
+      +rotate(90deg)
+  @if $direction == "bottom"
+    &:after
+      +rotate(0)
+  @if $direction == "top"
+    &:after
+      +rotate(180deg)
+  &:after
+    content: ""
+    position: absolute
+    width: 0
+    height: 0
+    border: $w solid transparent
+    border-top-color: $c
+    top: $t
+    margin-left: -$w/2
+    left: $l
+

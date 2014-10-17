@@ -1,0 +1,6 @@
+=selection($color: #111, $background: #f2f2f2)
+  $prefixes: -webkit-, -moz-, -ms-, -o-, ''
+  @each $prefix in $prefixes
+    ::#{$prefix}selection
+      color: $color
+      background: $background

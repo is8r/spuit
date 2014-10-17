@@ -1,0 +1,98 @@
+=checkbox($c: #ddd, $size: 26px)
+  position: relative
+  width: $size
+  height: $size
+  margin: 0
+  padding: 0
+  input
+    cursor: pointer
+    display: inline-block
+    position: absolute
+    width: $size
+    height: $size
+    margin: 0
+    padding: 0
+    background: #fff
+    border: 1px solid $color-blue !important
+    +no-shadow
+    +border-radius(2px)
+    -webkit-appearance: none !important
+    +background-image(linear-gradient($c + 20, $c + 10))
+    &:focus
+      border: 1px solid $color-blue !important
+      outline: none
+    &:after
+      content: ''
+      position: absolute
+      width: 10px
+      height: 6px
+      background: transparent
+      top: 8px
+      left: 7px
+      border: 3px solid rgba(0,0,0,0)
+      border-top: none
+      border-right: none
+      +opacity(0)
+      +rotate(-45deg)
+      +background-image(linear-gradient($c + 20, $c + 10))
+    &:checked
+      border: 1px solid $color-blue !important
+    &:hover:after
+      +opacity(1)
+      border: 3px solid rgba($color-blue, 0.5)
+      border-top: none
+      border-right: none
+    &:checked:after
+      //+opacity(1)
+      border: 3px solid $color-blue
+      border-top: none
+      border-right: none
+
+=checkbox_disk
+  $c: $color-blue
+  $r: 40px
+  position: relative
+  width: $r
+  height: $r
+  margin: 0
+  padding: 0
+  input
+    cursor: pointer
+    display: inline-block
+    position: absolute
+    width: $r
+    height: $r
+    margin: 0
+    padding: 0
+    background: #fff
+    border: 1px solid $color-gray !important
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0) !important
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0) !important
+    +border-radius($r)
+    -webkit-appearance: none !important
+    &:focus
+      border: 1px solid $color-gray !important
+      outline: none
+    &:after
+      content: ''
+      position: absolute
+      width: 13px
+      height: 8px
+      background: transparent
+      top: $r/2 - 6px
+      left: $r/2 - 7px
+      border: 3px solid $color-gray
+      border-top: none
+      border-right: none
+      +rotate(-45deg)
+    &:checked
+      border: 1px solid $color-blue !important
+      +background-image(linear-gradient($c + 40, $c + 10))
+    &:hover:after
+      border: 3px solid rgba($color-blue, 0.5)
+      border-top: none
+      border-right: none
+    &:checked:after
+      border: 3px solid #fff
+      border-top: none
+      border-right: none

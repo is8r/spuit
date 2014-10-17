@@ -1,0 +1,179 @@
+$_color-def: #222
+$_color-accent: #222
+$_margin-contents-bottom: 30px
+
+=body($_contents-width: 500px)
+
+  width: 100%
+  text-align: left
+
+  h1,h1 a,
+  h2,h2 a,
+  h3,h3 a,
+  h4,h4 a,
+  h5,h5 a
+    +font
+    clear: both
+    color: $_color-def
+    font-weight: normal
+    line-height: 1.6em
+
+  h1,h1 a
+    +font(30px)
+    margin-bottom: 20px
+
+  h2,h2 a
+    +font(24px)
+    margin-bottom: 20px
+
+  h3,h3 a
+    +font(20px)
+    margin-bottom: 20px
+
+  h4,h4 a
+    +font(20px)
+    margin-bottom: 20px
+
+  h5,h5 a
+    +font(20px)
+    margin-bottom: 16px
+
+  dl, ul, p
+    +font(16px)
+    color: $_color-def
+    @media screen and (max-width: $_contents-width)
+      font-size: 14px
+  i
+    font-style: italic
+
+  strong
+    font-weight: normal !important
+    padding-left: 3px
+    padding-right: 3px
+    font-weight: bold !important
+
+  p
+    clear: both
+    margin-bottom: $_margin-contents-bottom
+    line-height: 1.8em
+    img
+      max-width: 100%
+    > code
+      margin: 0 4px
+      padding: 2px 6px
+      font-style: italic
+      color: #777
+      background: #f8f8f8
+      font-size: 12px
+      $c: #f8f8f8
+      border: 1px solid $c - 10
+
+  a
+    +font(15px)
+    color: $_color-def
+    text-decoration: underline
+
+  // アイコンつきリンク
+  // a[target="_blank"]
+  > a[target="_blank"], p > a[target="_blank"], li > a[target="_blank"]
+    +transition
+    padding-left: 16px
+    margin-left: 4px
+    text-decoration: underline
+    display: inline-block
+    &:hover
+      color: $_color-accent
+
+  img
+    margin: 0
+    padding: 0
+    line-height: 0
+    border: none
+
+  canvas
+    margin-bottom: $_margin-contents-bottom
+
+  ul
+    margin-left: 20px
+    margin-bottom: $_margin-contents-bottom
+    li
+      +font(14px)
+      padding-top: 5px
+      padding-bottom: 5px
+      list-style-type: disc
+
+  ol
+    margin-bottom: $_margin-contents-bottom
+    li
+      +font(14px)
+      list-style: decimal
+      border-top: 1px dotted #ddd
+      padding: 8px 0 5px 0
+      margin-left: 30px
+      &:first-child
+        border-top: none
+
+  table
+    width: 100%
+    border-collapse: collapse
+    margin-bottom: $_margin-contents-bottom
+    th
+      border-bottom: 1px solid #eee
+      padding: 5px 10px 5px 10px
+      +font(10px)
+    td
+      border-bottom: 1px solid #eee
+      padding: 5px 10px 5px 10px
+      +font(14px)
+
+  pre
+    > code
+      width: auto !important
+      padding: 20px
+      margin-top: 50px
+      margin-bottom: 50px
+      display: block
+      line-height: 1.4em
+      background: #f8f8f8
+      font-family: Consolas, 'Liberation Mono', Courier, monospace
+      font-size: 13px
+      overflow: auto
+      p
+        font-family: Consolas, 'Liberation Mono', Courier, monospace
+        font-size: 13px
+
+  blockquote
+    width: auto !important
+    margin-top: 50px
+    margin-bottom: 50px
+    text-align: left !important
+    +clearfix
+    &.left
+      $ml: 20px
+      margin-left: -$ml !important
+      padding-left: $ml !important
+      border-left: 4px solid #f2f2f2
+    cite
+      margin-top: 0
+      float: right
+      p, a
+        +font(12px)
+        display: inline
+        font-weight: normal
+        font-style: normal
+        color: $_color-def
+        font-size: 12px
+        a
+          text-decoration: underline
+          &:hover
+            color: $_color-accent
+    p
+      +font
+      font-size: 19px
+      font-weight: bold
+      font-style: italic
+      margin-bottom: 10px
+      text-align: left !important
+      color: $_color-def
+      line-height: 1.8em
+

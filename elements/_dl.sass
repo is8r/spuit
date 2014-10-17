@@ -1,0 +1,89 @@
+$_c: #ddd
+$_width-left: 160px
+$_width-right: 520px
+$_margin: 20px
+$_border: 1px $_c solid
+$_break-point: 640px
+
+%_nowrap
+  overflow: hidden
+  white-space: nowrap
+  -webkit-text-overflow: ellipsis
+  text-overflow: ellipsis
+
+%_dl
+  > dt
+    baseline: top
+    padding: 10px 0 10px 0
+    font-weight: bold
+    line-height: 1.6em
+  > dd
+    baseline: top
+    padding: 10px 0 10px 0
+    line-height: 1.6em
+  @media screen and (max-width: $_break-point)
+    > dt
+      padding: 10px 0 0 0
+
+//----------------------------------------------------------------------
+
+//dl.dl-list（幅指定左のみ、左側の縦が長過ぎるとズレるのでnowrap付き）
+.dl-list-padding
+  @extend %_dl
+  position: relative
+  baseline: top
+  border-top: $_border
+  min-height: 1px
+  _height: 1%
+  > dt
+    clear: both
+    float: left
+    width: $_width-left
+    @extend %_nowrap
+  > dd
+    position: relative
+    padding-left: $_width-left + $_margin
+    border-bottom: $_border
+  @media screen and (max-width: $_break-point)
+    > dt
+      float: none
+      width: auto
+    > dd
+      padding-left: 0
+
+
+//----------------------------------------------------------------------
+
+//dl.dl-list-width（横幅指定必須）
+.dl-list-width
+  @extend %_dl
+  position: relative
+  *zoom: 1
+  +clearfix
+  border-bottom: $_border
+  width: $_width-right + $_width-left + $_margin
+  > dt
+    clear: both
+    float: left
+    width: $_width-left
+    border-top: $_border
+    display: block
+  > dd
+    position: relative
+    float: left
+    border-top: $_border
+    width: $_width-right
+    display: block
+    padding-left: $_margin
+  @media screen and (max-width: $_break-point)
+    width: auto
+    > dt
+      float: none
+      width: auto
+    > dd
+      border-top: none
+      padding-left: 0
+      width: auto
+
+
+

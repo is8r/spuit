@@ -1,0 +1,4 @@
+=opacity($value: 0.5)
+  opacity: $value
+  filter: alpha(opacity=($value*100))
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+($value*100)+")"

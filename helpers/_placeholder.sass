@@ -1,0 +1,16 @@
+=placeholder
+  &::-webkit-input-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+
+=set-placeholder($color: #ddd, $size: 1em, $style: normal, $weight: normal)
+  +placeholder
+    color: $color
+    font-size: $size
+    font-style: $style
+    font-weight: $weight

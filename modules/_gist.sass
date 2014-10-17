@@ -1,0 +1,58 @@
+$_contents-width: 500px
+$_break-point: 500px
+
+.gist
+  $_ml: 100px
+  width: auto !important
+  margin-left: -$_ml !important
+  margin-right: -$_ml !important
+  margin-top: 30px
+  margin-bottom: 30px
+  position: relative
+  @media screen and (max-width: $_contents-width + ($_ml*2) + 20px)
+    margin-left: 0 !important
+    margin-right: 0 !important
+  @media screen and (max-width: $_break-point)
+    margin-left: 0 !important
+    margin-right: 0 !important
+  table
+    margin-bottom: 0
+  .gist-file
+    border: none
+    .gist-data
+      border-bottom: none
+      background: #f8f8f8
+      .file-data
+        line-height: 1.4em
+        color: #444
+        position: relative
+        width: auto !important
+        .line-data
+          border-top: none
+          border-bottom: none
+          padding-left: 10px !important
+        .line-numbers,
+        .line-data,
+        .line-pre
+          border: none
+          font-size: 13px
+          background: #f8f8f8
+        .line-numbers
+          padding-right: 10px
+          width: 20px
+          .line-number
+            font-weight: normal
+            color: #ddd
+        .line-pre
+          font-family: Consolas, "Liberation Mono", Courier, monospace
+          color: #333
+    .gist-meta
+      $c: #f8f8f8
+      background-color: $c
+      border-top: 1px solid #eee
+      text-shadow: none
+
+    .gist-meta, .gist-meta a
+      font-size: 12px
+      font-weight: normal
+      text-shadow: 1px 1px rgba(255,255,255,0)

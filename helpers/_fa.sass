@@ -1,0 +1,54 @@
+=fa($content: '\f105')
+  +inline-block
+  font-family: FontAwesome
+  font-style: normal
+  font-weight: normal
+  line-height: 1
+  text-indent: 0
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  @if $content
+    content: $content
+
+=fa-icon($icon: '\f105', $size: 1em, $position: 'before', $margin: 0.4em)
+  position: relative
+  @if $position == 'after'
+    &:after
+      +fa($icon)
+      font-size: $size
+      margin-left: $margin
+  @else
+    &:before
+      +fa($icon)
+      font-size: $size
+      margin-right: $margin
+
+=fa-absolute($icon: '\f105', $size: 1em, $position: 'left', $left: 0, $top: 0)
+  position: relative
+  &:before
+    +fa($icon)
+    font-size: $size
+    position: absolute
+    @if $position == 'left'
+      position: absolute
+      left: $left
+      top: $top
+    @else if $position == 'right'
+      position: absolute
+      right: $left
+      top: $top
+
+=fa-replace($icon: '\f105', $w: 60px, $size: 1em, $round: true)
+  +hide-text
+  @if $round == true
+    +border-radius(60px)
+  width: $w
+  height: $w
+  &:before
+    +fa($icon)
+    font-size: $size
+    text-align: center
+    width: $w
+    height: $w
+    line-height: $w
+    vertical-align: top

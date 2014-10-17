@@ -1,0 +1,14 @@
+// Example:
+// +background-image(linear-gradient(to top, red, orange))
+
+=background-image($argument...)
+  background-size: 100%
+  $prefixes: webkit moz ''
+  @each $prefix in $prefixes
+    @if $prefix == webkit
+      background-image: -webkit-#{$argument}
+    @else if $prefix == moz
+      background-image: -moz-#{$argument}
+    @else
+      background-image: #{$argument}
+    background-image: #{$argument}

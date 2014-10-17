@@ -1,0 +1,11 @@
+=font-face($name, $path)
+  @at-root
+    @font-face
+      src: url('#{$path}.eot')
+      src: url('#{$path}.eot?iefix') format('eot'), url('#{$path}.woff') format("woff"), url('#{$path}.ttf') format('truetype'), url('フォント名.svg#font') format('svg')
+
+=web-font($fontname: 'pilcrowsoft', $weight: normal, $style: normal)
+  +font-face($fontname, '../../font/#{$fontname}/#{$fontname}-webfont')
+  font-family: $fontname
+  font-weight: $weight
+  font-style: $style

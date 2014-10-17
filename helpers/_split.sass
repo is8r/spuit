@@ -1,0 +1,42 @@
+// howto
+// .split-3
+//   +split(3, 700px, 20px)
+//   > li
+//     background: #ddd
+//     height: 40px
+
+// .split-2
+//   +split(2, 700px, 20px)
+//   > li
+//     background: #ddd
+//     height: 40px
+
+$_break-point: 640px
+
+=split($_col: 3, $_w: 700px, $_margin: 20px)
+  $_wcol: ($_w - ($_margin*($_col - 1)))/$_col
+  position: relative
+  width: $_w + $_margin
+  +clearfix
+  margin: -$_margin 0 0 -1*$_margin !important
+  padding: 0 !important
+  > li
+    width: $_wcol
+    float: left
+    list-style: none !important
+    margin: $_margin 0 0 $_margin
+    padding: 0
+    position: relative
+  @media screen and (max-width: $_break-point)
+    width: auto
+    margin: 0 !important
+    padding: 0 !important
+    > li
+      width: auto
+      float: none
+      list-style: none !important
+      margin: 10px 0 0 0 !important
+      padding: 0
+      &:first-child
+        margin: 0 !important
+

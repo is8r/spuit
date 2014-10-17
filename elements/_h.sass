@@ -1,0 +1,23 @@
+=h-border-horizon
+  display: flex
+  align-items: center
+  text-align: center
+  &:before,
+  &:after
+    border-top: 1px solid
+    content: ""
+    flex-grow: 1
+  &:before
+    margin-right: 0.5em
+  &:after
+    margin-left: 0.5em
+
+=h-border-horizon-right
+  display: flex
+  align-items: center
+  text-align: left
+  &:after
+    border-top: 1px solid
+    content: ""
+    flex-grow: 1
+    margin-left: 0.5em
