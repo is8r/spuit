@@ -1,10 +1,10 @@
-=h-border-horizon
+=h-border-horizon($border: 1px solid)
   display: flex
   align-items: center
   text-align: center
   &:before,
   &:after
-    border-top: 1px solid
+    border-top: $border
     content: ""
     flex-grow: 1
   &:before
@@ -12,12 +12,12 @@
   &:after
     margin-left: 0.5em
 
-=h-border-horizon-right
+=h-border-horizon-right($border: 1px solid)
   display: flex
   align-items: center
   text-align: left
   &:after
-    border-top: 1px solid
+    border-top: $border
     content: ""
     flex-grow: 1
     margin-left: 0.5em

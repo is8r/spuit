@@ -21,6 +21,29 @@
   &.is-current
     background-color: darken($c, 20%)
 
+=button-semi-flat($size: 14px, $c: #ffa500, $strangth: 10%, $c-text: #fff, $p: 10px 20px, $r: 2px)
+  +button-base
+  +border-radius($r)
+  +transition(background-color 0.2s ease-out)
+  +font($size)
+  background: $c
+  +background-image(linear-gradient(to top, $c, lighten($c, $strangth)))
+  border: 1px solid lighten($c, $strangth)
+  color: $c-text
+  padding: $p
+  &:hover
+    background: darken($c, $strangth)
+    +background-image(linear-gradient(to top, darken($c, $strangth), $c))
+  &:active
+    background: darken($c, $strangth*2)
+    +background-image(linear-gradient(to top, darken($c, $strangth*2), darken($c, 10%)))
+  &:disabled,
+  &.is-disabled
+    background-color: lighten($c, $strangth*3)
+  &.is-current
+    background: darken($c, $strangth)
+    +background-image(linear-gradient(to top, darken($c, $strangth), $c))
+
 =button-border($size: 14px, $c: #ffa500, $p: 10px 20px, $border: 2px, $r: 0px)
   +button-base
   +border-radius($r)
