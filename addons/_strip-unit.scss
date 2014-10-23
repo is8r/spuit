@@ -1,0 +1,11 @@
+ /*
+  * Returns a number without unit. E.g. 30px -> 30
+  * Borrowed from https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss
+  *
+  * @param value {String}
+  * @returns
+  *   <Number>
+  */
+ @function strip-unit($value) {
+     @return $value / ($value * 0 + 1);
+ }
