@@ -1,0 +1,17 @@
+=icon-disc($icon: '\f113', $w: 40px, $size: 20px, $c: #ffa500, $c-text: #fff)
+  +fa-icon($icon)
+  &:before
+    +inline-block
+    +border-radius($w)
+    background: $c
+    color: $c-text
+    width: $w
+    height: $w
+    line-height: $w
+    text-align: center
+    font-size: $size
+
+=icon-semiflat($icon: '\f113', $w: 40px, $size: 20px, $c: #ffa500, $strangth: 10%, $c-text: #fff)
+  +icon-disc($icon, $w, $size, $c, $c-text)
+  &:before
+    +background-image(linear-gradient(to top, $c, lighten($c, $strangth)))
