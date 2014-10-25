@@ -2,12 +2,11 @@
 // .scaffold
 //   +form($color-accent, 1px solid #eee, $break-point)
 //   padding-top: 20px
-//   .actions
-//     input[type=submit]
-//       +button(14px, $color-accent)
-//       min-width: 200px
+//   input[type=submit]
+//     +button(14px, $color-accent)
+//     min-width: 200px
 
-=form($_color-accent: #ffa500, $_border: 1px solid #eee, $_break-point: 640px)
+=form($_color-accent: #ffa500, $_border: 1px solid #eee, $_left-margin: 120px, $_break-point: 640px)
   +font(14px)
   @at-root
     #{&}__description
@@ -19,16 +18,16 @@
           margin-top: 0
         > label
           margin-left: 6px
-    #{&}__field, .field, .actions
+    #{&}__field, .field
       +clearfix
       position: relative
       margin-top: 10px
       padding: 0 22px 5px 0
-      padding-left: 140px
+      padding-left: $_left-margin
       > label, > legend
         position: absolute
         left: 0px
-        width: 120px
+        width: $_left-margin - 20px
       > .text
         width: 60%
         height: 20px
@@ -68,7 +67,7 @@
       cursor: pointer
 
     @media screen and (max-width: $_break-point)
-      #{&}__field, .field, .actions
+      #{&}__field, .field
         margin: 0 0 10px 0
         padding-left: 0
         > label, > legend
