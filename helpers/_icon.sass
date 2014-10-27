@@ -1,0 +1,71 @@
+=icon-close($w: 100px, $border-width: 4px)
+  +inline-block
+  width: $w
+  height: $w
+  position: relative
+  /* background: #ddd */
+  &:before
+    +rotate(45deg)
+    content: ''
+    position: absolute
+    top: $w/2 - ($border-width/2)
+    left: 0
+    width: $w
+    height: 0
+    border-top: $border-width solid #000
+  &:after
+    +rotate(-45deg)
+    content: ''
+    position: absolute
+    top: $w/2 - ($border-width/2)
+    left: 0
+    width: $w
+    height: 0
+    border-top: $border-width solid #000
+
+=icon-plus($w: 70px, $border-width: 4px)
+  +inline-block
+  width: $w
+  height: $w
+  position: relative
+  /* background: #ddd */
+  &:before
+    content: ''
+    position: absolute
+    top: $w/2 - ($border-width/2)
+    left: 0
+    width: $w
+    height: 1px
+    border-top: $border-width solid #000
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: $w/2 - ($border-width/2)
+    width: 1px
+    height: $w
+    border-left: $border-width solid #000
+
+=icon-humberger($w: 100px, $border-width: 4px)
+  +inline-block
+  width: $w
+  height: $w
+  position: relative
+  /* background: #ddd */
+  &:before
+    content: ''
+    position: absolute
+    top: $w/4 - ($border-width/2)
+    left: $w * 0.1
+    width: $w * 0.8
+    height: $w/4 - $border-width
+    border-top: $border-width solid #000
+    border-bottom: $border-width solid #000
+  &:after
+    content: ''
+    position: absolute
+    top: $w/4 * 3 - ($border-width/2) - 1px
+    left: $w * 0.1
+    width: $w * 0.8
+    height: 1px
+    border-top: $border-width solid #000
