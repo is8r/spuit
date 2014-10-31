@@ -43,11 +43,11 @@ $_break-point: 640px
 
 //responcive
 =table-line-stacktable
-  @extend .table-line
+  +table-line
   @media screen and (max-width: $_break-point)
     display: none
 =table-line-stacktable-small
-  @extend .table-line
+  +table-line
   display: none
   @media screen and (max-width: $_break-point)
     $_margin-top: 20px
