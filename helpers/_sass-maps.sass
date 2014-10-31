@@ -1,0 +1,20 @@
+// Example:
+// .icon
+//   $icon-images: (icon-ai: 0px, icon-fl: 10px, icon-fw: 0px, icon-id: 0px, icon-ps: 0px)
+//   +sass-maps($icon-images)
+
+=sass-maps($images)
+  @each $filename, $y-position in $images
+    &.#{$filename}:after
+      +inline-block
+      background-image: url('/images/#{$filename}.png')
+      background-position: center $y-position
+      background-repeat: no-repeat
+      width: 56px
+      height: 54px
+      background-size: 100%
+      content: ''
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    @each $filename, $y-position in $images
+      &.#{$filename}:after
+        background-image: url('/images/#{$filename}@2x.png')
