@@ -19,7 +19,7 @@ $_break-point: 640px
       padding-top: $_margin-tb
       padding-bottom: $_margin-tb
 
-.ul-list-icon
+=ul-list-icon
   $_margin-l: 10px
   $_margin-tb: 10px
   $_icon: "\f105"
@@ -29,14 +29,14 @@ $_break-point: 640px
     +fa-icon($_icon, $_font-size, 0, $_margin-tb)
     padding-left: $_margin-l
 
-.ul-list-border
+=ul-list-border
   @extend %_ul
   > li
     border-top: $_border
     &:first-child
       border-top: none
 
-.ul-list-border-tb
+=ul-list-border-tb
   @extend %_ul
   > li
     border-bottom: $_border
