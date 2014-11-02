@@ -4,19 +4,22 @@
   padding: 0
   text-align: center
   min-width: $n
-  #{&}__inner
-    position: relative
-    display: block
-    width: $n
-    margin: 0 auto
-    text-align: left
   @media screen and (max-width: $_break-point)
     width: auto
     min-width: 0
+
+  @at-root
     #{&}__inner
-      width: auto
-      @if $fit
-        margin-left: -$margin
-        margin-right: -$margin
-      padding-left: $margin
-      padding-right: $margin
+      position: relative
+      display: block
+      width: $n
+      margin: 0 auto
+      text-align: left
+      @media screen and (max-width: $_break-point)
+        width: auto
+        @if $fit == true
+          padding-left: 0
+          padding-right: 0
+        @else
+          padding-left: $margin
+          padding-right: $margin
