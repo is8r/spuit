@@ -1,0 +1,84 @@
+// CSS Only Pulldown Menu
+// Example:
+// <li class="pulldown">
+//   <a href="#">About</a>
+//   <ul class="pulldown__content">
+//     <li><a href="#">Twitter</a></li>
+//     <li><a href="#">Github</a></li>
+//   </ul>
+// </li>
+// .pulldown
+//   +pulldown
+//   .pulldown__content
+//     a
+//       +font-en(12px)
+//       text-transform: uppercase
+//       color: #000
+
+=pulldown($w: 150px, $c: #fff)
+  position: relative
+  a
+    display: block
+    text-decoration: none
+    text-align: center
+  &:hover,
+  &.is-open
+    .pulldown__content
+      +opacity(1)
+      +transform(translate(-50%, 0) scale(1))
+      display: block
+  .pulldown__content
+    +box-shadow(0 1px 2px 1px rgba(0,0,0,0.1))
+    +border-radius(2px)
+    +backface-visibility
+    +opacity(0)
+    +transform(translate(-50%, -60%) scale(0))
+    +transition(all 0.2s ease-in-out)
+
+    position: absolute
+    top: 3em
+    left: 50%
+    z-index: 99999
+
+    background: $c
+    width: $w
+
+    > li
+      padding: 10px
+      border-top: 1px solid $c
+      &:first-child
+        border-top: none
+    &:after
+      +rotate(180deg)
+      content: ''
+      position: absolute
+      width: 0
+      height: 0
+      border: 8px solid transparent
+      border-top-color: $c
+      top: -16px
+      margin-left: -8px
+      left: 50%
+  +break-points('mobile')
+    a
+      text-align: left
+    .pulldown__content
+      +box-shadow(none)
+      +border-radius(0px)
+      +opacity(1)
+      +transform(translate(-50%, 0) scale(1))
+      position: relative
+      top: 0
+      left: 50%
+      z-index: 1
+      background: transparent
+      width: auto
+      border-left: 2px solid #222
+      margin-left: 10px
+      > li
+        border-top: none
+      a
+        text-align: left
+      &:after
+        display: none
+
