@@ -1,0 +1,61 @@
+=scaffold($color-accent: #f22)
+  margin-bottom: 60px
+
+  // index
+  table
+    margin-top: 30px
+    width: 100%
+    +table-frame
+    td
+      > a
+        +a-link-arrow
+        color: $color-accent
+  > a
+    +button(12px, $color-accent)
+
+  // form
+  +form($color-accent)
+  form
+    .actions
+      margin-top: 20px
+      margin-bottom: 20px
+      a, input
+        +button(12px, $color-accent)
+        min-width: 300px
+
+  // show
+  $ml: 120px
+  > p
+    position: relative
+    padding-left: $ml
+    padding-top: 5px
+    padding-bottom: 5px
+    border-bottom: 1px solid #eee
+    min-height: 1.4em
+    > b
+      +font(10px)
+      position: absolute
+      left: 0px
+      width: $ml - 20px
+      text-transform: uppercase
+      line-height: 1.4em
+
+  // kaminari
+  .pagination
+    margin-top: 20px
+    margin-bottom: 20px
+    text-align: center
+    span.current,
+    a
+      +inline-block
+      +font(14px)
+      +nowrap
+      text-decoration: none
+      padding: 5px
+      text-align: center
+      color: $color-accent
+    span.current
+      +font(14px, normal, bold)
+      color: #222
+
+

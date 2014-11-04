@@ -11,6 +11,7 @@ $_break-point: 640px
 
 =table-frame($_border-top: 2px solid #eee, $_border: 1px solid #eee)
   @extend %_table
+  border-top: $_border
   thead
     tr
       th, td
@@ -23,6 +24,7 @@ $_break-point: 640px
           border-top: none
     th
       border: $_border
+      border-bottom: $_border-top
     td
       border: $_border
 

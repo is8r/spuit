@@ -3,3 +3,14 @@
   &:hover
     +opacity($value)
 
+=a-link-arrow
+  +transition(all 0.2s)
+  +font(12px, normal, bold)
+  +fa-icon
+  +nowrap
+  text-transform: uppercase
+  text-decoration: none
+  &:hover
+    &:before
+      +animation(anim-arrow 0.8s ease-out infinite)
+
