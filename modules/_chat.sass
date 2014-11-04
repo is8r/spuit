@@ -1,0 +1,67 @@
+// Example:
+// <ul class="chat">
+//   <li class="chat__item is-right">
+//     <div class="chat__avatar">
+//       <img src="http://dummyimage.com/100x100/000/fff" />
+//     </div>
+//     <div class="chat__voice">
+//       コメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメントコメント
+//       <span class="chat__voice-name">お名前</span>
+//       <span class="chat__voice-date">2014/00/00</span>
+//     </div>
+//   </li>
+// </ul>
+
+=chat($colors: (#f6615b, adjust-hue(#f6615b, 100)),$w: 80px, $r: 6px)
+  +clearfix
+  position: relative
+  .chat__item
+    position: relative
+    margin-top: 20px
+    padding-left: $w + 20px
+    &:first-child
+      margin-top: 0px
+    .chat__avatar
+      +border-radius($w)
+      overflow: hidden
+      width: $w
+      height: $w
+      position: absolute
+      top: 0
+      left: 0
+      img
+        width: $w
+        height: auto
+    .chat__voice
+      +border-radius($r)
+      +tri(nth($colors, 1), 12px, $w/2, 0, 'left')
+      +font(14px, 1.6em)
+      background: nth($colors, 1)
+      padding: 18px
+      color: #fff
+      min-height: $w - (18px * 2)
+      .chat__voice-name
+        +meta
+        color: #fff
+      .chat__voice-date
+        +meta
+        color: #fff
+  .chat__item--right
+    @extend .chat__item
+    padding-left: 0
+    padding-right: $w + 20px
+    .chat__avatar
+      left: auto
+      right: 0
+    .chat__voice
+      +tri(nth($colors, 2), 12px, $w/2, 0, 'right')
+      background: nth($colors, 2)
+
+
+
+
+
+
+
+
+

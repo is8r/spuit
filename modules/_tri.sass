@@ -1,17 +1,8 @@
-=tri($c: #2dd, $w:20px, $t: 10px, $l: 10px, $direction: "right")
+// Example:
+// +tri(#222, 12px, $w/2, 0, 'left')
+
+=tri($c: #2dd, $w:20px, $t: 0, $l: 0, $direction: "right")
   position: relative
-  @if $direction == "right"
-    &:after
-      +rotate(-90deg)
-  @if $direction == "left"
-    &:after
-      +rotate(90deg)
-  @if $direction == "bottom"
-    &:after
-      +rotate(0)
-  @if $direction == "top"
-    &:after
-      +rotate(180deg)
   &:after
     content: ""
     position: absolute
@@ -19,7 +10,28 @@
     height: 0
     border: $w solid transparent
     border-top-color: $c
-    top: $t
-    margin-left: -$w/2
-    left: $l
+  @if $direction == "left"
+    &:after
+      +transform(translateX(-$w*2) translateY(-$w) rotate(90deg))
+      left: $l
+      right: auto
+      top: $t
+  @if $direction == "right"
+    &:after
+      +transform(translateX($w*2) translateY(-$w) rotate(-90deg))
+      left: auto
+      right: $l
+      top: $t
+  @if $direction == "top"
+    &:after
+      +transform(translateX(-$w) translateY(-$w*2) rotate(180deg))
+      left: $l
+      right: auto
+      top: $t
+  @if $direction == "bottom"
+    &:after
+      +transform(translateX(-$w) translateY($w*2) rotate(0))
+      left: $l
+      right: auto
+      bottom: $l
 
