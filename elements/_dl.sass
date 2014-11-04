@@ -1,9 +1,3 @@
-$_c: #ddd
-$_width-left: 160px
-$_width-right: 520px
-$_margin: 20px
-$_border: 1px $_c solid
-$_break-point: 640px
 
 %_nowrap
   overflow: hidden
@@ -28,7 +22,13 @@ $_break-point: 640px
 //----------------------------------------------------------------------
 
 //dl.dl-list（幅指定左のみ、左側の縦が長過ぎるとズレるのでnowrap付き）
-.dl-list-padding
+=dl-list-padding
+  $_c: #ddd
+  $_width-left: 160px
+  $_width-right: 520px
+  $_margin: 20px
+  $_border: 1px $_c solid
+  $_break-point: 640px
   @extend %_dl
   position: relative
   baseline: top
@@ -52,10 +52,14 @@ $_break-point: 640px
       padding-left: 0
 
 
-//----------------------------------------------------------------------
-
 //dl.dl-list-width（横幅指定必須）
-.dl-list-width
+=dl-list-width
+  $_c: #ddd
+  $_width-left: 160px
+  $_width-right: 520px
+  $_margin: 20px
+  $_border: 1px $_c solid
+  $_break-point: 640px
   @extend %_dl
   position: relative
   *zoom: 1

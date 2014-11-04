@@ -5,6 +5,10 @@
   margin: 0
   padding: 0
   input
+    +no-shadow
+    +border-radius(2px)
+    +background-image(linear-gradient($c + 20, $c + 10))
+    -webkit-appearance: none !important
     cursor: pointer
     display: inline-block
     position: absolute
@@ -14,14 +18,13 @@
     padding: 0
     background: #fff
     border: 1px solid $color-blue !important
-    +no-shadow
-    +border-radius(2px)
-    -webkit-appearance: none !important
-    +background-image(linear-gradient($c + 20, $c + 10))
     &:focus
       border: 1px solid $color-blue !important
       outline: none
     &:after
+      +opacity(0)
+      +rotate(-45deg)
+      +background-image(linear-gradient($c + 20, $c + 10))
       content: ''
       position: absolute
       width: 10px
@@ -32,9 +35,6 @@
       border: 3px solid rgba(0,0,0,0)
       border-top: none
       border-right: none
-      +opacity(0)
-      +rotate(-45deg)
-      +background-image(linear-gradient($c + 20, $c + 10))
     &:checked
       border: 1px solid $color-blue !important
     &:hover:after
@@ -57,6 +57,7 @@
   margin: 0
   padding: 0
   input
+    +border-radius($r)
     cursor: pointer
     display: inline-block
     position: absolute
@@ -68,12 +69,12 @@
     border: 1px solid $color-gray !important
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0) !important
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0) !important
-    +border-radius($r)
     -webkit-appearance: none !important
     &:focus
       border: 1px solid $color-gray !important
       outline: none
     &:after
+      +rotate(-45deg)
       content: ''
       position: absolute
       width: 13px
@@ -84,10 +85,9 @@
       border: 3px solid $color-gray
       border-top: none
       border-right: none
-      +rotate(-45deg)
     &:checked
-      border: 1px solid $color-blue !important
       +background-image(linear-gradient($c + 40, $c + 10))
+      border: 1px solid $color-blue !important
     &:hover:after
       border: 3px solid rgba($color-blue, 0.5)
       border-top: none

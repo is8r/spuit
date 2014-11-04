@@ -1,4 +1,4 @@
-// howto
+// Example:
 // .split-3
 //   +split(3, 700px, 20px)
 //   > li
@@ -15,9 +15,9 @@ $_break-point: 640px
 
 =split($_col: 3, $_w: 700px, $_margin: 20px)
   $_wcol: ($_w - ($_margin*($_col - 1)))/$_col
+  +clearfix
   position: relative
   width: $_w + $_margin
-  +clearfix
   margin: -$_margin 0 0 -1*$_margin !important
   padding: 0 !important
   > li

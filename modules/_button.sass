@@ -21,7 +21,7 @@
   &.is-current
     background-color: darken($c, 20%)
 
-=button-semi-flat($size: 14px, $c: #ffa500, $strangth: 10%, $c-text: #fff, $p: 10px 20px, $r: 2px)
+=button-semiflat($size: 14px, $c: #ffa500, $strangth: 10%, $c-text: #fff, $p: 10px 20px, $r: 2px)
   +button-base
   +border-radius($r)
   +transition(background-color 0.2s ease-out)
@@ -99,16 +99,18 @@
   +border-radius($w)
   +transition(background-color 0.2s ease-out)
   +fa-icon($icon)
+  overflow: hidden
   background: $c
   color: $c-text
   width: $w
   height: $w
   line-height: $w
-  text-align: center
   font-size: $size
+  vertical-align: top
   &:before
     width: $w
     height: $w
+    margin-right: 0
   &:hover
     background-color: darken($c, 10%)
   &:active
