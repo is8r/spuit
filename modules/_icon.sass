@@ -15,3 +15,18 @@
   +icon-disc($icon, $w, $size, $c, $c-text)
   &:before
     +background-image(linear-gradient(to top, $c, lighten($c, $strangth)))
+
+=icon-border($icon: '\f113', $w: 40px, $size: 20px, $c: #ffa500, $border: 2px solid)
+  +fa-icon($icon)
+  &:before
+    +inline-block
+    +border-radius($w)
+    background: transparent
+    color: $c
+    border: $border $c
+    width: $w
+    height: $w
+    line-height: $w
+    text-align: center
+    font-size: $size
+
