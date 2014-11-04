@@ -7,15 +7,17 @@ A Sass Mixin Library from is8r to is8r
 
 spuit自体はこれでアップデートしていく予定。
 
-1.  $ git clone git@github.com:is8r/spuit-gulp-template.git
+```
+$ git clone git@github.com:is8r/spuit-gulp-template.git
+```
 
 ## Rails
 
 gemにはしないけどGit submoduleかpublic以下にgulpで書出して使う。
 scaffoldとかした時にviewを.scaffoldで囲うだけでそこそこ見栄えを整えてくれる機能も。
 
-1.  $ cd /app/assets/stylesheets/vendor/spuit
-2.  $ git clone git@github.com:is8r/spuit.git
+1.  ```$ cd /app/assets/stylesheets/vendor/spuit```
+2.  ```$ git clone git@github.com:is8r/spuit.git```
 3.	Edit: /app/assets/stylesheets/application.scss
 	
 	```
