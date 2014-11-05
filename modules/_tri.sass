@@ -25,13 +25,13 @@
   @if $direction == "top"
     &:after
       +transform(translateX(-$w) translateY(-$w*2) rotate(180deg))
-      left: $l
       right: auto
+      left: $l
       top: $t
   @if $direction == "bottom"
     &:after
       +transform(translateX(-$w) translateY($w*2) rotate(0))
-      left: $l
       right: auto
-      bottom: $l
+      left: $l
+      bottom: $t
 
