@@ -41,5 +41,13 @@
       +opacity(0.8)
       &:before
         +animation(anim-spin 1.6s infinite linear)
+  &.is-loading
+    a,
+    button
+      +button-disabled
+      +fa-replace('\f1ce', $w-button, $size, false)
+      +opacity(0.8)
+      &:before
+        +animation(anim-spin 1.6s infinite linear)
 
 
