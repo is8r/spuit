@@ -10,11 +10,22 @@
       +font(10px, normal, bold)
       text-align: center
     td
+      vertical-align: top
       > a
         +a-link-arrow
         color: $color-accent
+      img
+        width: 100px
+        height: auto
   > a
     +button(12px, $color-accent)
+    &.is-loading
+      +button-disabled
+      +fa-icon('\f1ce', 14px, 14px, false)
+      +opacity(0.8)
+      &:before
+        margin-right: 10px
+        +animation(anim-spin 1.6s infinite linear)
 
   // form
   +form($color-accent)
