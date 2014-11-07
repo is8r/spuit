@@ -1,42 +1,33 @@
 // Example:
-// .split-3
-//   +split(3, 700px, 20px)
-//   > li
-//     background: #ddd
-//     height: 40px
 
-// .split-2
-//   +split(2, 700px, 20px)
-//   > li
-//     background: #ddd
-//     height: 40px
+// Simple Grid System - ie9-
+@function split-width($column: 5, $gutter: 2)
+  $parcent: (1/$column) * 100
+  $margin: ($gutter * ($column - 1)) / $column
+  @return ($parcent - $margin)
 
-$_break-point: 640px
-
-=split($_col: 3, $_w: 700px, $_margin: 20px)
-  $_wcol: ($_w - ($_margin*($_col - 1)))/$_col
+=split($column: 5, $gutter: 2, $break-point: 640px)
   +clearfix
   position: relative
-  width: $_w + $_margin
-  margin: -$_margin 0 0 -1*$_margin !important
-  padding: 0 !important
   > li
-    width: $_wcol
+    display: block
     float: left
-    list-style: none !important
-    margin: $_margin 0 0 $_margin
-    padding: 0
-    position: relative
-  @media screen and (max-width: $_break-point)
-    width: auto
-    margin: 0 !important
-    padding: 0 !important
+    background: #ddd
+    box-sizing: border-box
+    width: split-width($column, $gutter) * 1%
+    min-height: 1px
+    margin-left: $gutter * 1%
+    @for $i from 0 through 50
+      @if $i%$column == 1
+        &:nth-child(#{$i})
+          margin-left: 0
+          // background: #2dd
+      @if $i >= $column
+        &:nth-child(#{$i})
+          margin-bottom: $gutter * 1%
+  @media screen and (max-width: $break-point)
     > li
       width: auto
       float: none
-      list-style: none !important
-      margin: 10px 0 0 0 !important
-      padding: 0
-      &:first-child
-        margin: 0 !important
+      margin: 0
 

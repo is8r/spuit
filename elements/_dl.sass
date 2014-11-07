@@ -6,6 +6,7 @@
   text-overflow: ellipsis
 
 %_dl
+  $break-point: 640px
   > dt
     baseline: top
     padding: 10px 0 10px 0
@@ -15,14 +16,14 @@
     baseline: top
     padding: 10px 0 10px 0
     line-height: 1.6em
-  @media screen and (max-width: $_break-point)
+  @media screen and (max-width: $break-point)
     > dt
       padding: 10px 0 0 0
 
 //----------------------------------------------------------------------
 
 //dl.dl-list（幅指定左のみ、左側の縦が長過ぎるとズレるのでnowrap付き）
-=dl-list-padding
+=dl-list-padding($break-point: 640px)
   $_c: #ddd
   $_width-left: 160px
   $_width-right: 520px
@@ -44,7 +45,7 @@
     position: relative
     padding-left: $_width-left + $_margin
     border-bottom: $_border
-  @media screen and (max-width: $_break-point)
+  @media screen and (max-width: $break-point)
     > dt
       float: none
       width: auto
@@ -53,7 +54,7 @@
 
 
 //dl.dl-list-width（横幅指定必須）
-=dl-list-width
+=dl-list-width($break-point: 640px)
   $_c: #ddd
   $_width-left: 160px
   $_width-right: 520px
@@ -79,7 +80,7 @@
     width: $_width-right
     display: block
     padding-left: $_margin
-  @media screen and (max-width: $_break-point)
+  @media screen and (max-width: $break-point)
     width: auto
     > dt
       float: none
