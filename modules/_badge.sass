@@ -30,3 +30,22 @@
       left: -30px
       +rotate(-45deg)
 
+// Example:
+// <i class="badge-tri"></i>
+
+=badge-tri($c: #f22, $w: 30px)
+  position: absolute
+  overflow: hidden
+  width: $w
+  height: $w
+  &:before
+    +transform(translateX(-50%) translateY(-50%) rotate(-45deg))
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    background: $c
+    display: block
+    padding: 0
+    width: $w
+    height: $w
