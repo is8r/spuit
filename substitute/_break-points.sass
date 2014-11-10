@@ -9,6 +9,9 @@
   @else if $point == tablet
     @media #{$tablet}
       @content
+  @else if $point == retina
+    @media (-webkit-min-device-pixel-ratio: 2)
+      @content
   @else if $point == desktop
     @media #{$desktop}
       @content
