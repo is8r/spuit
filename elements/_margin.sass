@@ -17,3 +17,15 @@
     @for $i from 0 through 10
       .pb#{($i*10)}
         padding-bottom: #{($i*10)}px
+
+=width-set
+  @at-root
+    @for $i from 0 through 20
+      .w#{($i*10)}
+        width: #{($i*10)}px
+
+=height-set
+  @at-root
+    @for $i from 0 through 10
+      .h#{($i*1)}
+        height: #{($i*1)}px
