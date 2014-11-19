@@ -1,5 +1,9 @@
 =icon-disc($icon: '\f113', $w: 40px, $size: 20px, $c: #ffa500, $c-text: #fff)
+  +inline-block
+  +hide-text
   +fa-icon($icon)
+  width: $w
+  height: $w
   &:before
     +inline-block
     +border-radius($w)
@@ -10,6 +14,7 @@
     line-height: $w
     text-align: center
     font-size: $size
+    text-indent: 0
 
 =icon-semiflat($icon: '\f113', $w: 40px, $size: 20px, $c: #ffa500, $strangth: 10%, $c-text: #fff)
   +icon-disc($icon, $w, $size, $c, $c-text)
