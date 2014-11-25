@@ -1,0 +1,10 @@
+=absolute($t: 100px, $l: 100px, $position: 'left')
+  position: absolute
+  top: $t
+  @if $position == 'left'
+    left: $l
+  @else
+    right: $l
+
+=relative
+  position: relative
