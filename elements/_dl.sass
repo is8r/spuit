@@ -1,10 +1,3 @@
-
-%_nowrap
-  overflow: hidden
-  white-space: nowrap
-  -webkit-text-overflow: ellipsis
-  text-overflow: ellipsis
-
 %_dl
   $break-point: 640px
   > dt
@@ -37,10 +30,10 @@
   min-height: 1px
   _height: 1%
   > dt
+    +nowrap
     clear: both
     float: left
     width: $_width-left
-    @extend %_nowrap
   > dd
     position: relative
     padding-left: $_width-left + $_margin
