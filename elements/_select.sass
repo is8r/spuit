@@ -1,0 +1,40 @@
+=select($border: 1px solid #eee, $w: 300px, $p: 12px, $r: 2px)
+  +border-radius($r)
+  +box-sizing(border-box)
+  position: relative
+  overflow: hidden
+  border: $border
+  width: $w
+  select
+    +reset-form
+    +inline-block
+    +box-sizing(content-box)
+    width: 100%
+    padding: $p $p $p $p
+    cursor: pointer
+    color: #000
+    &:focus
+      outline: none
+      border: none
+  &:before
+    +fa('\f0d8')
+    +absolute(0 + ($p/2), $p, 'right')
+  &:after
+    +fa('\f0d7')
+    +absolute(9px + ($p/2), $p, 'right')
+
+  select
+    width: 110% // IE9
+    &::-ms-expand
+      display: none // IE10
+
+  // @at-root
+  //   //Firefox
+  //   @-moz-document url-prefix()
+  //     #{&}
+  //       select
+  //         text-indent: 0.01px
+  //         text-overflow: ""
+  //         &:-moz-focusring
+  //           color: transparent
+  //           text-shadow: 0 0 0 #000

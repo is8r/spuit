@@ -1,4 +1,4 @@
-=checkbox-fa
+=radio-fa
   label
     +inline-block
     position: relative
@@ -6,7 +6,7 @@
     padding-left: 30px
     &:before
       $r: 15px
-      +fa('\f096')
+      +fa('\f10c')
       +inline-block
       position: absolute
       top: 0
@@ -14,11 +14,13 @@
       width: $r
       height: $r
       border-radius: 100%
-      font-size: 18px
+      font-size: 20px
       color: #eee
-  input[type="checkbox"]
+  input[type="radio"]
     display: none
     &:checked + label
       &:before
-        +fa('\f046')
+        // +fa('\f05d')
+        // +fa('\f058')
+        +fa('\f192')
         color: #000
