@@ -13,6 +13,7 @@
     padding: $p $p $p $p
     cursor: pointer
     color: #000
+    background: #fff
     &:focus
       outline: none
       border: none
@@ -28,13 +29,13 @@
     &::-ms-expand
       display: none // IE10
 
-  // @at-root
-  //   //Firefox
-  //   @-moz-document url-prefix()
-  //     #{&}
-  //       select
-  //         text-indent: 0.01px
-  //         text-overflow: ""
-  //         &:-moz-focusring
-  //           color: transparent
-  //           text-shadow: 0 0 0 #000
+=select-firefox-hack
+  @at-root
+    @-moz-document url-prefix()
+      #{&}
+        select
+          text-indent: 0.01px
+          text-overflow: ''
+          &:-moz-focusring
+            color: transparent
+            text-shadow: none
