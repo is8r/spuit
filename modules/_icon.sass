@@ -15,23 +15,26 @@
     text-align: center
     font-size: $size
     text-indent: 0
+    margin-right: 0
 
 =icon-semiflat($icon: '\f113', $w: 40px, $size: 20px, $c: #ffa500, $strangth: 10%, $c-text: #fff)
   +icon-disc($icon, $w, $size, $c, $c-text)
   &:before
     +background-image(linear-gradient(to top, $c, lighten($c, $strangth)))
+    margin-right: 0
 
-=icon-border($icon: '\f113', $w: 40px, $size: 20px, $c: #ffa500, $border: 2px solid)
+=icon-border($icon: '\f113', $w: 40px, $size: 20px, $c: #ffa500, $border: 2px)
   +fa-icon($icon)
   &:before
     +inline-block
     +border-radius($w)
+    +transition(opacity 0.2s ease-out)
     background: transparent
     color: $c
-    border: $border $c
+    border: $border solid $c
     width: $w
     height: $w
     line-height: $w
     text-align: center
     font-size: $size
-
+    margin-right: 0

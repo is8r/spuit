@@ -20,14 +20,11 @@
     @for $i from 0 through 50
       @if $i%$column == 1
         &:nth-child(#{$i})
+          clear: both
           margin-left: 0
-          // background: #2dd
-      @if $i >= $column
+      @else
         &:nth-child(#{$i})
-          margin-bottom: $gutter * 1%
-  // @media screen and (max-width: $break-point)
-  //   > li
-  //     width: auto
-  //     float: none
-  //     margin: 0
+          clear: none
+          margin-left: $gutter * 1%
+      margin-bottom: $gutter * 1%
 
