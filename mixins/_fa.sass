@@ -53,3 +53,9 @@
     height: $w
     line-height: $w
     vertical-align: top
+
+=fa-loading
+  &.is-loading
+    +fa-icon('\f1ce')
+    &:before
+      +animation(anim-spin 1.6s infinite linear)
