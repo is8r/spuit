@@ -1,7 +1,10 @@
 // Example:
 // +tri(#222, 12px, $w/2, 0, 'left')
 
-=tri($c: #2dd, $w:20px, $t: 0, $l: 0, $direction: "right")
+=tri($c: #2dd, $w:20px, $l: 0, $t: 0, $direction: "right")
+  +triangle($c, $w, $l, $t, $direction)
+
+=triangle($c: #2dd, $w:20px, $l: 0, $t: 0, $direction: "right")
   position: relative
   &:after
     content: ""
