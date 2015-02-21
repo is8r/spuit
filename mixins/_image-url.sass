@@ -1,0 +1,20 @@
+=image-url($src: 'xxx', $w: 120px, $h: 60px)
+  content: ' '
+  background-image: image-url('#{$src}.png')
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  width: $w
+  height: $h
+  +break-points('retina')
+    background-image: image-url('#{$src}@2x.png')
+
+=replace-image-url($src: 'xxx', $w: 120px, $h: 60px)
+  +hide-text
+  +inline-block
+  width: $w
+  height: $h
+  &:before
+    +inline-block
+    +image-url($src, $w, $h)
+
