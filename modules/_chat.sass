@@ -15,12 +15,14 @@
 =chat($colors: (#f6615b, adjust-hue(#f6615b, 100)),$w: 80px, $r: 6px)
   +clearfix
   position: relative
+
   .chat__item
     position: relative
     margin-top: 20px
     padding-left: $w + 20px
     &:first-child
       margin-top: 0px
+
     .chat__avatar
       +border-radius($w)
       overflow: hidden
@@ -34,7 +36,7 @@
         height: auto
     .chat__voice
       +border-radius($r)
-      +tri(nth($colors, 1), 12px, $w/2, 0, 'left')
+      +tri(nth($colors, 1), 12px, 0, $w/2, 'left')
       +font(14px, 1.6em)
       background: nth($colors, 1)
       padding: 18px
@@ -46,6 +48,7 @@
       .chat__voice-date
         +meta
         color: #fff
+
   .chat__item--right
     @extend .chat__item
     padding-left: 0
@@ -54,14 +57,5 @@
       left: auto
       right: 0
     .chat__voice
-      +tri(nth($colors, 2), 12px, $w/2, 0, 'right')
+      +tri(nth($colors, 2), 12px, 0, $w/2, 'right')
       background: nth($colors, 2)
-
-
-
-
-
-
-
-
-
