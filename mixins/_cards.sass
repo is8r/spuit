@@ -1,0 +1,32 @@
+// Example:
+
+// Simple Grid System - ie9-
+@function card-width($column: 5, $gutter: 2)
+  $parcent: (1/$column) * 100
+  $margin: ($gutter * ($column - 1)) / $column
+  @return ($parcent - $margin)
+
+=cards($column: 5, $gutter: 2, $break-point: 640px)
+  @at-root
+    #{&}
+      +clearfix
+      position: relative
+    #{&}__item
+      display: block
+      float: left
+      background: #ddd
+      box-sizing: border-box
+      width: card-width($column, $gutter) * 1%
+      min-height: 1px
+      margin-left: $gutter * 1%
+      @for $i from 0 through 50
+        @if $i%$column == 1
+          &:nth-child(#{$i})
+            clear: both
+            margin-left: 0
+        @else
+          &:nth-child(#{$i})
+            clear: none
+            margin-left: $gutter * 1%
+        margin-bottom: $gutter * 1%
+
