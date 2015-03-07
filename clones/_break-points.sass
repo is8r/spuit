@@ -1,6 +1,6 @@
 =break-points($point, $mobile-width: 640px, $tablet-width: 960px)
   $mobile: '(max-width: #{$mobile-width})'
-  $tablet: '(min-width: #{$mobile-width}) and (max-width: #{$tablet-width})'
+  $tablet: '(min-width: #{$mobile-width}) and (max-width: #{$tablet-width + 20px})'
   $desktop: '(min-width: #{$tablet-width})'
 
   @if $point == mobile
@@ -15,3 +15,7 @@
   @else if $point == desktop
     @media #{$desktop}
       @content
+
+=media($point)
+  +break-points($point)
+    @content
