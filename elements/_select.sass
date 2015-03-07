@@ -36,3 +36,40 @@
           &:-moz-focusring
             color: transparent
             text-shadow: none
+
+=select-fa($border: 1px solid none, $w: 100%, $p: 10px, $r: 4px)
+  $color: #222
+  $color-line: #222
+  +border-radius($r)
+  +border-box
+  position: relative
+  overflow: hidden
+  border: $border
+  width: $w
+  select
+    +reset-form
+    +inline-block
+    +box-sizing(content-box)
+    +font(14px, 1em)
+    width: 100%
+    padding: $p $p $p $p
+    cursor: pointer
+    color: $color
+    background: #fff
+    &:focus
+      outline: none
+      border: none
+  &:before
+    +fa('\f0dc')
+    color: $color
+    font-size: 12px
+    position: absolute
+    top: 0
+    right: 0
+    border-left: 1px solid darken($color-line, 5%)
+    padding: 0 16px
+    line-height: 35px
+  select
+    width: 110% // IE9
+    &::-ms-expand
+      display: none // IE10

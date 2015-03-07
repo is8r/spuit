@@ -1,0 +1,25 @@
+=input($c: #fff, $p: 10px)
+  $border: 1px solid transparent
+  $color-select: #fdfdc1
+
+  +border-box
+  +font(14px)
+  width: auto
+  line-height: normal
+  border: $border
+  padding: $p
+  background: $c
+  +placeholder
+    +font(14px)
+    color: #ddd
+  +break-points('mobile')
+    +font(12px)
+    padding: $p
+    +placeholder
+      +font(12px)
+  &:focus
+    outline: 0
+    background: lighten($color-select, 10%)
+  +break-points('mobile')
+    +background-image(linear-gradient(to top, $c, $c))
+

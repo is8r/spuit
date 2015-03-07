@@ -1,8 +1,8 @@
 $serif: 'ヒラギノ明朝 Pro W6','Hiragino Mincho Pro','HGS明朝E','ＭＳ Ｐ明朝',serif
 $sans: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif
 
-// + font
-=font($size: 1em, $line-height: normal, $weight: normal, $family: 'sans')
+// + font-base
+=font-base($size: 1em, $line-height: normal, $weight: normal, $family: 'sans')
   @if $family == "serif"
     font-family: $serif
   @else if $family == "sans"
