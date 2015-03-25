@@ -1,4 +1,4 @@
-=scaffold($color-accent: #f22)
+=scaffold($color-accent: #f22, $color-select: #fcfabd)
   margin-bottom: 60px
 
   // index
@@ -18,7 +18,7 @@
         width: 100px
         height: auto
   > a
-    +button(12px, $color-accent)
+    +button
     &.is-loading
       +button-disabled
       +fa-icon('\f1ce', 14px, 14px, false)
@@ -28,13 +28,13 @@
         +animation(anim-spin 1.6s infinite linear)
 
   // form
-  +form($color-accent)
+  +form($color-accent, $color-select)
   form
     .actions
       margin-top: 20px
       margin-bottom: 20px
       a, input
-        +button(12px, $color-accent)
+        +button
         min-width: 300px
 
   // show

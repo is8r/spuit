@@ -6,8 +6,8 @@
 //     +button(14px, $color-accent)
 //     min-width: 200px
 
-=form($_color-accent: #ffa500, $_border: 1px solid #eee, $_left-margin: 120px, $_break-point: 640px)
-  +font(14px)
+=form($_color-accent: #ffa500, $_color-select: #fcfabd, $_border: 1px solid #eee, $_left-margin: 120px, $_break-point: 640px)
+  +font
 
   input[type=text],
   input[type=email],
@@ -15,13 +15,15 @@
   input[type=password],
   input[type=number],
   textarea
-    +font(14px)
+    +border-radius(2px)
+    +border-box
+    +font
     width: auto
     line-height: normal
     border: $_border
     padding: 10px
     +placeholder
-      +font(14px)
+      +font
       color: #ddd
   input[type=text],
   input[type=email],
@@ -35,6 +37,7 @@
   textarea:focus
     outline: 0
     border-color: $_color-accent
+    background: $_color-select
   input[type=radio], input[type=radio] + label,
   input[type=checkbox], input[type=checkbox] + label
     cursor: pointer
