@@ -1,12 +1,7 @@
 // Example:
-// .scaffold
-//   +form($color-accent, 1px solid #eee, $break-point)
-//   padding-top: 20px
-//   input[type=submit]
-//     +button(14px, $color-accent)
-//     min-width: 200px
 
-=form($_color-accent: #ffa500, $_color-select: #fcfabd, $_border: 1px solid #eee, $_left-margin: 120px, $_break-point: 640px)
+=formset($color-bg: #f8f8f8, $color-bg-select: #fefef3, $color-border: transparent, $color-border-select: transparent, $color-placeholder: #ddd, $margin-left: 120px, $_break-point: 640px)
+  $_border: 1px solid transparent
   +font
 
   input[type=text],
@@ -21,10 +16,12 @@
     width: auto
     line-height: normal
     border: $_border
+    border-color: $color-border
     padding: 10px
+    background: $color-bg
     +placeholder
       +font
-      color: #ddd
+      color: $color-placeholder
   input[type=text],
   input[type=email],
   input[type=url],
@@ -36,8 +33,8 @@
   input[type=password]:focus,
   textarea:focus
     outline: 0
-    border-color: $_color-accent
-    background: $_color-select
+    border-color: $color-border-select
+    background: $color-bg-select
   input[type=radio], input[type=radio] + label,
   input[type=checkbox], input[type=checkbox] + label
     cursor: pointer
@@ -67,11 +64,11 @@
       position: relative
       margin-top: 10px
       padding: 0 22px 5px 0
-      padding-left: $_left-margin
+      padding-left: $margin-left
       > label, > legend
         position: absolute
         left: 0px
-        width: $_left-margin - 20px
+        width: $margin-left - 20px
       > .text
         width: 60%
         height: 20px

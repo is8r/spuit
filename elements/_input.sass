@@ -1,17 +1,20 @@
-=input($c: #fff, $p: 10px)
-  $border: 1px solid transparent
-  $color-select: #fdfdc1
+// input($color-bg: #f8f8f8, $color-bg-select: #fefef3, $color-border: transparent, $color-border-select: transparent, $color-placeholder: #ddd, $margin-left: 120px, $_break-point: 640px)
 
+=input($color-bg: #f8f8f8, $color-bg-select: #fefef3, $color-border: transparent, $color-border-select: transparent, $color-placeholder: #ddd, $p: 10px, $r: 2px)
+  $border: 1px solid transparent
+
+  +border-radius($r)
   +border-box
   +font(14px)
   width: auto
   line-height: normal
-  border: $border
   padding: $p
-  background: $c
+  border: $border
+  border-color: $color-border
+  background: $color-bg
   +placeholder
     +font(14px)
-    color: #ddd
+    color: $color-placeholder
   +break-points('mobile')
     +font(12px)
     padding: $p
@@ -19,7 +22,6 @@
       +font(12px)
   &:focus
     outline: 0
-    background: lighten($color-select, 10%)
+    background: $color-bg-select
   +break-points('mobile')
-    +background-image(linear-gradient(to top, $c, $c))
-
+    +background-image(linear-gradient(to top, $color-bg, $color-bg))
