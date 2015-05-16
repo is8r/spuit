@@ -43,15 +43,13 @@ $_break-point: 640px
     &:first-child
       border-top: $_border
 
-=ul-floats($_m: 20px)
+=ul-floats($_margin: 20px, $_bottom: true)
   +clearfix
-  margin-left: -$_m
+  margin-left: -$_margin
   > li
     float: left
-    margin-left: $_m
+    margin-left: $_margin
+    @if $_bottom
+      margin-bottom: $_margin
     > a
       display: block
-
-
-
-
