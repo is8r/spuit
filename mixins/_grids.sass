@@ -1,12 +1,13 @@
 =grid-container
   +clearfix
-  +box-sizing(border-box)
+  +border-box
   margin-right: auto
   margin-left: auto
   position: relative
 
 =grid-row($gutter: 10px)
   +clearfix
+  +border-box
   position: relative
   margin-left:  -($gutter / 2)
   margin-right: -($gutter / 2)
@@ -14,7 +15,7 @@
   margin-bottom: -($gutter / 2)
 
 =grid-item($gutter: 10px)
-  +box-sizing(border-box)
+  +border-box
   position: relative
   padding-left:  ($gutter / 2)
   padding-right: ($gutter / 2)
@@ -24,12 +25,11 @@
   word-break: break-all
 
 =grid-item-debug($gutter: 10px)
-  background: rgba(#f2f2f2, 0.5)
+  background: rgba(#eee, 0.5)
   min-height: 100px
-  border: ($gutter / 4) solid rgba(#222, 0.2)
+  outline: ($gutter / 4) solid rgba(#222, 0.5)
 
 =grids($grid-columns: 12, $grid-gutter: 10px, $debug: true)
-
   @at-root
     #{&}
       +grid-container
