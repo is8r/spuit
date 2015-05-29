@@ -1,40 +1,45 @@
-=disc-flat($icon: '\f113', $w: 40px, $size: 20px, $c: #ffa500, $c-text: #fff)
+=disc-base($w: 40px, $round: true)
   +inline-block
   +hide-text
-  +fa-icon($icon)
   width: $w
   height: $w
+  line-height: $w
+  @if $round == true
+    +border-radius($w)
   &:before
     +inline-block
-    +border-radius($w)
-    background: $c
-    color: $c-text
     width: $w
     height: $w
     line-height: $w
     text-align: center
-    font-size: $size
     text-indent: 0
-    margin-right: 0
 
-=disc-semiflat($icon: '\f113', $w: 40px, $size: 20px, $c: #ffa500, $strangth: 10%, $c-text: #fff)
-  +disc-flat($icon, $w, $size, $c, $c-text)
+// .disc-flat
+//   +disc-flat('\f113', 20px, 40px, #529ef6)
+=disc-flat($icon: '\f113', $size: 18px, $w: 40px, $c: #ffa500, $c-text: #fff)
+  +disc-base($w)
+  +border-radius($w)
+  background: $c
+  &:before
+    +fa($icon)
+    font-size: $size
+    color: $c-text
+
+// .disc-semiflat
+//   +disc-semiflat('\f113', 20px, 40px, #529ef6)
+=disc-semiflat($icon: '\f113', $size: 18px, $w: 40px, $c: #ffa500, $strangth: 10%, $c-text: #fff)
+  +disc-flat($icon, $size, $w, $c, $c-text)
   &:before
     +background-image(linear-gradient(to top, $c, lighten($c, $strangth)))
     margin-right: 0
 
-=disc-border($icon: '\f113', $w: 40px, $size: 20px, $c: #ffa500, $border: 2px)
-  +fa-icon($icon)
+// .disc-border
+//   +disc-border('\f113', 20px, 40px, #529ef6)
+=disc-border($icon: '\f113', $size: 18px, $w: 40px, $c: #ffa500, $border: 1px)
+  +disc-base($w)
+  +border-radius($w)
+  border: $border solid $c
   &:before
-    +inline-block
-    +border-radius($w)
-    +transition(opacity 0.2s ease-out)
-    background: transparent
-    color: $c
-    border: $border solid $c
-    width: $w
-    height: $w
-    line-height: $w
-    text-align: center
+    +fa($icon)
     font-size: $size
-    margin-right: 0
+    color: $c

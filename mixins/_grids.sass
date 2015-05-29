@@ -24,11 +24,6 @@
   float: left
   word-break: break-all
 
-=grid-item-debug($gutter: 10px)
-  background: rgba(#eee, 0.5)
-  min-height: 100px
-  outline: ($gutter / 4) solid rgba(#222, 0.5)
-
 =grids($grid-columns: 12, $grid-gutter: 10px, $debug: true)
   @at-root
     #{&}
@@ -38,10 +33,10 @@
       +grid-row($grid-gutter)
 
     #{&}__item
+      @if $debug
+        +debug-block
       +grid-item($grid-gutter)
       width: percentage(3 / $grid-columns)
-      @if $debug
-        +grid-item-debug($grid-gutter)
       &.c
         clear: both
       @for $i from 0 through $grid-columns

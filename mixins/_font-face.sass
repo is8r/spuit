@@ -5,14 +5,13 @@
       src: url('#{$path}.eot')
       src: url('#{$path}.eot?iefix') format('eot'), url('#{$path}.woff') format("woff"), url('#{$path}.ttf') format('truetype'), url('#{$path}.svg#font') format('svg')
 
-// Example:
+//example:
 // +font-face-rails('fontello', 'fontello/fontello')
 // =font-feeeed($size: 1em, $line-height: normal, $weight: normal, $family: 'sans')
 //   font-family: 'fontello'
 //   font-size: $size
 //   font-weight: $weight
 //   line-height: $line-height
-
 =font-face-rails($name, $path)
   @at-root
     @font-face
