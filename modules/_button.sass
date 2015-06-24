@@ -98,8 +98,27 @@
     +opacity(0.2)
   &.is-current
     background-color: $c
-    color: #fff
+    color: $c-text
     border-color: transparet
+
+=button-colors($size: 14px, $c: #529ef6, $c-text: #fff, $c-hover: #fff, $c-hover-text: #529ef6, $p: 10px 20px, $r: 0px)
+  +button-base
+  +border-radius($r)
+  +transition(background-color 0.2s ease-out)
+  +font($size)
+  background: $c-text
+  padding: $p
+  color: $c
+  &:hover
+    background-color: darken($c-text, 20%)
+  &:active
+    background-color: darken($c, 10%)
+  &:disabled,
+  &.is-disabled
+    +opacity(0.2)
+  &.is-current
+    background-color: $c
+    color: $c-text
 
 // .button-emboss
 //   +button-emboss(14px, #529ef6, #fff, 10px 20px, 6px, 4px)
