@@ -1,9 +1,9 @@
 // Example:
 // +triangle(#222, 12px, $w/2, 0, 'left')
 
-=triangle($c: #2dd, $w:20px, $l: 0, $t: 0, $direction: "right")
+=triangle($c: #2dd, $w:20px, $l: 0, $t: 0, $direction: "right", $element: "after")
   position: relative
-  &:after
+  &:#{$element}
     content: ""
     position: absolute
     width: 0
@@ -11,30 +11,30 @@
     border: $w solid transparent
     border-top-color: $c
   @if $direction == "left"
-    &:after
+    &:#{$element}
       +transform(translateX(-$w*2) translateY(-$w) rotate(90deg))
       left: $l
       right: auto
       top: $t
   @if $direction == "right"
-    &:after
+    &:#{$element}
       +transform(translateX($w*2) translateY(-$w) rotate(-90deg))
       left: auto
       right: $l
       top: $t
   @if $direction == "top"
-    &:after
+    &:#{$element}
       +transform(translateX(-$w) translateY(-$w*2) rotate(180deg))
       right: auto
       left: $l
       top: $t
   @if $direction == "bottom"
-    &:after
+    &:#{$element}
       +transform(translateX(-$w) translateY($w*2) rotate(0))
       right: auto
       left: $l
       bottom: $t
 
-=tri($c: #2dd, $w:20px, $l: 0, $t: 0, $direction: "right")
-  +triangle($c, $w, $l, $t, $direction)
+=tri($c: #2dd, $w:20px, $l: 0, $t: 0, $direction: "right", $element: "after")
+  +triangle($c, $w, $l, $t, $direction, $element)
 

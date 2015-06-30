@@ -12,6 +12,7 @@
   border: $border
   border-color: $color-border
   background: $color-bg
+  +background-image(linear-gradient(transparent, transparent))
   +placeholder
     +font(14px)
     color: $color-placeholder
@@ -25,5 +26,6 @@
     outline: 0
     background: $color-bg-select
     border-color: $color-border-select
+    +background-image(linear-gradient(transparent, transparent))
   +break-points('mobile')
     +background-image(linear-gradient(to top, $color-bg, $color-bg))
