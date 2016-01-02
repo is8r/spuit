@@ -1,8 +1,8 @@
 =button-base($c: transparent)
   +inline-block
-  +appearance(none)
-  +box-shadow(none)
-  +border-radius(0px)
+  box-shadow: none
+  appearance: none
+  border-radius: 0
   +background-image(linear-gradient(to top, $c, $c))
   position: relative
   cursor: pointer
@@ -35,9 +35,9 @@
 //   +button-flat(14px, #529ef6, #fff, 10px 20px, 2px)
 =button-flat($size: 14px, $c: #529ef6, $c-text: #fff, $p: 10px 20px, $r: 2px)
   +button-base
-  +border-radius($r)
   +transition(background-color 0.2s ease-out)
   +font($size)
+  border-radius: $r
   background: $c
   color: $c-text
   padding: $p
@@ -55,9 +55,9 @@
 //   +button-semiflat(14px, #529ef6, 10%, #fff, 10px 20px, 2px)
 =button-semiflat($size: 14px, $c: #529ef6, $strangth: 10%, $c-text: #fff, $p: 10px 20px, $r: 2px)
   +button-base
-  +border-radius($r)
   +transition(background-color 0.2s ease-out)
   +font($size)
+  border-radius: $r
   background: $c
   +background-image(linear-gradient(to top, $c, lighten($c, $strangth)))
   border: 1px solid lighten($c, $strangth)
@@ -80,9 +80,9 @@
 //   +button-border(14px, #529ef6, #fff, 10px 20px)
 =button-border($size: 14px, $c: #529ef6, $c-text: #fff, $p: 10px 20px, $border: 1px, $r: 0px)
   +button-base
-  +border-radius($r)
   +transition(background-color 0.2s ease-out)
   +font($size)
+  border-radius: $r
   background: transparent
   padding: $p
   border: $border solid $c
@@ -124,27 +124,27 @@
 //   +button-emboss(14px, #529ef6, #fff, 10px 20px, 6px, 4px)
 =button-emboss($size: 14px, $c: #529ef6, $c-text: #fff, $p: 10px 20px, $thickness: 6px, $r: 4px)
   +button-base
-  +border-radius($r)
   +transition(background-color 0.2s ease-out)
   +font($size)
-  +box-shadow(0 $thickness 0 darken($c, 10%))
+  box-shadow: 0 $thickness 0 darken($c, 10%)
+  border-radius: $r
   background: $c
   color: $c-text
   padding: $p
   &:hover
-    +box-shadow(0 ($thickness - 2px) 0 darken($c, 20%))
     +translateY(2px)
+    box-shadow: 0 ($thickness - 2px) 0 darken($c, 20%)
     background-color: darken($c, 2%)
   &:active
-    +box-shadow(0 0 0 $c)
     +translateY($thickness)
+    box-shadow: 0 0 0 $c
     background-color: darken($c, 10%)
   &:disabled,
   &.is-disabled
-    +box-shadow(0 2px 0 lighten($c, 2%))
     +translateY($thickness - 2px)
+    box-shadow: 0 2px 0 lighten($c, 2%)
     background-color: lighten($c, 20%)
   &.is-current
-    +box-shadow(0 0 0 $c)
     +translateY($thickness)
+    box-shadow: 0 0 0 $c
     background-color: darken($c, 10%)

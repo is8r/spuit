@@ -1,6 +1,6 @@
 =select($border: 1px solid #eee, $w: 100%, $p: 12px, $r: 2px)
-  +border-radius($r)
   +border-box
+  border-radius: $r
   position: relative
   overflow: hidden
   border: $border
@@ -8,7 +8,7 @@
   select
     +reset-form
     +inline-block
-    +box-sizing(content-box)
+    box-sizing: content-box
     width: 100%
     padding: $p $p $p $p
     cursor: pointer
@@ -49,7 +49,7 @@
   select
     +reset-form
     +inline-block
-    +box-sizing(content-box)
+    box-sizing: content-box
     +font(14px, 1em)
     width: 100%
     padding: $p $p $p $p

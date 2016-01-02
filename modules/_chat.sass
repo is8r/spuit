@@ -24,7 +24,7 @@
       margin-top: 0px
 
     .chat__avatar
-      +border-radius($w)
+      border-radius: $w
       overflow: hidden
       width: $w
       height: $w
@@ -35,9 +35,9 @@
         width: $w
         height: auto
     .chat__voice
-      +border-radius($r)
       +tri(nth($colors, 1), 12px, 0, $w/2, 'left')
       +font(14px, 1.6em)
+      border-radius: $r
       background: nth($colors, 1)
       padding: 18px
       color: #fff
