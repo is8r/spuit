@@ -1,0 +1,8 @@
+=util-size($width: 10, $count: 10)
+  @at-root
+    @for $i from 0 through $count
+      .w#{($i*$width)}
+        width: #{($i*$width)}px
+    @for $i from 0 through $count
+      .h#{($i*$width)}
+        height: #{($i*$width)}px

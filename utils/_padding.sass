@@ -1,0 +1,9 @@
+=util-padding($margin: 10, $count: 10)
+  @at-root
+    @for $i from 0 through $count
+      .pt#{($i*$margin)}
+        padding-top: #{($i*$margin)}px
+
+    @for $i from 0 through $count
+      .pb#{($i*$margin)}
+        padding-bottom: #{($i*$margin)}px

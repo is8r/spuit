@@ -1,0 +1,9 @@
+=util-margin($margin: 10, $count: 10)
+  @at-root
+    @for $i from 0 through $count
+      .mt#{($i*$margin)}
+        margin-top: #{($i*$margin)}px
+
+    @for $i from 0 through $count
+      .mb#{($i*$margin)}
+        margin-bottom: #{($i*$margin)}px

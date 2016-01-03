@@ -38,22 +38,6 @@
       right: $left
       top: $top
 
-=fa-replace($icon: '\f105', $w: 60px, $size: 1em, $round: true)
-  +inline-block
-  +hide-text
-  @if $round == true
-    border-radius: $w
-  width: $w
-  height: $w
-  &:before
-    +fa($icon)
-    font-size: $size
-    text-align: center
-    width: $w
-    height: $w
-    line-height: $w
-    vertical-align: top
-
 =fa-loading
   &.is-loading
     +fa-icon('\f1ce')

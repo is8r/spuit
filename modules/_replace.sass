@@ -1,0 +1,25 @@
+=replace-image($w: 120px, $h: 60px, $filepath: '/images/xxx', $filename: 'png')
+  +hide-text
+  display: block
+  background-image: url('#{$filepath}.#{$filename}')
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  width: $w
+  height: $h
+  +break-points('retina')
+    background-image: url('#{$filepath}@2x.#{$filename}')
+
+=replace-fa($content: '\f105', $size: 1em, $width: 1em)
+  +hide-text
+  display: inline-block
+  width: $width
+  height: $width
+  &:before
+    +fa($content)
+    font-size: $size
+    width: $width
+    height: $width
+    line-height: $width
+    text-align: center
+    vertical-align: top

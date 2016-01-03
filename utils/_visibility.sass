@@ -1,0 +1,28 @@
+=util-hidden($bp: xs, $size: 0)
+  @at-root
+    .hidden-#{$bp}-up
+      @media (min-width: $size)
+        display: none !important
+    .hidden-#{$bp}-down
+      @media (max-width: $size)
+        display: none !important
+
+=util-visible($bp: xs, $size: 0)
+  @at-root
+    .visible-#{$bp}-up
+      @media (min-width: $size)
+        display: block !important
+    .visible-#{$bp}-down
+      @media (max-width: $size)
+        display: block !important
+
+=util-visibility
+  +util-hidden(xs, $media-xs)
+  +util-hidden(sm, $media-sm)
+  +util-hidden(md, $media-md)
+  +util-hidden(lg, $media-lg)
+
+  +util-visible(xs, $media-xs)
+  +util-visible(sm, $media-sm)
+  +util-visible(md, $media-md)
+  +util-visible(lg, $media-lg)
