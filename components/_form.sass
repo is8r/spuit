@@ -1,0 +1,49 @@
+=form
+  input[type=text],
+  textarea
+    +input-base
+  .select
+    +select-base
+  .radio
+    +radio-base
+  .checkbox
+    +checkbox-base
+
+  fieldset
+    $w: 150px
+    font-size: 16px
+    position: relative
+    display: block
+    border: none
+    margin: 0
+    padding: 0 0 10px $w
+    box-sizing: border-box
+
+    legend
+      font-size: 16px
+      color: $color-black
+      position: absolute
+      left: 0px
+      display: inline-block
+      border: none
+      margin: 0
+      padding: 6px 0
+      width: $w
+
+    .small
+      margin-top: 5px
+      margin-bottom: 0
+      color: $color-gray
+      font-size: 12px
+
+    &.is-validate
+      $color-red: #e74c3c
+      input,
+      textarea,
+      .select
+        border-color: $color-red
+      .radio label:before,
+      .checkbox label:before
+        border-color: $color-red
+      p
+        color: $color-red

@@ -1,31 +1,22 @@
-// input($color-bg: #f8f8f8, $color-bg-select: #fefef3, $color-border: transparent, $color-border-select: transparent, $color-placeholder: #ddd, $margin-left: 120px, $_break-point: 640px)
+=input-base($w: 100%)
+  +reset-form
+  $border: 1px solid #ddd
+  $color-key: #529ef6
+  $border-key: 1px solid rgba($color-key, 0.3)
+  $color-bg-select: #fffff2
 
-=input-base($color-bg: #fefef3, $color-bg-select: #fff, $color-border: #eee, $color-border-select: #ccc, $color-placeholder: #ddd, $p: 10px, $r: 2px)
-  $border: 1px solid transparent
-
-  +border-box
-  +font(14px)
-  border-radius: $r
-  width: auto
-  line-height: normal
-  padding: $p
+  font-size: 16px
+  box-sizing: border-box
+  display: inline-block
+  padding: 10px 10px
   border: $border
-  border-color: $color-border
-  background: $color-bg
-  +background-image(linear-gradient(transparent, transparent))
-  +placeholder
-    +font(14px)
-    color: $color-placeholder
-  +break-points('mobile')
-    +font(12px)
-    padding: $p
-    +placeholder
-      +font(12px)
+  border-radius: 3px
+  background: #fff
+  width: $w
+  vertical-align: top
+
   &:focus
-    box-shadow: $color-border-select 0 0 10px
+    border: $border-key
+    box-shadow: rgba($color-key, 0.3) 0 0 10px
     outline: 0
     background: $color-bg-select
-    border-color: $color-border-select
-    +background-image(linear-gradient(transparent, transparent))
-  +break-points('mobile')
-    +background-image(linear-gradient(to top, $color-bg, $color-bg))

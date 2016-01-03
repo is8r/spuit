@@ -1,59 +1,68 @@
-=body($_contents-width: 500px)
-  $_color-def: #222
-  $_color-accent: #222
-  $_margin-contents-bottom: 30px
+=body
+  $color-def: #222
+  $color-accent: #f22
+  $margin-contents-bottom: 30px
 
   width: 100%
   text-align: left
+
+  > *
+    margin-bottom: 30px
+    &:last-child
+      margin-bottom: 0
 
   h1,h1 a,
   h2,h2 a,
   h3,h3 a,
   h4,h4 a,
-  h5,h5 a
-    +font
+  h5,h5 a,
+  h6,h6 a
     clear: both
-    color: $_color-def
+    color: $color-def
     font-weight: normal
     line-height: 1.6em
+  small
+    font-size: 12px
 
   h1,h1 a
-    +font(30px)
+    font-size: 30px
     margin-bottom: 20px
 
   h2,h2 a
-    +font(24px)
+    font-size: 24px
     margin-bottom: 20px
 
   h3,h3 a
-    +font(20px)
+    font-size: 22px
     margin-bottom: 20px
 
   h4,h4 a
-    +font(20px)
+    font-size: 20px
     margin-bottom: 20px
 
   h5,h5 a
-    +font(20px)
+    font-size: 18px
+    margin-bottom: 16px
+
+  h6,h6 a
+    font-size: 16px
     margin-bottom: 16px
 
   dl, ul, p
-    +font(16px)
-    color: $_color-def
-    @media screen and (max-width: $_contents-width)
-      font-size: 14px
+    font-size: 16px
+
   i
     font-style: italic
 
   strong
     font-weight: normal !important
+    font-weight: bold !important
     padding-left: 3px
     padding-right: 3px
-    font-weight: bold !important
 
   p
+    font-size: 16px
     clear: both
-    margin-bottom: $_margin-contents-bottom
     line-height: 1.8em
     img
       max-width: 100%
@@ -68,20 +77,19 @@
       border: 1px solid $c - 10
 
   a
-    +font(15px)
-    color: $_color-def
+    font-size: 16px
+    color: $color-def
     text-decoration: underline
+    &:hover
+      text-decoration: none
 
   // アイコンつきリンク
   // a[target="_blank"]
   > a[target="_blank"], p > a[target="_blank"], li > a[target="_blank"]
-    +transition
-    padding-left: 16px
-    margin-left: 4px
-    text-decoration: underline
-    display: inline-block
-    &:hover
-      color: $_color-accent
+    +icon-fa('\f08e')
+    &:before
+      opacity: 0.2
+      margin-left: 4px
 
   img
     margin: 0
@@ -90,11 +98,9 @@
     border: none
 
   canvas
-    margin-bottom: $_margin-contents-bottom
 
   ul
     margin-left: 20px
-    margin-bottom: $_margin-contents-bottom
     li
       +font(14px)
       padding-top: 2px
@@ -103,7 +109,6 @@
       a
         +font(14px)
   ol
-    margin-bottom: $_margin-contents-bottom
     li
       +font(14px)
       list-style: decimal
@@ -116,7 +121,6 @@
   table
     width: 100%
     border-collapse: collapse
-    margin-bottom: $_margin-contents-bottom
     th
       border-bottom: 1px solid #eee
       padding: 5px 10px 5px 10px
@@ -143,37 +147,28 @@
         font-size: 13px
 
   blockquote
-    width: auto !important
-    margin-top: 50px
-    margin-bottom: 50px
-    text-align: left !important
     +clearfix
-    &.left
-      $ml: 20px
-      margin-left: -$ml !important
-      padding-left: $ml !important
-      border-left: 4px solid #f2f2f2
+    width: auto !important
+    text-align: left !important
+    margin-left: 0
+    padding-left: 20px
+    border-left: 4px solid #f2f2f2
     cite
       margin-top: 0
       float: right
+      font-size: 12px
       p, a
-        +font(12px)
         display: inline
         font-weight: normal
         font-style: normal
-        color: $_color-def
+        color: $color-def
         font-size: 12px
         a
           text-decoration: underline
           &:hover
-            color: $_color-accent
+            color: $color-accent
     p
-      +font
-      font-size: 19px
       font-weight: bold
       font-style: italic
       margin-bottom: 10px
       text-align: left !important
-      color: $_color-def
-      line-height: 1.8em
-

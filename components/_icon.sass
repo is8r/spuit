@@ -18,3 +18,19 @@
     @each $filename, $y-position in $images
       &.#{$filename}:after
         background-image: url('#{$path}#{$filename}@2x.png')
+
+
+=icon-fa($content: '\f105', $margin: 0.4em, $position: 'before')
+  @if $position == 'after'
+    &:after
+      +fa($content)
+      margin-left: $margin
+  @else
+    &:before
+      +fa($content)
+      margin-right: $margin
+
+=icon-loading
+  +icon-fa('\f1ce')
+  &:before
+    animation: anim-spiner 1.6s infinite linear

@@ -1,26 +1,37 @@
-=radio-fa
+=radio-base
+  margin: 0
+
   label
-    +inline-block
-    position: relative
+    border-radius: 20px
+    margin: 0
+    padding: 10px 10px 10px 0
+    line-height: 2em
     cursor: pointer
-    padding-left: 30px
+
     &:before
-      $r: 15px
-      +fa('\f10c')
-      +inline-block
-      position: absolute
-      top: 0
-      left: 0
-      width: $r
-      height: $r
-      border-radius: 100%
-      font-size: 20px
-      color: #eee
-  input[type="radio"]
+      +fa('\f111')
+      +border-box
+      margin-right: 0.5em
+      border: 1px solid #ddd
+      vertical-align: top
+      background: #fff
+      padding: 7px
+      width: 30px
+      height: 30px
+      border-radius: 30px
+      color: #fff
+
+    &:hover
+      &:before
+        color: rgba($color-key, 0.2)
+
+  input[type=radio]
     display: none
+
     &:checked + label
       &:before
-        // +fa('\f05d')
-        // +fa('\f058')
-        +fa('\f192')
-        color: #000
+        color: $color-key
+
+      &:hover
+        &:before
+          color: $color-key

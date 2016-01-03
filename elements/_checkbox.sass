@@ -1,24 +1,38 @@
-=checkbox-fa
+=checkbox-base
+  margin: 0
+
   label
-    +inline-block
-    position: relative
+    border-radius: 20px
+    margin: 0
+    padding: 10px 10px 10px 0
+    line-height: 2em
     cursor: pointer
-    padding-left: 30px
+
     &:before
-      $r: 15px
-      +fa('\f096')
-      +inline-block
-      position: absolute
-      top: 0
-      left: 0
-      width: $r
-      height: $r
-      border-radius: 100%
-      font-size: 18px
-      color: #eee
-  input[type="checkbox"]
+      +fa('\f00c')
+      +border-box
+      margin-right: 0.6em
+      border: 1px solid #ddd
+      vertical-align: top
+      background: #fff
+      color: #fff
+      width: 28px
+      height: 28px
+      border-radius: 4px
+      padding: 5px
+
+    &:hover
+      &:before
+        background: rgba($color-key, 0.2)
+
+  input[type=checkbox]
     display: none
+
     &:checked + label
       &:before
-        +fa('\f046')
-        color: #000
+        color: #fff
+        background: $color-key
+
+      &:hover
+        &:before
+          background: $color-key
