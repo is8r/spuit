@@ -1,7 +1,7 @@
-=checkbox-base
+=checkbox-base($tag: label)
   margin: 0
 
-  label
+  #{$tag}
     border-radius: 20px
     margin: 0
     padding: 10px 10px 10px 0
@@ -28,10 +28,11 @@
   input[type=checkbox]
     display: none
 
-    &:checked + label
+    &:checked + #{$tag}
       &:before
         color: #fff
         background: $color-key
+        border-color: $color-key
 
       &:hover
         &:before

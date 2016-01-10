@@ -1,0 +1,31 @@
+// =breakpoint($point, $mobile-width: 640px, $tablet-width: 960px)
+//   $mobile: '(max-width: #{$mobile-width})'
+//   $tablet: '(min-width: #{$mobile-width}) and (max-width: #{$tablet-width + 20px})'
+//   $desktop: '(min-width: #{$tablet-width})'
+
+//   @if $point == mobile
+//     @media #{$mobile}
+//       @content
+//   @else if $point == tablet
+//     @media #{$tablet}
+//       @content
+//   @else if $point == retina
+//     @media (-webkit-min-device-pixel-ratio: 2)
+//       @content
+//   @else if $point == desktop
+//     @media #{$desktop}
+//       @content
+
+=breakpoint-down($w: $media-md)
+  @media (max-width: '#{$w}')
+    @content
+
+=breakpoint-up($w: $media-md)
+  @media (min-width: '#{$w}')
+    @content
+
+//shortcuts
+
+=media($w: $media-md)
+  +breakpoint-down($w)
+    @content

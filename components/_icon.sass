@@ -34,3 +34,47 @@
   +icon-fa('\f1ce')
   &:before
     animation: anim-spiner 1.6s infinite linear
+
+=icon-triangle-element($size: 4px, $direction: bottom, $color: #646f82)
+  content: ""
+  width: 0
+  height: 0
+  display: inline-block
+  @if $direction == bottom
+    border: $size solid transparent
+    border-top: $size solid $color
+  @if $direction == top
+    border: $size solid transparent
+    border-bottom: $size solid $color
+  @if $direction == right
+    border: $size solid transparent
+    border-left: $size solid $color
+  @if $direction == left
+    border: $size solid transparent
+    border-right: $size solid $color
+
+// Example:
+// .icon-triangle
+//   +icon-triangle
+// .icon-triangle-pulldown
+//   +icon-triangle(after, bottom)
+=icon-triangle($position: before, $direction: right, $size: 4px, $margin: 0.3em)
+  &:#{$position}
+    +icon-triangle-element($size, $direction)
+    @if $position == before
+      margin-right: $margin
+      @if $direction == top
+        transform: translateX(-$size/2) translateY(-$size/2)
+      @if $direction == bottom
+        transform: translateX(-$size/2) translateY($size/2)
+      @if $direction == right
+        transform: translateX(-$size/2) translateX($size)
+    @if $position == after
+      margin-left: $margin
+      @if $direction == top
+        transform: translateX($size/2) translateY(-$size/2)
+      @if $direction == bottom
+        transform: translateX($size/2) translateY($size/2)
+      @if $direction == right
+        transform: translateX($size/2) translateX($size)
+

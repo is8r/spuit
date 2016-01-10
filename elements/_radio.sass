@@ -1,7 +1,8 @@
-=radio-base
+=radio-base($tag: label)
+  $w: 30px
   margin: 0
 
-  label
+  #{$tag}
     border-radius: 20px
     margin: 0
     padding: 10px 10px 10px 0
@@ -15,23 +16,22 @@
       border: 1px solid #ddd
       vertical-align: top
       background: #fff
-      padding: 7px
-      width: 30px
-      height: 30px
-      border-radius: 30px
+      padding: 8px
+      width: $w
+      height: $w
+      border-radius: $w
       color: #fff
+      font-size: 13px
 
     &:hover
       &:before
-        color: rgba($color-key, 0.2)
+        background-color: rgba($color-key, 0.2)
+        color: #fff
 
   input[type=radio]
     display: none
 
-    &:checked + label
+    &:checked + #{$tag}
       &:before
-        color: $color-key
-
-      &:hover
-        &:before
-          color: $color-key
+        background-color: $color-key
+        border-color: $color-key

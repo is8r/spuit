@@ -1,47 +1,37 @@
-$_font-size: 12px
-$_margin-tb: 10px
-$_border: 1px solid #eee
-$_break-point: 640px
-
-%_ul
+=ul-base
+  $margin: 10px
+  margin: 0
+  padding: 0
+  list-style: none
   > li
-    padding-top: $_margin-tb
-    padding-bottom: $_margin-tb
+    padding-top: $margin
+    padding-bottom: $margin
     line-height: 1.6em
     > a
       display: block
-      line-height: $_font-size
       text-decoration: none
       line-height: 1.6em
-  @media screen and (max-width: $_break-point)
-    $_margin-tb: 4px
-    > li
-      padding-top: $_margin-tb
-      padding-bottom: $_margin-tb
 
-=ul-list-icon
-  $_margin-l: 10px
-  $_margin-tb: 10px
-  $_icon: "\f105"
-  @extend %_ul
+=ul-icon($icon: "\f105")
+  +ul-base
   > li
+    +icon-fa($icon)
     display: block
-    +fa-icon($_icon, $_font-size, 0, $_margin-tb)
-    padding-left: $_margin-l
 
-=ul-list-border
-  @extend %_ul
+=ul-border($border: 1px solid #eee, $top: false, $bottom: false)
+  $border: 1px solid #eee
+  +ul-base
+  display: block
+  @if $bottom == true
+    border-bottom: $border
   > li
-    border-top: $_border
-    &:first-child
-      border-top: none
+    float: none
+    display: block
+    border-top: $border
 
-=ul-list-border-tb
-  @extend %_ul
-  > li
-    border-bottom: $_border
-    &:first-child
-      border-top: $_border
+    @if $top == false
+      &:first-child
+        border-top: none
 
 =ul-floats($_margin: 20px, $_bottom: true)
   +clearfix

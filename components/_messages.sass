@@ -1,0 +1,18 @@
+=message-element($name: info, $color: #3498DB)
+  box-sizing: border-box
+  padding: 12px
+  border-radius: 3px
+  display: block
+
+  &.is-#{$name}
+    color: $color
+    background: rgba($color, 0.1)
+    border: 1px solid rgba($color, 0.15)
+
+=util-messages($color-info: #3498DB, $color-success: #1ABC9C, $color-warning: #F1C40F, $color-danger: #E74C3C)
+  @at-root
+    .message
+      +message-element(info, $color-info)
+      +message-element(success, $color-success)
+      +message-element(warning, $color-warning)
+      +message-element(danger, $color-danger)
