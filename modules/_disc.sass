@@ -1,10 +1,10 @@
-=disc($w: 30px)
-  border-radius: $w
+=disc($w: 30px, $r: true)
   width: $w
   height: $w
   line-height: $w
   &:before
-    border-radius: $w
+    @if $r == true
+      border-radius: $w
     width: $w
     height: $w
     line-height: $w

@@ -68,7 +68,7 @@
       @if $direction == bottom
         transform: translateX(-$size/2) translateY($size/2)
       @if $direction == right
-        transform: translateX(-$size/2) translateX($size)
+        transform: translateX($size/2) translateY(-$size/2)
     @if $position == after
       margin-left: $margin
       @if $direction == top
@@ -76,5 +76,5 @@
       @if $direction == bottom
         transform: translateX($size/2) translateY($size/2)
       @if $direction == right
-        transform: translateX($size/2) translateX($size)
+        transform: translateX($size/2) translateY(-$size/2)
 
