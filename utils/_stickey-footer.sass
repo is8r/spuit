@@ -1,0 +1,14 @@
+=util-stickey-footer($footer-height: 100px)
+  @at-root
+    html
+      position: relative
+      min-height: 100%
+
+    body
+      margin-bottom: $footer-height
+
+    body > .footer
+      position: absolute
+      bottom: 0
+      width: 100%
+      height: $footer-height
