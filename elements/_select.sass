@@ -1,4 +1,4 @@
-=select-base($w: 100%)
+=select-base($w: 100%, $bg: #fff, $bg-image: $gradiation)
   $border: 1px solid #ddd
   $r: 2px
 
@@ -16,8 +16,8 @@
     width: 100%
     padding: 10px 10px
     cursor: pointer
-    background: #fff
-    background-image: $gradiation
+    background: $bg
+    background-image: $bg-image
     font-size: 16px
     color: $color-black
     &:focus
