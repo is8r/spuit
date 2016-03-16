@@ -24,6 +24,10 @@
   @media (min-width: '#{$w}')
     @content
 
+=breakpoint-retina
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)
+    @content
+
 //shortcuts
 
 =media($w: $media-md)
