@@ -10,6 +10,18 @@
   +breakpoint-retina
     background-image: url('#{$filepath}@2x.#{$filename}')
 
+=replace-image-url($w: 120px, $h: 60px, $filepath: '/images/xxx', $filename: 'png')
+  +hide-text
+  display: block
+  background-image: image-url('#{$filepath}.#{$filename}')
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  width: $w
+  height: $h
+  +breakpoint-retina
+    background-image: image-url('#{$filepath}@2x.#{$filename}')
+
 =replace-fa($content: '\f105', $size: 1em, $width: 1em)
   +hide-text
   display: inline-block
@@ -23,3 +35,14 @@
     line-height: $width
     text-align: center
     vertical-align: top
+
+=background-image-url($w: 120px, $h: 60px, $filepath: '/images/xxx', $filename: 'png')
+  display: inline-block
+  background-image: image-url('#{$filepath}.#{$filename}')
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+  width: $w
+  height: $h
+  +breakpoint-retina
+    background-image: image-url('#{$filepath}@2x.#{$filename}')
