@@ -78,3 +78,28 @@
       @if $direction == right
         transform: translateX($size/2) translateY(-$size/2)
 
+// Example:
+// .icon-plus
+//   +icon-plus(16px, 1px, #fff)
+=icon-plus($w: 70px, $border-width: 4px, $c: #222)
+  +inline-block
+  width: $w
+  height: $w
+  position: relative
+  // background: #ddd
+  &:before
+    content: ''
+    position: absolute
+    top: $w/2 - ($border-width/2)
+    left: 0
+    width: $w
+    height: 1px
+    border-top: $border-width solid $c
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: $w/2 - ($border-width/2)
+    width: 1px
+    height: $w
+    border-left: $border-width solid $c
