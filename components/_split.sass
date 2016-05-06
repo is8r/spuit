@@ -20,7 +20,7 @@
         box-sizing: border-box
         width: split-width($column, $gutter) * 1%
         margin-left: $gutter * 1%
-        @for $i from 0 through 50
+        @for $i from 0 through 150
           @if $i%$column == 1
             &:nth-child(#{$i})
               clear: both
@@ -29,5 +29,4 @@
             &:nth-child(#{$i})
               clear: none
               margin-left: $gutter * 1%
-          margin-bottom: $gutter * 1%
-
+        margin-bottom: 10px

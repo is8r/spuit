@@ -58,9 +58,9 @@
 //   +icon-triangle
 // .icon-triangle-pulldown
 //   +icon-triangle(after, bottom)
-=icon-triangle($position: before, $direction: right, $size: 4px, $margin: 0.3em)
+=icon-triangle($position: before, $direction: right, $color: #646f82, $size: 4px, $margin: 0.3em)
   &:#{$position}
-    +icon-triangle-element($size, $direction)
+    +icon-triangle-element($size, $direction, $color)
     @if $position == before
       margin-right: $margin
       @if $direction == top

@@ -1,35 +1,36 @@
 =checkbox-base($tag: label)
+  $w: 20px
   margin: 0
 
   #{$tag}
-    border-radius: 20px
     margin: 0
-    padding: 10px 10px 10px 0
-    line-height: 2em
+    padding: 0
     cursor: pointer
 
     &:before
       +fa('\f00c')
       +border-box
       margin-right: 0.6em
-      border: 1px solid #ddd
-      vertical-align: top
-      text-align: center
+      vertical-align: middle
       background: #fff
       color: #fff
-      width: 28px
-      height: 28px
-      border-radius: 4px
-      padding: 5px
+      width: $w
+      height: $w
+      border-radius: 2px
+      line-height: $w
+      text-align: center
+      border: 1px solid #eee
+      transform: translateY(-1px)
 
     &:hover
       &:before
-        background: rgba($color-key, 0.2)
+        color: $color-key
 
   input[type=checkbox]
     display: none
 
     &:checked + #{$tag}
+      font-weight: 700
       &:before
         color: #fff
         background: $color-key

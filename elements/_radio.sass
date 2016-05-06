@@ -1,5 +1,5 @@
 =radio-base($tag: label)
-  $w: 30px
+  $w: 20px
   margin: 0
 
   #{$tag}
@@ -10,28 +10,26 @@
     cursor: pointer
 
     &:before
-      +fa('\f111')
-      +border-box
+      content: ''
+      display: inline-block
       margin-right: 0.5em
-      border: 1px solid #ddd
-      vertical-align: top
-      background: #fff
-      padding: 8px
+      vertical-align: middle
+      background-color: #fff
       width: $w
       height: $w
       border-radius: $w
-      color: #fff
-      font-size: 13px
+      border: 2px solid #eee
 
     &:hover
       &:before
-        background-color: rgba($color-key, 0.2)
-        color: #fff
+        background-color: $color-key
+        border: 7px solid #f8f8f8
 
   input[type=radio]
     display: none
 
     &:checked + #{$tag}
+      font-weight: 700
       &:before
-        background-color: $color-key
-        border-color: $color-key
+        background-color: #fff
+        border: 7px solid $color-key
