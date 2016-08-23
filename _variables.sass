@@ -21,14 +21,5 @@ $transition: all 0.1s ease-out
 
 //media query
 
-$media-xs: 0
-$media-sm: 34em
-$media-md: 48em
-$media-lg: 62em
-$media-sm-down: '(max-width: #{$media-sm})'
-$media-md-down: '(max-width: #{$media-md})'
-$media-lg-down: '(max-width: #{$media-lg})'
-$media-sm-up: '(min-width: #{$media-sm})'
-$media-md-up: '(min-width: #{$media-md})'
-$media-lg-up: '(min-width: #{$media-lg})'
-$media-retina: '(-webkit-min-device-pixel-ratio: 2)'
+$media-breakpoints: (xs: 0, sm: 34em, md: 48em, lg: 62em)
+$media-retina: '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)'
