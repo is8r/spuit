@@ -1,22 +1,20 @@
-=input-base($w: 100%)
+=input-base
   +reset-form
   $border: 1px solid #ddd
   $color-key: #529ef6
   $border-key: 1px solid rgba($color-key, 0.3)
   $color-bg-select: #fffff2
 
-  font-size: 16px
-  box-sizing: border-box
   display: inline-block
-  padding: 10px 10px
+  padding: 0 0.5rem
   border: $border
-  border-radius: 3px
   background: #fff
-  width: $w
-  vertical-align: top
+
+  &::placeholder
+    font-size: inherit
+    color: #ddd
 
   &:focus
     border: $border-key
-    box-shadow: rgba($color-key, 0.3) 0 0 10px
     outline: 0
     background: $color-bg-select
