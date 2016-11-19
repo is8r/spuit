@@ -35,11 +35,9 @@
   cursor: default
 
 // .button-flat
-//   +button-flat(1em, 10px 20px, #529ef6, #fff, 2px)
-=button-flat($size: 1em, $p: 10px 20px, $c: #529ef6, $c-text: #fff, $r: 2px)
+//   +button-flat(0.5rem 1rem, #529ef6, #fff, 2px)
+=button-flat($p: 0.5rem 1rem, $c: #529ef6, $c-text: #fff, $r: 2px)
   +button-base
-  font-size: $size
-  transition: $transition
   border-radius: $r
   background: $c
   color: $c-text
@@ -51,11 +49,9 @@
     color: $c-text
 
 // .button-semiflat
-//   +button-semiflat(1em, 10px 20px, #529ef6, 10%, #fff, 2px)
-=button-semiflat($size: 1em, $p: 9px 20px, $c: #529ef6, $strangth: 10%, $c-text: #fff, $r: 4px)
+//   +button-semiflat(0.5rem 1rem, #529ef6, 10%, #fff, 2px)
+=button-semiflat($p: 0.5rem 1rem, $c: #529ef6, $strangth: 5%, $c-text: #fff, $r: 4px)
   +button-base
-  font-size: $size
-  transition: $transition
   border-radius: $r
   background: $c
   background-image: linear-gradient(to top, $c, lighten($c, $strangth))
@@ -69,10 +65,9 @@
     background-image: linear-gradient(to top, darken($c, $strangth), $c)
 
 // .button-border
-//   +button-border(1em, 10px 20px, #529ef6, #fff)
-=button-border($size: 1em, $p: 9px 20px, $c: #529ef6, $c-text: #fff, $border: 1px, $r: 0px)
+//   +button-border(0.5rem 1rem, #529ef6, #fff)
+=button-border($p: 0.5rem 1rem, $c: #529ef6, $c-text: #fff, $border: 1px, $r: 2px)
   +button-base
-  transition: $transition
   border-radius: $r
   background: transparent
   padding: $p
@@ -86,11 +81,10 @@
     border-color: transparet
 
 // .button-emboss
-//   +button-emboss(1em, 10px 20px, #529ef6, #fff, 6px, 4px)
-=button-emboss($size: 1em, $p: 10px 20px, $c: #529ef6, $c-text: #fff, $thickness: 6px, $r: 4px)
+//   +button-emboss(0.5rem 1rem, #529ef6, #fff, 6px, 4px)
+=button-emboss($p: 0.5rem 1rem, $c: #529ef6, $c-text: #fff, $thickness: 6px, $r: 4px)
   +button-base
-  font-size: $size
-  transition: $transition
+  transition: all 0.1s ease-out
   transform: translateY(-$thickness)
   box-shadow: 0 $thickness 0 darken($c, 10%)
   border-radius: $r
