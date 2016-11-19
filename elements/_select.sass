@@ -16,8 +16,8 @@
     display: inline-block
     box-sizing: content-box
     width: 100%
-    padding: 0.5rem
-    cursor: pointer
+    padding: 0.2rem 0.5rem
+    line-height: 2
     background: $bg
     background-image: $bg-image
     color: $color-black
@@ -28,8 +28,9 @@
   &:before
     +fa('\f0dc')
     position: absolute
-    top: 10px
+    top: 50%
     right: 5px
+    margin-top: -6px
     color: $color-black
 
   select

@@ -39,6 +39,7 @@
 =button-flat($p: 0.5rem 1rem, $c: #529ef6, $c-text: #fff, $r: 2px)
   +button-base
   border-radius: $r
+  border: 1px solid $c
   background: $c
   color: $c-text
   padding: $p
@@ -47,6 +48,7 @@
   &.is-current
     background-color: darken($c, 10%)
     color: $c-text
+    border-color: $c
 
 // .button-semiflat
 //   +button-semiflat(0.5rem 1rem, #529ef6, 10%, #fff, 2px)

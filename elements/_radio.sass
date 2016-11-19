@@ -1,35 +1,47 @@
-=radio-base($tag: label)
-  $w: 20px
+=radio-default
   margin: 0
+  display: inline-block
+  vertical-align: top
+
+  input[type=radio]
+    display: inline-block
+    margin: 0 4px 0 0
+  label
+    cursor: pointer
+    margin: 0
+
+=radio-base($tag: label)
+  $w: 16px
+  +radio-default
 
   #{$tag}
-    border-radius: 20px
     margin: 0
-    padding: 10px 10px 10px 0
-    line-height: 2em
+    padding: 0
+    line-height: 1
     cursor: pointer
+    display: inline-block
 
     &:before
       content: ''
       display: inline-block
-      margin-right: 0.5em
       vertical-align: middle
-      background-color: #fff
       width: $w
       height: $w
       border-radius: $w
       border: 2px solid #eee
+      margin-top: -2px
+      margin-left: -2px
+      margin-right: 4px
 
     &:hover
       &:before
         background-color: $color-key
-        border: 7px solid #f8f8f8
+        border: 5px solid #f8f8f8
 
   input[type=radio]
     display: none
 
     &:checked + #{$tag}
-      font-weight: 700
       &:before
         background-color: #fff
-        border: 7px solid $color-key
+        border: 5px solid $color-key

@@ -1,0 +1,28 @@
+=fieldset-base($legend-width: 120px, $gutter: 20px)
+  +clearfix
+  position: relative
+  padding-left: $legend-width + $gutter
+  padding-bottom: 0.5rem
+  +breakpoint-down(sm)
+    padding-left: 0
+    padding-bottom: 1rem
+
+  > legend
+    width: $legend-width
+    margin-left: -($legend-width + $gutter)
+    display: inline-block
+    vertical-align: middle
+    float: left
+
+    +breakpoint-down(sm)
+      display: block
+      float: none
+      width: auto
+      margin-left: 0
+
+  &.has-padding
+    > legend
+      padding-top: 0.5rem
+      +breakpoint-down(sm)
+        padding-top: 0
+

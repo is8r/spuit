@@ -1,26 +1,42 @@
-=checkbox-base($tag: label)
-  $w: 20px
+=checkbox-default
   margin: 0
+  display: inline-block
+  vertical-align: top
+
+  input[type=checkbox]
+    display: inline-block
+    margin: 0 4px 0 0
+  label
+    cursor: pointer
+    margin: 0
+
+=checkbox-base($tag: label)
+  $w: 18px
+  +checkbox-default
 
   #{$tag}
     margin: 0
     padding: 0
+    line-height: 1
     cursor: pointer
 
     &:before
       +fa('\f00c')
-      +border-box
-      margin-right: 0.6em
       vertical-align: middle
+      box-sizing: border-box
+      text-align: center
       background: #fff
       color: #fff
       width: $w
       height: $w
-      border-radius: 2px
       line-height: $w
-      text-align: center
-      border: 1px solid #eee
-      transform: translateY(-1px)
+      padding: 0
+      border: 1px solid #ddd
+      font-size: 0.5rem
+      border-radius: 3px
+      margin-top: -2px
+      margin-left: 0px
+      margin-right: 4px
 
     &:hover
       &:before
@@ -30,7 +46,6 @@
     display: none
 
     &:checked + #{$tag}
-      font-weight: 700
       &:before
         color: #fff
         background: $color-key
