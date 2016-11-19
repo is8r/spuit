@@ -1,24 +1,25 @@
-=select-base($w: 100%, $bg: #fff, $bg-image: $gradiation)
+=select-base($w: auto, $bg: #fff, $bg-image: $gradiation)
   $border: 1px solid #ddd
   $r: 2px
 
-  +border-box
+  box-sizing: border-box
   border-radius: $r
   position: relative
   overflow: hidden
   border: $border
   width: $w
+  display: inline-block
+  padding-right: 20px
 
   select
     +reset-form
-    +inline-block
+    display: inline-block
     box-sizing: content-box
     width: 100%
-    padding: 10px 10px
+    padding: 0.5rem
     cursor: pointer
     background: $bg
     background-image: $bg-image
-    font-size: 16px
     color: $color-black
     &:focus
       outline: none
@@ -26,7 +27,9 @@
 
   &:before
     +fa('\f0dc')
-    +absolute((10px/2), 12px, 'right')
+    position: absolute
+    top: 10px
+    right: 5px
     color: $color-black
 
   select
