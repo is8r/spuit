@@ -12,25 +12,25 @@
     border-top-color: $c
   @if $direction == "left"
     &:#{$element}
-      +transform(translateX(-$w*2) translateY(-$w) rotate(90deg))
+      transform: translateX(-$w*2) translateY(-$w) rotate(90deg)
       left: $l
       right: auto
       top: $t
   @if $direction == "right"
     &:#{$element}
-      +transform(translateX($w*2) translateY(-$w) rotate(-90deg))
+      transform: translateX($w*2) translateY(-$w) rotate(-90deg)
       left: auto
       right: $l
       top: $t
   @if $direction == "top"
     &:#{$element}
-      +transform(translateX(-$w) translateY(-$w*2) rotate(180deg))
+      transform: translateX(-$w) translateY(-$w*2) rotate(180deg)
       right: auto
       left: $l
       top: $t
   @if $direction == "bottom"
     &:#{$element}
-      +transform(translateX(-$w) translateY($w*2) rotate(0))
+      transform: translateX(-$w) translateY($w*2) rotate(0)
       right: auto
       left: $l
       bottom: $t

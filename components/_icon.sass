@@ -6,7 +6,7 @@
 =icon-images-maps($r, $images, $path: '/images/')
   @each $filename, $y-position in $images
     &.#{$filename}:after
-      +inline-block
+      display: inline-block
       background-image: url('#{$path}#{$filename}.png')
       background-position: center $y-position
       background-repeat: no-repeat
@@ -82,7 +82,7 @@
 // .icon-plus
 //   +icon-plus(16px, 1px, #fff)
 =icon-plus($w: 70px, $border-width: 4px, $c: #222)
-  +inline-block
+  display: inline-block
   width: $w
   height: $w
   position: relative

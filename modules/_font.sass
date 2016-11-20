@@ -1,12 +1,9 @@
-$serif: 'ヒラギノ明朝 Pro W6','Hiragino Mincho Pro','HGS明朝E','ＭＳ Ｐ明朝',serif
-$sans: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif
-
 // + font-base
 =font-base($size: 1em, $line-height: normal, $weight: normal, $family: 'sans')
   @if $family == "serif"
-    font-family: $serif
+    font-family: $font-serif
   @else if $family == "sans"
-    font-family: $sans
+    font-family: $font-sans
   font-size: $size
   font-weight: $weight
   line-height: $line-height
@@ -14,9 +11,9 @@ $sans: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Mei
 // +font-yu
 =font-yu($size: 1em, $line-height: normal, $weight: normal, $family: 'sans')
   @if $family == "serif"
-    font-family: YuMincho, '游明朝',$serif
+    font-family: YuMincho, '游明朝',$font-serif
   @else if $family == "sans"
-    font-family: YuGothic, '游ゴシック',$sans
+    font-family: YuGothic, '游ゴシック',$font-sans
   font-size: $size
   font-weight: $weight
   line-height: $line-height

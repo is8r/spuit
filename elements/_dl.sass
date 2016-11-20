@@ -1,41 +1,30 @@
 =dl-base
   margin: 0
   padding: 0
-  > dt,
-  > dd
-    baseline: top
+  > *
+    +break-word
     margin: 0
-    padding: 10px 0
-    line-height: 1.6em
-  > dt
-    font-weight: bold
+    padding: 0
+    display: border-box
 
-=dl-base-flex
+=dl-flex($left: 30%, $p: 0.5rem 1rem)
   +dl-base
   display: flex
   flex-flow: row wrap
   justify-content: space-between
   align-items: flex-start
   align-content: flex-start
-  > dt,
-  > dd
-    +border-box
   > dt
-    width: 30%
-    padding-right: 10px
+    width: $left
+    padding: $p
+    padding-left: 0
   > dd
-    width: 70%
-
-=dl-border
-  +dl-base-flex
-  border-bottom: $border
-  > dt
-    border-top: $border
+    width: 100% - $left
+    padding: $p
     padding-right: 0
-  > dd
-    border-top: $border
-    border-left: $border
-    padding-left: 20px
 
-=dl-list
-  +dl-base-flex
+=dl-border($border: 1px solid #ddd, $left: 30%, $p: 0.5rem 1rem)
+  +dl-flex($left, $p)
+  border-bottom: $border
+  > *
+    border-top: $border
