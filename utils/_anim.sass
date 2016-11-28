@@ -1,35 +1,35 @@
 =util-anim
   @at-root
-    // +animation(anim-arrow 0.8s ease-out infinite)
-    +keyframes(anim-arrow)
+    // animation: anim-arrow 0.8s ease-out infinite
+    @keyframes anim-arrow
       0%
-        +translateX(0%)
+        transform: translateX(0%)
       50%
-        +translateX(20%)
+        transform: translateX(20%)
       100%
-        +translateX(0%)
+        transform: translateX(0%)
 
-    // +animation(anim-float 0.8s ease-out infinite)
-    +keyframes(anim-float)
+    // animation: anim-float 0.8s ease-out infinite
+    @keyframes anim-float
       0%
-        +translateY(0%)
+        transform: translateY(0%)
       50%
-        +translateY(20%)
+        transform: translateY(20%)
       100%
-        +translateY(0%)
+        transform: translateY(0%)
 
-    // +animation(anim-scale 0.8s ease-out)
-    +keyframes(anim-scale)
+    // animation: anim-scale 0.8s ease-out
+    @keyframes anim-scale
       0%
-        +scale(1)
+        transform: scale(1)
       50%
-        +scale(1.2)
+        transform: scale(1.2)
       100%
-        +scale(1)
+        transform: scale(1)
 
-    // +animation(anim-spiner 1.6s infinite linear)
-    +keyframes(anim-spiner)
+    // animation: anim-spiner 1.6s infinite linear
+    @keyframes anim-spiner
       0%
-        +rotate(0deg)
+        transform: rotate(0deg)
       100%
-        +rotate(360deg)
+        transform: rotate(360deg)

@@ -1,13 +1,13 @@
 =grid-container
   +clearfix
-  +border-box
+  box-sizing: border-box
   margin-right: auto
   margin-left: auto
   position: relative
 
 =grid-row($gutter: 10px)
   +clearfix
-  +border-box
+  box-sizing: border-box
   position: relative
   margin-left:  -($gutter / 2)
   margin-right: -($gutter / 2)
@@ -15,7 +15,7 @@
   margin-bottom: -($gutter / 2)
 
 =grid-item($gutter: 10px)
-  +border-box
+  box-sizing: border-box
   position: relative
   padding-left:  ($gutter / 2)
   padding-right: ($gutter / 2)
