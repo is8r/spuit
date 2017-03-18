@@ -1,0 +1,68 @@
+@import 'spuit/_all';
+
+@import 'styles/config/variables';
+@import 'styles/config/mixins';
+
+// basic styles
+
+html {
+  font-size: 100%;
+  @include breakpoint-down(md) {
+    font-size: 80%;
+  }
+}
+
+body {
+  @include font-title(1rem, normal, 400);
+  color: $color-black;
+}
+
+// demo styles
+
+.demo-styles {
+  color: $color-black;
+
+  h1 {
+    @include font-title(3.0rem);
+  }
+  h2 {
+    @include font-title(2.4rem);
+  }
+  h3 {
+    @include font-title(2.0rem);
+  }
+  h4 {
+    @include font-title(1.7rem);
+  }
+  h5 {
+    @include font-title(1.6rem);
+  }
+  h6 {
+    @include font-title(1.5rem);
+  }
+  p {
+    @include font(1rem, normal, 400);
+  }
+
+  .word-break {
+    @include word-break;
+    display: inline-block;
+    width: 100px;
+    background: #f8f8f8;
+    padding: 10px;
+  }
+  .word-break-none {
+    @include word-break(false);
+    display: inline-block;
+    width: 100px;
+    background: #f8f8f8;
+    padding: 10px;
+  }
+  .text-overflow {
+    @include text-overflow();
+    display: inline-block;
+    width: 100px;
+    background: #f8f8f8;
+    padding: 10px;
+  }
+}

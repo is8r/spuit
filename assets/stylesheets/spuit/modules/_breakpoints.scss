@@ -1,0 +1,19 @@
+@mixin breakpoint-down($name: md, $breakpoints: $grid-breakpoints) {
+  $map: map-get($breakpoints, $name);
+  @media (max-width: $map) {
+    @content;
+  }
+}
+
+@mixin breakpoint-up($name: md, $breakpoints: $grid-breakpoints) {
+  $map: map-get($breakpoints, $name);
+  @media (min-width: $map) {
+    @content;
+  }
+}
+
+@mixin breakpoint-retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}

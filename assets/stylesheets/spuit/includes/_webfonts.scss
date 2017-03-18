@@ -1,0 +1,30 @@
+// @include include-fa
+@mixin include-fa {
+  @at-root {
+    @import url('//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css');
+  }
+}
+
+// @include include-noto
+// font-family: 'Noto Sans Japanese', san-serif;
+@mixin include-noto {
+  @at-root {
+    @import url('//fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+  }
+}
+
+// @include include-roboto
+// font-family: 'Roboto', sans-serif;
+@mixin include-roboto {
+  @at-root {
+    @import url('//fonts.googleapis.com/css?family=Roboto');
+  }
+}
+
+// @include include-opensans
+// font-family: 'Open Sans', sans-serif;
+@mixin include-opensans {
+  @at-root {
+    @import url('//fonts.googleapis.com/css?family=Open+Sans:400,300,700')
+  }
+}

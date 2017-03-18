@@ -1,0 +1,63 @@
+@mixin background-image($w: 50px, $h: 50px, $path: '/images/xxx', $extension: 'png') {
+  background-image: url('#{$path}.#{$extension}');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  width: $w;
+  height: $h;
+  @include breakpoint-retina {
+    background-image: url('#{$path}@2x.#{$extension}');
+  }
+}
+
+@mixin replace-background-image($w: 50px, $h: 50px, $path: '/images/xxx', $extension: 'png') {
+  @include hide-text;
+  display: inline-block;
+  width: $w;
+  line-height: $h;
+  height: $h;
+  position: relative;
+  vertical-align: middle;
+
+  &:after {
+    @include background-image($w, $h, $path);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+//for rails
+@mixin background-image-url($w: 50px, $h: 50px, $path: '/images/xxx', $extension: 'png') {
+  display: inline-block;
+  background-image: image-url('#{$path}.#{$extension}');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: $w;
+  height: $h;
+  @include breakpoint-retina {
+    background-image: image-url('#{$path}@2x.#{$extension}');
+  }
+}
+
+//for rails
+@mixin replace-background-image-url($w: 50px, $h: 50px, $path: '/images/xxx', $extension: 'png') {
+  @include hide-text;
+  display: inline-block;
+  width: $w;
+  line-height: $h;
+  height: $h;
+  position: relative;
+  vertical-align: middle;
+
+  &:after {
+    @include background-image-url($w, $h, $path);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}

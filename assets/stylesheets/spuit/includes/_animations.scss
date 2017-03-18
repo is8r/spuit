@@ -1,0 +1,55 @@
+// @include include-animations
+@mixin include-animations {
+  @at-root {
+
+    // animation: anim-spin 1.6s infinite linear
+    @keyframes anim-spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(359deg);
+      }
+    }
+
+    // animation: anim-float 0.8s ease-out infinite
+    @keyframes anim-float {
+      0% {
+        transform: translateY(0%);
+      }
+      50% {
+        transform: translateY(20%);
+      }
+      100% {
+        transform: translateY(0%);
+      }
+    }
+
+    // animation: anim-arrow 0.8s ease-out infinite
+    @keyframes anim-arrow {
+      0% {
+        transform: translateX(0%);
+      }
+      50% {
+        transform: translateX(20%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+
+    // animation: anim-scale 0.8s ease-out
+    @keyframes anim-scale {
+      0% {
+        transform: scale(1);;
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+  }
+}

@@ -1,0 +1,31 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 34em,
+  md: 48em,
+  lg: 62em,
+  xl: 75em
+) !default;
+
+$grid-breakpoints-px: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$grid-breakpoints-bs3: (
+  xs: 0,
+  sm: 34em,
+  md: 48em,
+  lg: 62em
+) !default;
+
+$grids-breakpoints-bs3-px: (
+  xs: 0,
+  sm: 750px,
+  md: 970px,
+  lg: 1170px
+) !default;
+
+$media-retina: (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi);

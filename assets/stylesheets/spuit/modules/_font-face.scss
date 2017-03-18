@@ -1,0 +1,31 @@
+/*
+example:
+@include font-face('fontello', 'fontello/fontello');
+@mixin font-fontello($size: 1rem, $line-height: normal, $weight: normal) {
+  font-family: 'fontello';
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+*/
+
+@mixin font-face($name, $path) {
+  @at-root {
+    @font-face {
+      font-family: $name;
+      src: url('#{$path}.eot');
+      src: url('#{$path}.eot?iefix') format('eot'), url('#{$path}.woff') format("woff"), url('#{$path}.ttf') format('truetype'), url('#{$path}.svg#font') format('svg');
+    }
+  }
+}
+
+//for rails
+@mixin font-face-url($name, $path) {
+  @at-root {
+    @font-face {
+      font-family: $name;
+      src: font-url('#{$path}.eot');
+      src: font-url('#{$path}.eot?iefix') format('eot'), font-url('#{$path}.woff') format("woff"), font-url('#{$path}.ttf') format('truetype'), font-url('#{$path}.svg#font') format('svg');
+    }
+  }
+}

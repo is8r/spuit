@@ -1,0 +1,175 @@
+=body
+  $color-def: #222
+  $color-accent: #f22
+
+  width: 100%
+  text-align: left
+
+  > *
+    margin-bottom: 2rem
+    &:first-child
+      margin-top: 0
+    &:last-child
+      margin-bottom: 0
+
+  h1,h1 a,
+  h2,h2 a,
+  h3,h3 a,
+  h4,h4 a,
+  h5,h5 a,
+  h6,h6 a
+    +word-break
+    clear: both
+    color: $color-def
+    font-weight: normal
+  small
+    font-size: 0.8rem
+
+  h1,h1 a
+    font-size: 2rem
+    line-height: 3rem
+    margin-top: 2rem
+    margin-bottom: 2rem
+
+  h2,h2 a
+    font-size: 1.8rem
+    margin-top: 2rem
+    margin-bottom: 2rem
+
+  h3,h3 a
+    font-size: 1.4rem
+    margin-top: 2rem
+    margin-bottom: 2rem
+
+  h4,h4 a
+    font-size: 1rem
+    margin-bottom: 20px
+
+  h5,h5 a
+    font-size: 1rem
+    margin-bottom: 16px
+
+  h6,h6 a
+    font-size: 1rem
+    margin-bottom: 16px
+
+  dl, ul, p
+    font-size: 1rem
+
+  i
+    font-style: italic
+
+  strong
+    font-weight: normal !important
+    font-weight: bold !important
+    padding-left: 3px
+    padding-right: 3px
+
+  p
+    +font
+    clear: both
+    code
+      +font-code
+      margin: 0 4px
+      padding: 2px 6px
+      font-style: italic
+      color: #777
+      background: #f8f8f8
+      $c: #f8f8f8
+      border: 1px solid $c - 10
+
+  a
+    +font
+    color: $color-def
+    text-decoration: underline
+    &:hover
+      text-decoration: none
+
+  // アイコンつきリンク
+  // a[target="_blank"]
+  > a[target="_blank"], p > a[target="_blank"], li > a[target="_blank"]
+    +icon-fa('\f08e')
+    &:before
+      opacity: 0.2
+      margin-left: 4px
+      font-size: 0.8rem
+
+  img
+    margin: 0
+    padding: 0
+    line-height: 0
+    border: none
+    max-width: 100%
+
+  > ul
+    margin-left: 20px
+    li
+      +font(0.9rem)
+      list-style-type: disc
+      a
+        +font(0.9rem)
+  > ol
+    margin-left: 20px
+    li
+      +font
+      list-style: decimal
+      + li
+        border-top: 1px dotted #ddd
+
+  > table
+    width: 100%
+    border-collapse: collapse
+    th
+      border-bottom: 1px solid #eee
+      padding: 5px 10px 5px 10px
+      +font(10px)
+    td
+      border-bottom: 1px solid #eee
+      padding: 5px 10px 5px 10px
+      +font(14px)
+
+  pre > code,
+  .highlight
+    width: auto !important
+    padding: 20px
+    margin-top: 2rem
+    margin-bottom: 2rem
+    display: block
+    background: #f8f8f8
+    border: 1px solid #eee
+    font-family: Consolas, 'Liberation Mono', Courier, monospace
+    font-size: 0.8rem
+    line-height: 1.6rem
+    overflow: auto
+    p
+      font-family: Consolas, 'Liberation Mono', Courier, monospace
+      font-size: 0.8rem
+    pre
+      margin-bottom: 0
+
+  blockquote
+    +clearfix
+    width: auto !important
+    text-align: left !important
+    margin-left: 0
+    padding-left: 20px
+    border-left: 4px solid #f2f2f2
+    cite
+      margin-top: 0
+      float: right
+      font-size: 12px
+      p, a
+        display: inline
+        font-weight: normal
+        font-style: normal
+        color: $color-def
+        font-size: 12px
+        a
+          text-decoration: underline
+          &:hover
+            color: $color-accent
+    p
+      font-weight: bold
+      font-style: italic
+      margin-bottom: 10px
+      text-align: left !important

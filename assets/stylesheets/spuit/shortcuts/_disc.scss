@@ -1,0 +1,6 @@
+@mixin disc($r: 40px) {
+  border-radius: $r;
+  width: $r;
+  height: $r;
+  line-height: $r;
+}

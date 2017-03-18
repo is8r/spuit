@@ -1,0 +1,15 @@
+@mixin text-overflow($line: 1) {
+  @if $line == 1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  } @else {
+    // FIXME: atoprefixerがwebkit-box-orientを消してしまう
+    // work: IE9^, Chrome, Safari
+    // not work: Firefox
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+  }
+}

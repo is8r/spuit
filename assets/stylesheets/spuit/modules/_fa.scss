@@ -1,0 +1,28 @@
+@mixin fa($content: '\f105') {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-indent: 0;
+  @if ($content) {
+    content: $content;
+  }
+}
+
+@mixin replace-fa($content: '\f105', $size: 1rem, $r: 1rem) {
+  @include hide-text;
+  display: inline-block;
+  width: $r;
+  height: $r;
+  line-height: $r;
+
+  &:after {
+    @include fa($content);
+    font-size: $size;
+    width: $r;
+    height: $r;
+    line-height: $r;
+    text-align: center;
+  }
+}

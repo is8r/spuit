@@ -1,0 +1,17 @@
+// @include include-hiddens
+@mixin include-hiddens {
+  @at-root {
+    @each $bp in map-keys($grids-breakpoints) {
+      .hidden-#{$bp}-up {
+        @include breakpoint-up($bp) {
+          display: none !important;
+        }
+      }
+      .hidden-#{$bp}-down {
+        @include breakpoint-down($bp) {
+          display: none !important;
+        }
+      }
+    }
+  }
+}

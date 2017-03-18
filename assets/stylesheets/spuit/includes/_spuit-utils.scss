@@ -1,0 +1,11 @@
+// @include include-spuit-utils
+@mixin include-spuit-utils {
+  @at-root {
+    .c {
+      clear: both;
+    }
+    .clearfix {
+      @include clearfix;
+    }
+  }
+}

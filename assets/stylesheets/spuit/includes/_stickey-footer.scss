@@ -1,0 +1,18 @@
+// @include include-stickey-footer
+@mixin include-stickey-footer($footer-height: 100px, $class: '.footer') {
+  @at-root {
+    html {
+      position: relative;
+      min-height: 100%;
+    }
+    body {
+      margin-bottom: $footer-height;
+    }
+    body > #{$class} {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: $footer-height;
+    }
+  }
+}
