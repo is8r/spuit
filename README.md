@@ -8,3 +8,9 @@ install:
 ```
 $ npm install spuit
 ```
+
+import:
+
+``` styles.scss
+@import "node_modules/spuit/spuit";
+```

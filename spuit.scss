@@ -1,0 +1,37 @@
+@charset "utf-8";
+
+// valiables
+@import 'assets/stylesheets/spuit/variables/defaults';
+@import 'assets/stylesheets/spuit/variables/fonts';
+@import 'assets/stylesheets/spuit/variables/timing-functions';
+@import 'assets/stylesheets/spuit/variables/media-queries';
+
+// module mixins
+@import 'assets/stylesheets/spuit/modules/clearfix';
+@import 'assets/stylesheets/spuit/modules/breakpoints';
+@import 'assets/stylesheets/spuit/modules/hide-text';
+@import 'assets/stylesheets/spuit/modules/fa';
+@import 'assets/stylesheets/spuit/modules/font-face';
+@import 'assets/stylesheets/spuit/modules/background-image';
+@import 'assets/stylesheets/spuit/modules/inherit';
+@import 'assets/stylesheets/spuit/modules/word-break';
+@import 'assets/stylesheets/spuit/modules/text-overflow';
+@import 'assets/stylesheets/spuit/modules/reset';
+
+// create styles
+@import 'assets/stylesheets/spuit/includes/animations';
+@import 'assets/stylesheets/spuit/includes/hiddens';
+@import 'assets/stylesheets/spuit/includes/spacers';
+@import 'assets/stylesheets/spuit/includes/webfonts';
+@import 'assets/stylesheets/spuit/includes/stickey-footer';
+@import 'assets/stylesheets/spuit/includes/spuit-utils';
+
+// shortcut mixins
+@import 'assets/stylesheets/spuit/shortcuts/absolute';
+@import 'assets/stylesheets/spuit/shortcuts/centering';
+@import 'assets/stylesheets/spuit/shortcuts/disc';
+
+// shortcut components, element
+// FIXME: 未整理、不要なものを削除するまでコメントアウト
+// @import 'assets/stylesheets/spuit/components/xxx';
+// @import 'assets/stylesheets/spuit/element/xxx';
