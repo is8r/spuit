@@ -10,8 +10,7 @@
     cursor: pointer
     margin: 0
 
-=radio-base($tag: label)
-  $w: 16px
+=radio-base($tag: label, $w: 16px, $color-key: #529ef6)
   +radio-default
 
   #{$tag}
@@ -29,9 +28,6 @@
       height: $w
       border-radius: $w
       border: 2px solid #eee
-      margin-top: -2px
-      margin-left: -2px
-      margin-right: 4px
 
     &:hover
       &:before

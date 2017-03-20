@@ -47,14 +47,44 @@ body {
   p {
     @include font(1rem);
   }
+  form {
+    @include font(0.9rem);
+  }
   input[type=text] {
     @include input;
   }
-  table {
-    @include table;
+  textarea {
+    @include input;
+    height: 120px;
   }
   legend {
-    @include font(1rem);
+    @include font(inherit);
+  }
+  .radio {
+    @include radio-base;
+  }
+  .radio-inside {
+    @include radio-base(span);
+  }
+  .checkbox {
+    @include checkbox-base;
+  }
+  .checkbox-inside {
+    @include checkbox-base(span);
+  }
+
+  .table {
+    @include table;
+    margin-bottom: 10px;
+
+    &-line{
+      @include table-line;
+      margin-bottom: 10px;
+    }
+    &-stripe{
+      @include table-stripe;
+      margin-bottom: 10px;
+    }
   }
   .fieldset {
     @include fieldset-flex;
@@ -75,6 +105,9 @@ body {
     @include button-emboss;
   }
 
+  .reset-ul {
+    @include reset-ul;
+  }
   .word-break {
     @include word-break;
     display: inline-block;

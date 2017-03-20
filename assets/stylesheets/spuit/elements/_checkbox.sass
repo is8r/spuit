@@ -10,8 +10,7 @@
     cursor: pointer
     margin: 0
 
-=checkbox-base($tag: label)
-  $w: 18px
+=checkbox-base($tag: label, $w: 18px, $color-key: #529ef6)
   +checkbox-default
 
   #{$tag}
@@ -33,10 +32,6 @@
       padding: 0
       border: 1px solid #ddd
       font-size: 0.5rem
-      border-radius: 3px
-      margin-top: -2px
-      margin-left: 0px
-      margin-right: 4px
 
     &:hover
       &:before
