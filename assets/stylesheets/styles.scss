@@ -3,6 +3,8 @@
 @import 'styles/config/variables';
 @import 'styles/config/mixins';
 
+@include include-animations
+
 // basic styles
 
 html {
@@ -13,7 +15,7 @@ html {
 }
 
 body {
-  @include font-title(1rem, normal, 400);
+  @include font(1rem);
   color: $color-black;
 }
 
@@ -23,25 +25,54 @@ body {
   color: $color-black;
 
   h1 {
-    @include font-title(3.0rem);
+    @include font(2.8rem);
+    font-weight: 300;
   }
   h2 {
-    @include font-title(2.4rem);
+    @include font(2.0rem);
+    font-weight: 300;
   }
   h3 {
-    @include font-title(2.0rem);
+    @include font(1.6rem);
   }
   h4 {
-    @include font-title(1.7rem);
+    @include font(1.5rem);
   }
   h5 {
-    @include font-title(1.6rem);
+    @include font(1.3rem);
   }
   h6 {
-    @include font-title(1.5rem);
+    @include font(1.2rem);
   }
   p {
-    @include font(1rem, normal, 400);
+    @include font(1rem);
+  }
+  input[type=text] {
+    @include input;
+  }
+  table {
+    @include table;
+  }
+  legend {
+    @include font(1rem);
+  }
+  .fieldset {
+    @include fieldset-flex;
+  }
+  .button {
+    @include button;
+  }
+  .button-semiflat {
+    @include font;
+    @include button-semiflat;
+  }
+  .button-border {
+    @include font;
+    @include button-border;
+  }
+  .button-emboss {
+    @include font;
+    @include button-emboss;
   }
 
   .word-break {

@@ -1,14 +1,23 @@
-@mixin font($size: 1rem, $line-height: normal, $weight: normal) {
-  font-family: $font-sans;
+@include include-opensans;
+
+@mixin font($size: 1rem, $line-height: normal, $weight: 400) {
+  font-family: 'Open Sans', $font-serif;
   font-size: $size;
   font-weight: $weight;
   line-height: $line-height;
 }
 
-@include include-opensans;
-@mixin font-title($size: 1rem, $line-height: normal, $weight: 300) {
-  font-family: 'Open Sans', sans-serif;
-  font-size: $size;
-  font-weight: $weight;
-  line-height: $line-height;
+@mixin button {
+  @include font;
+  @include button-normal;
+}
+
+@mixin input {
+  @include font;
+  @include input-normal(100%);
+}
+
+@mixin table {
+  @include font(1rem);
+  @include table-normal;
 }

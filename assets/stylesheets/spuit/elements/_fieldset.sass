@@ -1,4 +1,4 @@
-=fieldset-base($legend-width: 120px, $gutter: 20px)
+=fieldset-base($legend-width: 100px, $gutter: 20px)
   +clearfix
   position: relative
   padding-left: $legend-width + $gutter
@@ -26,3 +26,20 @@
       +breakpoint-down(sm)
         padding-top: 0
 
+//not <fieldset/>
+=fieldset-flex($legend-width: 30%, $gutter: 20px)
+  display: flex
+  justify-content: space-between
+  align-items: center
+  min-width: 0
+  padding: 0
+  margin: 0 0 10px
+  border: 0
+  &:last-child
+    margin-bottom: 0
+  > legend
+    width: $legend-width
+    padding-right: $gutter
+    margin-bottom: 0
+  > *:not(legend)
+    flex: 1

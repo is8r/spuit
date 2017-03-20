@@ -32,6 +32,9 @@ gulp.task('connect', function() {
 });
 gulp.task('browserSync', function() {
   browserSync({
+    files: [
+      'dist/index.html'
+    ],
     server: {
       baseDir: paths.dist
     }

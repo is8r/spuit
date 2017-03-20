@@ -1,19 +1,20 @@
-=table-base($padding: 5px 10px)
+=table-base($p: 5px 10px)
   width: 100%
   border-collapse: collapse
   th
     font-weight: bold
   th, td
-    padding: $padding
+    padding: $p
 
-//  .table--frame
-//    +table-frame
-=table-frame($border-top: 2px solid #eee, $border: 1px solid #eee)
-  +table-base
+//  .table--normal
+//    +table-normal
+=table-normal($p: 5px 10px, $border-top: 2px solid #eee, $border: 1px solid #eee)
+  +table-base($p)
   border-top: $border
   thead
     tr
       th, td
+        font-size: 0.8rem
         border: $border
         border-bottom: $border-top
   tbody

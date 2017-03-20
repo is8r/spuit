@@ -1,0 +1,12 @@
+/*
+necessary:
+@include include-fa;
+@include include-animations;
+*/
+@mixin icon-loading {
+  &::before {
+    @include fa('\f1ce');
+    animation: anim-spin 1.6s infinite linear;
+    margin-right: 5px;
+  }
+}
