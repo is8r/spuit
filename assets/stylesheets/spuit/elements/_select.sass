@@ -1,6 +1,8 @@
-=select-base($w: auto, $bg: #fff, $bg-image: $gradiation)
+=select-base($w: auto, $bg: #fff)
+  // $bg-image: linear-gradient(to top, #f2f2f2 0%, lighten(#f2f2f2, 10%) 100%)
   $border: 1px solid #ddd
   $r: 2px
+  $icon: 'DQo8c3ZnIHdpZHRoPSI2cHgiIGhlaWdodD0iMTBweCIgdmlld0JveD0iMTQ3IDIyNSA2IDEwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggNDIgKDM2NzgxKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4NCiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4NCiAgICA8ZGVmcz48L2RlZnM+DQogICAgPHBhdGggZD0iTTE1MCwyMjUgTDE1MywyMjkgTDE0NywyMjkgTDE1MCwyMjUgWiBNMTUwLDIzNSBMMTQ3LDIzMSBMMTUzLDIzMSBMMTUwLDIzNSBaIiBpZD0iQ29tYmluZWQtU2hhcGUiIHN0cm9rZT0ibm9uZSIgZmlsbD0iIzAwMDAwMCIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+DQo8L3N2Zz4='
 
   box-sizing: border-box
   border-radius: $r
@@ -16,27 +18,27 @@
     display: inline-block
     box-sizing: content-box
     width: 100%
-    padding: 0.2rem 0.5rem
-    line-height: 2
+    padding: 10px 10px
+    // padding: 5px 10px
+    line-height: 1 !important
     background: $bg
-    background-image: $bg-image
+    // background-image: $bg-image
     color: $color-black
     &:focus
       outline: none
       border: none
 
-  &:before
-    +fa('\f0dc')
-    position: absolute
-    top: 50%
-    right: 5px
-    margin-top: -6px
-    color: $color-black
+    background-image: url('data:image/svg+xml;base64,#{$icon}')
+    background-repeat: no-repeat
+    background-position: right 34px top 13px
+    background-size: 6px 10px
 
   select
     width: 110% // IE9
     &::-ms-expand
       display: none // IE10
+
+  +select-firefox-hack
 
 =select-firefox-hack
   @at-root
@@ -45,6 +47,8 @@
         select
           text-indent: 0.01px
           text-overflow: ''
+          color: #000
+          padding: 5px 10px
           &:-moz-focusring
-            color: transparent
+            // color: transparent
             text-shadow: none

@@ -72,7 +72,9 @@ body {
   .checkbox-inside {
     @include checkbox-base(span);
   }
-
+  .select {
+    @include select-base;
+  }
   .table {
     @include table;
     margin-bottom: 10px;
