@@ -7,7 +7,7 @@
 
 @mixin breakpoint-up($name: md, $breakpoints: $grid-breakpoints) {
   $map: map-get($breakpoints, $name);
-  @media (min-width: $map) {
+  @media (min-width: $map + 1px) {
     @content;
   }
 }
