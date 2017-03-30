@@ -10,3 +10,59 @@ necessary:
     margin-right: 5px;
   }
 }
+
+@mixin icon-twitter {
+  &::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: $color-twitter;
+    background-image: url("data:image/svg+xml, #{$svg-twitter}");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 60% 60%;
+  }
+}
+
+@mixin icon-facebook {
+  &::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: $color-facebook;
+    background-image: url("data:image/svg+xml, #{$svg-facebook}");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 60% 60%
+  }
+}
+
+@mixin icon-hatena {
+  &::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: $color-hatena;
+    background-image: url("data:image/svg+xml, #{$svg-hatena}");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+}
+
+@mixin icon-hamburger {
+  &::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    background-color: #000;
+    background-image: url("data:image/svg+xml, #{$svg-hamburger}");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 45% 45%;
+  }
+}

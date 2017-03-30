@@ -147,4 +147,18 @@ body {
     background: #f8f8f8;
     padding: 10px;
   }
+
+  .icon-hamburger {
+    @include icon-hamburger;
+  }
+  .icon-twitter {
+    @include icon-twitter;
+  }
+  .icon-facebook {
+    @include icon-facebook;
+  }
+  .icon-hatena {
+    @include icon-hatena;
+  }
+
 }
