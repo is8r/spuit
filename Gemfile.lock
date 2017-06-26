@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spuit (0.0.6)
+    spuit (0.0.7)
       rake
       thor (~> 0.19)
 

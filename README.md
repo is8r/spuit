@@ -37,6 +37,7 @@ webpacker: ./bin/webpack-dev-server
 ```
 
 ```
+$ bundle install
 $ yarn add spuit
 $ foreman start
 ```
