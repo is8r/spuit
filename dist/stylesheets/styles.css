@@ -1778,8 +1778,10 @@ body {
       box-shadow: 0 0 0 #529ef6;
       background-color: #2283f3; }
   .demo-styles .button-group {
+    display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }
     .demo-styles .button-group > * {

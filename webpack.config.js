@@ -29,23 +29,25 @@ module.exports = [{
     rules: [
        {
          test: /\.(scss|css)$/,
-         loaders: ExtractTextPlugin.extract({
-            fallbackLoader: 'style-loader',
-            loader: ['css-loader', 'sass-loader', 'postcss-loader']
+         use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'sass-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [
+                  require('autoprefixer')({
+                    browsers: ['last 2 versions']
+                  })
+                ]
+              }
+            }
+          ]
           })
        }
      ]
   },
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        postcss: [
-          require('autoprefixer')({
-            browsers: ['last 2 versions']
-          })
-        ]
-      }
-    }),
     new ExtractTextPlugin({ filename: 'stylesheets/[name].css', disable: false, allChunks: true })
   ]
 }];
