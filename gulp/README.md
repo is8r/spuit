@@ -1,7 +1,0 @@
-
-## development
-
-```
-$ npm install
-$ gulp
-```

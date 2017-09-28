@@ -1,0 +1,40 @@
+@mixin switch-base($w: 60px, $h: 30px, $c: green, $margin: 3px) {
+  input[type=checkbox]{
+  	display: none;
+  }
+
+  label {
+    cursor: pointer;
+  	text-indent: -9999px;
+  	width: $w;
+  	height: $h;
+  	background: grey;
+  	display: block;
+  	border-radius: $h;
+  	position: relative;
+
+    &:after {
+    	content: '';
+    	position: absolute;
+    	top: $margin;
+    	left: $margin;
+    	width: $h - ($margin*2);
+    	height: $h - ($margin*2);
+    	background: #fff;
+    	border-radius: $h - ($margin*2);
+    	transition: 0.3s;
+    }
+  }
+
+  input:checked + label {
+  	background: $c;
+    &:after {
+    	left: calc(100% - #{$margin});
+    	transform: translateX(-100%);
+    }
+  }
+
+  label:active:after {
+  	width: $h;
+  }
+}

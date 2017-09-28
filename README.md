@@ -58,13 +58,3 @@ $ yarn add spuit
 $ foreman start
 $ open http://localhost:5000/
 ```
-
----
-
-## development
-
-publish:
-
-```
-$ rake release & npm publish
-```

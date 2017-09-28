@@ -1,10 +1,12 @@
 {
   "name": "spuit",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "JS + Sass Mixin Library",
   "main": "spuit.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server",
+    "build": "webpack --config webpack.config.js",
+    "deploy": "rake release && npm publish"
   },
   "repository": {
     "type": "git",
@@ -18,21 +20,15 @@
   },
   "homepage": "https://github.com/is8r/spuit#readme",
   "devDependencies": {
-    "autoprefixer": "^6.2.3",
-    "browser-sync": "^2.18.8",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.0.3",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^2.0.6",
-    "gulp-filter": "^5.0.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-postcss": "^6.0.1",
-    "gulp-ruby-sass": "^2.1.1",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.4.1",
-    "gulp-uglify": "^2.1.0",
-    "require-dir": "^0.3.1"
+    "autoprefixer": "^7.1.4",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {}
 }
