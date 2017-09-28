@@ -1,0 +1,31 @@
+@mixin select-base($w: 200px, $h: 40px) {
+  $icon-select: 'DQo8c3ZnIHdpZHRoPSI2cHgiIGhlaWdodD0iMTBweCIgdmlld0JveD0iMTQ3IDIyNSA2IDEwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPg0KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggNDIgKDM2NzgxKSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4NCiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4NCiAgICA8ZGVmcz48L2RlZnM+DQogICAgPHBhdGggZD0iTTE1MCwyMjUgTDE1MywyMjkgTDE0NywyMjkgTDE1MCwyMjUgWiBNMTUwLDIzNSBMMTQ3LDIzMSBMMTUzLDIzMSBMMTUwLDIzNSBaIiBpZD0iQ29tYmluZWQtU2hhcGUiIHN0cm9rZT0ibm9uZSIgZmlsbD0iIzAwMDAwMCIgZmlsbC1ydWxlPSJldmVub2RkIj48L3BhdGg+DQo8L3N2Zz4=';
+
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  width: $w;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;base64,#{$icon-select}');
+  background-repeat: no-repeat;
+  background-position: right 12px top 15px;
+  background-size: 6px 10px;
+
+  select {
+    padding: 5px 12px;
+    width: 130%;
+    height: $h;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    appearance: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
