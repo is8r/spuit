@@ -123,6 +123,9 @@ body {
       }
     }
   }
+  .switch {
+    @include switch-base(38px, 20px, #529ef6, 2px);
+  }
   .reset-ul {
     @include reset-ul;
   }
