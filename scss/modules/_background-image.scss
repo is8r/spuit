@@ -29,6 +29,19 @@
   }
 }
 
+@mixin background-svg($w, $h, $svg) {
+  display: inline-block;
+  position: relative;
+  background-image: url('data:image/svg+xml;base64,#{$svg}');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: $w $h;
+  width: $w;
+  height: $h;
+  vertical-align: middle;
+  line-height: $h;
+}
+
 //for rails
 @mixin background-image-url($w: 50px, $h: 50px, $path: '/images/xxx', $extension: 'png') {
   display: inline-block;
