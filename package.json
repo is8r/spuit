@@ -1,13 +1,8 @@
 {
   "name": "spuit",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "JS + Sass Mixin Library",
   "main": "spuit.scss",
-  "scripts": {
-    "start": "webpack-dev-server",
-    "build": "webpack --config webpack.config.js",
-    "deploy": "rake release && npm publish"
-  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/is8r/spuit.git"
@@ -20,15 +15,32 @@
   },
   "homepage": "https://github.com/is8r/spuit#readme",
   "devDependencies": {
-    "autoprefixer": "^7.1.4",
+    "autoprefixer": "^8.2.0",
+    "bootstrap": "^4.0.0",
     "css-loader": "^0.28.7",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "node-sass": "^4.5.3",
-    "postcss-loader": "^2.0.6",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.7.2",
+    "popper.js": "^1.14.3",
+    "postcss-loader": "^2.0.10",
     "sass-loader": "^6.0.6",
-    "style-loader": "^0.20.1",
-    "webpack": "^3.5.6",
-    "webpack-dev-server": "^2.7.1"
+    "spuit": "0.0.12",
+    "style-loader": "^0.20.3",
+    "uglifyjs-webpack-plugin": "^1.2.4",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-manifest-plugin": "^2.0.0-rc.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "npm": "^6.0.1"
+  },
+  "scripts": {
+    "dev": "open http://localhost:8080/ && webpack-dev-server --progress --mode development --config webpack/webpack.config.js",
+    "watch": "webpack --watch --progress --mode development --config webpack/webpack.config.js",
+    "build": "webpack --progress --mode production --config webpack/webpack.config.js",
+    "deploy": "rake release && npm publish"
+  }
 }
