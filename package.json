@@ -34,7 +34,9 @@
     "webpack-dev-server": "^3.1.1",
     "webpack-manifest-plugin": "^2.0.0-rc.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "npm": "^6.0.1"
+  },
   "scripts": {
     "dev": "open http://localhost:8080/ && webpack-dev-server --progress --mode development --config webpack/webpack.config.js",
     "watch": "webpack --watch --progress --mode development --config webpack/webpack.config.js",
