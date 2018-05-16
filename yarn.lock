@@ -7408,9 +7408,11 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
 
-spuit@0.0.11:
-  version "0.0.11"
-  resolved "https://registry.yarnpkg.com/spuit/-/spuit-0.0.11.tgz#d98a72de2ad8fac7897354773ff5669cda4d532c"
+spuit@0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/spuit/-/spuit-0.0.12.tgz#860c6c26979d9f694f53e35dbf2316ae81ad9d38"
+  dependencies:
+    npm "^6.0.1"
 
 sshpk@^1.7.0:
   version "1.13.1"
