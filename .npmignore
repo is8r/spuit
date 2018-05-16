@@ -2,8 +2,8 @@
 .DS_Store
 node_modules
 npm-debug.log
-gulpfile.js
-gulp
 dist/index.html
 assets/javascripts
+webpack
+yarn.lock
 .editorconfig
