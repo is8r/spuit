@@ -35,7 +35,7 @@ module Spuit
       end
     end
   else
-    spuit_path = File.expand_path("../../assets/stylesheets", __FILE__)
+    spuit_path = File.expand_path("../../scss", __FILE__)
     ENV["SASS_PATH"] = [ENV["SASS_PATH"], spuit_path].compact.join(File::PATH_SEPARATOR)
   end
 end
