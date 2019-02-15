@@ -58,3 +58,20 @@ $ yarn add spuit
 $ foreman start
 $ open http://localhost:5000/
 ```
+
+---
+
+For Development
+
+## local server
+
+```
+$ yarn install
+$ yarn run dev
+```
+
+## deploy
+
+```
+$ yarn run deploy
+```

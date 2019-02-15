@@ -1,9 +1,10 @@
-@mixin reset-form($c: transparent) {
+@mixin reset-form() {
   margin: 0;
   padding: 0;
   border-radius: 0;
-  background-image: linear-gradient(transparent, transparent);
+  background-image: none;
   background: transparent;
+  -webkit-appearance: none;
   appearance: none;
   border: none;
   outline: none;
