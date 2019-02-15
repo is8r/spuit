@@ -1,6 +1,6 @@
 {
   "name": "spuit",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "JS + Sass Mixin Library",
   "main": "spuit.scss",
   "repository": {
@@ -26,7 +26,7 @@
     "popper.js": "^1.14.3",
     "postcss-loader": "^2.0.10",
     "sass-loader": "^6.0.6",
-    "spuit": "0.0.12",
+    "spuit": "0.0.13",
     "style-loader": "^0.20.3",
     "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack": "^4.4.1",
