@@ -1,0 +1,47 @@
+@charset 'utf-8';
+
+// valiables
+@import 'variables/fonts';
+@import 'variables/timing-functions';
+@import 'variables/media-queries';
+@import 'variables/colors';
+@import 'variables/svgs';
+
+// module mixins
+@import 'modules/clearfix';
+@import 'modules/breakpoints';
+@import 'modules/hide-text';
+@import 'modules/fa';
+@import 'modules/font-face';
+@import 'modules/background-image';
+@import 'modules/inherit';
+@import 'modules/word-break';
+@import 'modules/text-overflow';
+@import 'modules/reset';
+
+// create styles
+@import 'includes/animations';
+@import 'includes/hiddens';
+@import 'includes/spacers';
+@import 'includes/webfonts';
+@import 'includes/stickey-footer';
+@import 'includes/spuit-utils';
+@import 'includes/normalize';
+
+// shortcut mixins
+@import 'shortcuts/absolute';
+@import 'shortcuts/centering';
+@import 'shortcuts/disc';
+
+// shortcut components, element
+// FIXME: 未整理、不要なものを削除するまでコメントアウト
+@import 'components/icon';
+@import 'components/button';
+@import 'components/switch';
+@import 'elements/table';
+@import 'elements/input';
+@import 'elements/fieldset';
+// @import 'elements/radio';
+// @import 'elements/checkbox';
+@import 'elements/custom-checkbox';
+@import 'elements/select';

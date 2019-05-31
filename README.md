@@ -17,46 +17,18 @@ import:
 ``` styles.scss
 @import "node_modules/spuit/spuit";
 ```
+ore
 
-## rails
-
-install:
-
-```
-$ rails new app_name --webpack
-```
-
-Gemfile
-
-```
-gem 'spuit'
-gem 'foreman'
-```
-
-app/javascripts/packs/application.scss
-
-```
+``` styles.scss
 @import "~spuit";
 ```
 
-Procfile
+## rails
 
-```
-web: bundle exec rails s
-webpacker: ./bin/webpack-dev-server
-```
+import:
 
-app/views/layouts/application.html.erb
-
-```
-<%= stylesheet_pack_tag 'application' %>
-```
-
-```
-$ bundle install
-$ yarn add spuit
-$ foreman start
-$ open http://localhost:5000/
+``` styles.scss
+@import "spuit";
 ```
 
 ---
@@ -72,6 +44,14 @@ $ yarn run dev
 
 ## deploy
 
+npm:
+
 ```
-$ yarn run deploy
+$ npm publish
+```
+
+gem:
+
+```
+$ rake release
 ```

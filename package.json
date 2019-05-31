@@ -40,7 +40,6 @@
   "scripts": {
     "dev": "open http://localhost:8080/ && webpack-dev-server --progress --mode development --config webpack/webpack.config.js",
     "watch": "webpack --watch --progress --mode development --config webpack/webpack.config.js",
-    "build": "webpack --progress --mode production --config webpack/webpack.config.js",
-    "deploy": "rake release && npm publish"
+    "build": "webpack --progress --mode production --config webpack/webpack.config.js"
   }
 }
