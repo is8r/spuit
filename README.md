@@ -17,8 +17,19 @@ import:
 ``` styles.scss
 @import "node_modules/spuit/spuit";
 ```
+ore
+
+``` styles.scss
+@import "~spuit";
+```
 
 ## rails
+
+import:
+
+``` styles.scss
+@import "spuit";
+```
 
 ---
 
@@ -33,6 +44,14 @@ $ yarn run dev
 
 ## deploy
 
+npm:
+
 ```
-$ yarn run deploy
+$ npm publish
+```
+
+gem:
+
+```
+$ rake release
 ```
