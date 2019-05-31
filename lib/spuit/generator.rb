@@ -1,12 +1,13 @@
-require 'spuit/version'
+require "spuit/version"
 require "fileutils"
-require 'thor'
+require "thor"
+require "pathname"
 
 module Spuit
   class Generator < Thor
-    map ['-v', '--version'] => :version
+    map ["-v", "--version"] => :version
 
-    desc 'install', 'Install Spuit into your project'
+    desc "install", "Install Spuit into your project"
     method_options :path => :string, :force => :boolean
     def install
       if spuit_files_already_exist? && !options[:force]
@@ -17,7 +18,7 @@ module Spuit
       end
     end
 
-    desc 'update', 'Update Spuit'
+    desc "update", "Update Spuit"
     method_options :path => :string
     def update
       if spuit_files_already_exist?
@@ -29,9 +30,9 @@ module Spuit
       end
     end
 
-    desc 'version', 'Show Spuit version'
+    desc "version", "Show spuit version"
     def version
-      say "Spuit #{Spuit::VERSION}"
+      say "spuit #{Spuit::VERSION}"
     end
 
     private
@@ -42,9 +43,9 @@ module Spuit
 
     def install_path
       @install_path ||= if options[:path]
-          Pathname.new(File.join(options[:path], 'spuit'))
+          Pathname.new(File.join(options[:path], "spuit"))
         else
-          Pathname.new('spuit')
+          Pathname.new("spuit")
         end
     end
 
@@ -54,7 +55,7 @@ module Spuit
     end
 
     def remove_spuit_directory
-      FileUtils.rm_rf("spuit")
+      FileUtils.rm_rf(install_path)
     end
 
     def make_install_directory
@@ -70,7 +71,7 @@ module Spuit
     end
 
     def stylesheets_directory
-      File.join(top_level_directory, "app", "assets", "stylesheets")
+      File.join(top_level_directory, "core")
     end
 
     def top_level_directory
