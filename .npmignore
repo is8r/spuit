@@ -1,9 +1,13 @@
 .sass-cache
 .DS_Store
+assets
+bin
+design
+dist
+lib
 node_modules
-npm-debug.log
-dist/index.html
-assets/javascripts
+pkg
 webpack
+npm-debug.log
 yarn.lock
 .editorconfig
