@@ -2,8 +2,8 @@ const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
-let app = './assets';
-let dist = '../dist';
+let app = './assets'
+let dist = '../dist'
 
 module.exports = {
   entry: {
@@ -19,14 +19,41 @@ module.exports = {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader']
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: false,
+                includePaths: [path.resolve(__dirname, 'node_modules')],
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: false
+              },
+            },
+          ]
         })
       },
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader?minimize', 'sass-loader']
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: false,
+              },
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: false,
+              },
+            },
+          ]
         })
       },
       {
