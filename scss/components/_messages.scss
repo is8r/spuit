@@ -1,0 +1,23 @@
+@mixin message-element($name: info, $color: #3498db) {
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: 3px;
+  display: block;
+
+  &.is-#{$name} {
+    color: $color;
+    background: rgba($color, 0.1);
+    border: 1px solid rgba($color, 0.15);
+  }
+}
+
+@mixin util-messages($color-info: #3498db, $color-success: #1abc9c, $color-warning: #f1c40f, $color-danger: #e74c3c) {
+  @at-root {
+    .message {
+      @include message-element(info, $color-info);
+      @include message-element(success, $color-success);
+      @include message-element(warning, $color-warning);
+      @include message-element(danger, $color-danger);
+    }
+  }
+}

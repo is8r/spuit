@@ -27,6 +27,7 @@
 @import 'includes/stickey-footer';
 @import 'includes/spuit-utils';
 @import 'includes/normalize';
+@import 'includes/icon';
 
 // shortcut mixins
 @import 'shortcuts/absolute';
@@ -34,14 +35,10 @@
 @import 'shortcuts/disc';
 
 // shortcut components, element
-// FIXME: 未整理、不要なものを削除するまでコメントアウト
-@import 'components/icon';
 @import 'components/button';
 @import 'components/switch';
 @import 'elements/table';
 @import 'elements/input';
 @import 'elements/fieldset';
-// @import 'elements/radio';
-// @import 'elements/checkbox';
 @import 'elements/custom-checkbox';
 @import 'elements/select';

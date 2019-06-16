@@ -1,0 +1,40 @@
+@mixin dl-base {
+  margin: 0;
+  padding: 0;
+  > * {
+    @include break-word;
+    margin: 0;
+    padding: 0;
+    display: border-box;
+  }
+}
+
+@mixin dl-flex($left: 30%, $p: 0.5rem 1rem) {
+  @include dl-base;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: flex-start;
+
+  > dt {
+    width: $left;
+    padding: $p;
+    padding-left: 0;
+  }
+  
+  > dd {
+    width: 100% - $left;
+    padding: $p;
+    padding-right: 0;
+  }
+}
+
+@mixin dl-border($border: 1px solid #ddd, $left: 30%, $p: 0.5rem 1rem) {
+  @include dl-flex($left, $p);
+  border-bottom: $border;
+  
+  > * {
+    border-top: $border;
+  }
+}
