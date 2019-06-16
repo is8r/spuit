@@ -1,6 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
+const TerserPlugin = require('terser-webpack-plugin')
 
 let app = './assets'
 let dist = '../dist'
@@ -65,5 +67,8 @@ module.exports = {
   plugins: [
     require('autoprefixer'),
     new ExtractTextPlugin('stylesheets/[name].css')
-  ]
+  ],
+  optimization: {
+    minimizer: [new TerserPlugin({}), new OptimizeCSSAssetsPlugin({})],
+  },
 }
