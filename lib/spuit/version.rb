@@ -1,3 +1,3 @@
 module Spuit
-  VERSION = "0.0.14.2"
+  VERSION = "0.1.0"
 end

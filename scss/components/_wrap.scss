@@ -1,0 +1,27 @@
+@mixin wrap($n: 960px, $margin: 10px) {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  min-width: $n;
+  @include breakpoint-down(md) {
+    width: auto;
+    min-width: 0;
+  }
+
+  @at-root {
+    #{&}__inner {
+      box-sizing: border-box;
+      position: relative;
+      display: block;
+      width: $n;
+      margin: 0 auto;
+      text-align: left;
+      @include breakpoint-down(md) {
+        width: 100%;
+        padding-left: $margin;
+        padding-right: $margin;
+      }
+    }
+  }
+}

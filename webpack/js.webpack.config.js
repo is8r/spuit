@@ -1,10 +1,10 @@
 const path = require('path')
 const webpack = require('webpack')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-// const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-let app = './assets';
-let dist = '../dist';
+let app = './assets'
+let dist = '../dist'
 
 module.exports = {
   entry: {
@@ -19,11 +19,16 @@ module.exports = {
     port: 8080
   },
   plugins: [
-    new UglifyJsPlugin()
-    // new HtmlWebpackPlugin({
-    //   template: path.join(__dirname, '../app/html/index.ejs'),
-    //   minify: false
-    // })
+    new UglifyJsPlugin(),
+    new HtmlWebpackPlugin({
+      template: app+'/html/index.ejs',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+      },
+      chunksSortMode: 'dependency'
+    })
   ],
   cache: true
 };

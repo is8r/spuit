@@ -1,0 +1,45 @@
+// Example:
+
+// Simple Grid System - ie9-
+@function split-width($column: 5, $gutter: 2) {
+  $parcent: (1 / $column) * 100;
+  $margin: ($gutter * ($column - 1)) / $column;
+  @return ($parcent - $margin);
+}
+
+@mixin split($column: 5, $gutter: 2, $debug: false) {
+  @at-root {
+    #{&} {
+      @include clearfix;
+      @include reset-ul;
+      position: relative;
+
+      > * {
+        @if $debug {
+          @include debug-block;
+        }
+
+        display: inline-block;
+        float: left;
+        box-sizing: border-box;
+        width: split-width($column, $gutter) * 1%;
+        margin-left: $gutter * 1%;
+        margin-bottom: 10px;
+
+        @for $i from 0 through 150 {
+          @if $i%$column == 1 {
+            &:nth-child(#{$i}) {
+              clear: both;
+              margin-left: 0;
+            }
+          } @else {
+            &:nth-child(#{$i}) {
+              clear: none;
+              margin-left: $gutter * 1%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

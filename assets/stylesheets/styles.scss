@@ -1,5 +1,7 @@
 @import '../../spuit';
 @import '../../scss/includes/grid';
+@import '../../scss/components/wrap';
+@import '../../scss/components/wordwrap-fadeout';
 
 @import 'styles/config/variables';
 @import 'styles/config/mixins';
@@ -165,4 +167,7 @@ body {
     @include icon-hatena;
   }
 
+  .wordwrap-fadeout {
+    @include wordwrap-fadeout;
+  }
 }

@@ -6,8 +6,9 @@
 //       = link_to 'shoulder', '#'
 //   Heading and shoulder links.
 
-=shoulder
-  +reset-ul
-  display: inline-block
-  float: right
-  padding-left: 10px
+@mixin shoulder {
+  @include reset-ul;
+  display: inline-block;
+  float: right;
+  padding-left: 10px;
+}
