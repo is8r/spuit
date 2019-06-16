@@ -4,9 +4,9 @@
 @import 'styles/config/variables';
 @import 'styles/config/mixins';
 
-@include include-animations
-@include include-normalize
-@include include-grid
+@include include-animations;
+@include include-normalize;
+@include include-grid;
 
 // basic styles
 
