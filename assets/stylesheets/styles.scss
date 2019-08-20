@@ -167,6 +167,13 @@ body {
   .icon-hatena {
     @include icon-hatena;
   }
+  
+  .icon-svg {
+    &::before {
+      content: '';
+      @include background-map-svg($map-svg-star);
+    }
+  }
 
   .wordwrap-fadeout {
     @include wordwrap-fadeout;
