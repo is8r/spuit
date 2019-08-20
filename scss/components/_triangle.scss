@@ -1,46 +1,45 @@
 // Example:
-// +triangle(#222, 12px, $w/2, 0, 'left')
+// @include triangle(#2dd, 15px, 10px, 50%, 0, "down", "after");
 
-@mixin triangle($c: #2dd, $w: 20px, $l: 0, $t: 0, $direction: "right", $element: "after") {
+@mixin triangle($c: #2dd, $w: 15px, $h: 10px, $l: 50%, $t: 0, $direction: "down", $element: "after") {
   position: relative;
+
   &:#{$element} {
     content: "";
     position: absolute;
-    width: 0;
+    border-style: solid;
+    display: inline-block;
     height: 0;
-    border: $w solid transparent;
-    border-top-color: $c;
+    width: 0;
   }
-  @if ($direction == "left") {
+
+  @if $direction == "up" {
     &:#{$element} {
-      transform: translateX(-$w * 2) translateY(-$w) rotate(90deg);
-      left: $l;
-      right: auto;
-      top: $t;
+      border-color: transparent transparent $c;
+      border-width: 0 ($w / 2) $h;
+      left: calc(#{$l} - #{$w/2});
+      top: $t - $h;
     }
-  }
-  @if ($direction == "right") {
+  } @else if $direction == "right" {
     &:#{$element} {
-      transform: translateX($w * 2) translateY(-$w) rotate(-90deg);
-      left: auto;
-      right: $l;
-      top: $t;
+      border-color: transparent transparent transparent $c;
+      border-width: ($h / 2) 0 ($h / 2) $w;
+      right: $l - $w;
+      top: calc(#{$t} - #{$h/2});
     }
-  }
-  @if ($direction == "top") {
+  } @else if $direction == "down" {
     &:#{$element} {
-      transform: translateX(-$w) translateY(-$w * 2) rotate(180deg);
-      right: auto;
-      left: $l;
-      top: $t;
+      border-color: $c transparent transparent;
+      border-width: $h ($w / 2) 0;
+      left: calc(#{$l} - #{$w/2});
+      bottom: $t - $h;
     }
-  }
-  @if ($direction == "bottom") {
+  } @else if $direction == "left" {
     &:#{$element} {
-      transform: translateX(-$w) translateY($w * 2) rotate(0);
-      right: auto;
-      left: $l;
-      bottom: $t;
+      border-color: transparent $c transparent transparent;
+      border-width: ($h / 2) $w ($h / 2) 0;
+      left: $l - $w;
+      top: calc(#{$t} - #{$h/2});
     }
   }
 }

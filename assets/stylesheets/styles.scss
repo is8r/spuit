@@ -2,6 +2,7 @@
 @import '../../scss/includes/grid';
 @import '../../scss/components/wrap';
 @import '../../scss/components/wordwrap-fadeout';
+@import '../../scss/components/triangle';
 
 @import 'styles/config/variables';
 @import 'styles/config/mixins';
@@ -166,8 +167,25 @@ body {
   .icon-hatena {
     @include icon-hatena;
   }
+  
+  .icon-svg {
+    &::before {
+      content: '';
+      @include background-map-svg($map-svg-star);
+    }
+  }
 
   .wordwrap-fadeout {
     @include wordwrap-fadeout;
+  }
+
+  .triangle-container {
+    @include triangle(#2dd, 10px, 15px, 0, 50%, "left", "after");
+    // @include triangle(#2dd, 15px, 10px, 50%, 0, "down", "after");
+
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
   }
 }
