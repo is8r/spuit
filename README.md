@@ -17,7 +17,8 @@ import:
 ``` styles.scss
 @import "node_modules/spuit/spuit";
 ```
-ore
+
+or
 
 ``` styles.scss
 @import "~spuit";
