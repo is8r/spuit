@@ -40,7 +40,7 @@
     "npm": "^6.9.0"
   },
   "scripts": {
-    "dev": "open http://localhost:8080/ && webpack-dev-server --progress --mode development --config webpack/webpack.config.js",
+    "dev": "webpack-dev-server --progress --mode development --config webpack/webpack.config.js --open-page index.html",
     "watch": "webpack --watch --progress --mode development --config webpack/webpack.config.js",
     "build": "webpack --progress --mode production --config webpack/webpack.config.js"
   }

@@ -1,20 +1,23 @@
-@import '../../spuit';
-@import '../../scss/includes/grid';
-@import '../../scss/components/wrap';
-@import '../../scss/components/wordwrap-fadeout';
-@import '../../scss/components/triangle';
+@import "../../spuit";
+@import "../../scss/includes/grid";
+@import "../../scss/components/wrap";
+@import "../../scss/components/wordwrap-fadeout";
+@import "../../scss/components/triangle";
 
-@import 'styles/config/variables';
-@import 'styles/config/mixins';
+@import "styles/config/variables";
+@import "styles/config/mixins";
 
 @include include-animations;
 @include include-normalize;
 @include include-grid;
+@include include-spacers;
 
 // basic styles
 
 html {
   font-size: 100%;
+  -webkit-scroll-behavior:smooth;
+  scroll-behavior:smooth;
   @include breakpoint-down(md) {
     font-size: 80%;
   }
@@ -30,25 +33,38 @@ body {
 .demo-styles {
   color: $color-black;
 
+  + .demo-styles {
+    margin-top: 6rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
   h1 {
-    @include font(2.8rem);
-    font-weight: 300;
+    @include font(2.8rem, 1, bold);
   }
   h2 {
-    @include font(2.0rem);
-    font-weight: 300;
+    @include font(2rem, 1, bold);
   }
   h3 {
-    @include font(1.6rem);
+    @include font(1.6rem, 1, bold);
   }
   h4 {
-    @include font(1.5rem);
+    @include font(1.5rem, 1, bold);
   }
   h5 {
-    @include font(1.3rem);
+    @include font(1.3rem, 1, bold);
   }
   h6 {
-    @include font(1.2rem);
+    @include font(1.2rem, 1, bold);
   }
   p {
     @include font(1rem);
@@ -56,7 +72,7 @@ body {
   form {
     @include font(1rem);
   }
-  input[type=text] {
+  input[type="text"] {
     @include input;
   }
   textarea {
@@ -86,11 +102,11 @@ body {
     @include table;
     margin-bottom: 10px;
 
-    &-line{
+    &-line {
       @include table-line;
       margin-bottom: 10px;
     }
-    &-stripe{
+    &-stripe {
       @include table-stripe;
       margin-bottom: 10px;
     }
@@ -155,9 +171,6 @@ body {
     padding: 10px;
   }
 
-  .icon-hamburger {
-    @include icon-hamburger;
-  }
   .icon-twitter {
     @include icon-twitter;
   }
@@ -167,10 +180,13 @@ body {
   .icon-hatena {
     @include icon-hatena;
   }
-  
+  .icon-hamburger {
+    @include icon-hamburger;
+  }
+
   .icon-svg {
     &::before {
-      content: '';
+      content: "";
       @include background-map-svg($map-svg-star);
     }
   }
@@ -188,4 +204,128 @@ body {
     height: 30px;
     background-color: #ddd;
   }
+}
+
+// demo layouts
+
+$width-sidebar: 10rem;
+
+label[for="menu-control"] {
+  @include breakpoint-up(md) {
+    display: none;
+  }
+  @include breakpoint-down(md) {
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+
+    .icon-hamburger {
+      @include icon-hamburger;
+    }
+  }
+}
+
+#menu-control {
+  display: none;
+
+  @include breakpoint-down(md) {
+    + main {
+      .sidebar {
+        transition: all 0.2s ease-out;
+      }
+      .content {
+        transition: all 0.2s ease-out;
+      }
+      label[for="menu-control"] {
+        transition: all 0.2s ease-out;
+      }
+    }
+
+    &:checked + main {
+      overflow: hidden;
+
+      .sidebar {
+        transform: translateX($width-sidebar);
+      }
+      .content {
+        transform: translateX($width-sidebar);
+        opacity: 0.2;
+      }
+      label[for="menu-control"] {
+        transform: translateX($width-sidebar);
+      }
+    }
+  }
+}
+
+.l-container {
+  display: flex;
+
+  .l-sidebar {
+    flex: 0 0 $width-sidebar;
+    position: relative;
+    box-sizing: border-box;
+
+    @include breakpoint-down(md) {
+      margin-left: -$width-sidebar;
+    }
+
+    .sidebar {
+      width: $width-sidebar;
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+  }
+
+  .l-content {
+    min-width: 20rem;
+    flex-grow: 1;
+  }
+}
+
+.sidebar {
+  padding: 1rem;
+
+  h1 {
+    @include font(1rem);
+    &:first-child {
+      margin-top: 2rem;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 1rem;
+
+    li {
+    }
+  }
+
+  a {
+    @include font(0.875rem);
+    color: $color-black;
+  }
+}
+
+.content {
+  padding: 1rem 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.title {
+  font-size: 2.25rem !important;
+  font-weight: 100 !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 }
