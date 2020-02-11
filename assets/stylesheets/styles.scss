@@ -221,9 +221,23 @@ label[for="menu-control"] {
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
-
+    position: fixed;
+    z-index: 99;
+    
     .icon-hamburger {
       @include icon-hamburger;
+      z-index: 2;
+      position: fixed;
+    }
+    
+    &::after {
+      content: '';
+      display: none;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(#ddd, 0.5);
     }
   }
 }
@@ -233,12 +247,13 @@ label[for="menu-control"] {
 
   @include breakpoint-down(md) {
     + main {
-      .sidebar {
+      .l-sidebar {
         transition: all 0.2s ease-out;
       }
-      .content {
+      .l-content {
         transition: all 0.2s ease-out;
       }
+      
       label[for="menu-control"] {
         transition: all 0.2s ease-out;
       }
@@ -247,15 +262,14 @@ label[for="menu-control"] {
     &:checked + main {
       overflow: hidden;
 
-      .sidebar {
-        transform: translateX($width-sidebar);
+      .l-sidebar {
+        margin-left: 0;
       }
-      .content {
-        transform: translateX($width-sidebar);
-        opacity: 0.2;
-      }
+      
       label[for="menu-control"] {
-        transform: translateX($width-sidebar);
+        &::after {
+          display: block;
+        }
       }
     }
   }
@@ -266,22 +280,10 @@ label[for="menu-control"] {
 
   .l-sidebar {
     flex: 0 0 $width-sidebar;
-    position: relative;
     box-sizing: border-box;
-
+    
     @include breakpoint-down(md) {
       margin-left: -$width-sidebar;
-    }
-
-    .sidebar {
-      width: $width-sidebar;
-      position: fixed;
-      top: 0px;
-      bottom: 0px;
-      overflow-x: hidden;
-      overflow-y: auto;
-      padding: 1rem;
-      box-sizing: border-box;
     }
   }
 
@@ -290,6 +292,9 @@ label[for="menu-control"] {
     flex-grow: 1;
   }
 }
+
+//--------------------
+// page design
 
 .sidebar {
   padding: 1rem;
