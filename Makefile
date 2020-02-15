@@ -2,6 +2,7 @@
 # $ make deploy
 
 up:
+	yarn dev
 
 dev:
 	yarn install

@@ -18,8 +18,9 @@ html {
   font-size: 100%;
   -webkit-scroll-behavior:smooth;
   scroll-behavior:smooth;
+  
   @include breakpoint-down(md) {
-    font-size: 80%;
+    font-size: 90%;
   }
 }
 
@@ -210,7 +211,7 @@ body {
 
 $width-sidebar: 10rem;
 
-label[for="menu-control"] {
+label[for="hamburger"].hamburger {
   @include breakpoint-up(md) {
     display: none;
   }
@@ -242,7 +243,7 @@ label[for="menu-control"] {
   }
 }
 
-#menu-control {
+input[type=checkbox]#hamburger {
   display: none;
 
   @include breakpoint-down(md) {
@@ -254,7 +255,7 @@ label[for="menu-control"] {
         transition: all 0.2s ease-out;
       }
       
-      label[for="menu-control"] {
+      label[for="hamburger"].hamburger {
         transition: all 0.2s ease-out;
       }
     }
@@ -266,7 +267,7 @@ label[for="menu-control"] {
         margin-left: 0;
       }
       
-      label[for="menu-control"] {
+      label[for="hamburger"].hamburger {
         &::after {
           display: block;
         }
