@@ -16,9 +16,9 @@
 
 html {
   font-size: 100%;
-  -webkit-scroll-behavior:smooth;
-  scroll-behavior:smooth;
-  
+  -webkit-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+
   @include breakpoint-down(md) {
     font-size: 90%;
   }
@@ -29,12 +29,25 @@ body {
   color: $color-black;
 }
 
+a {
+  color: $color-blue;
+  text-decoration: underline;
+
+  &:hover {
+    color: darken($color-blue, 10%);
+  }
+
+  &:active {
+    outline: 3px solid rgba($color-blue, 0.2);
+  }
+}
+
 // demo styles
 
-.demo-styles {
+.demo-block {
   color: $color-black;
 
-  + .demo-styles {
+  + .demo-block {
     margin-top: 6rem;
   }
 
@@ -207,7 +220,7 @@ body {
   }
 }
 
-// demo layouts
+// layouts
 
 $width-sidebar: 10rem;
 
@@ -224,15 +237,15 @@ label[for="hamburger"].hamburger {
     cursor: pointer;
     position: fixed;
     z-index: 99;
-    
+
     .icon-hamburger {
       @include icon-hamburger;
       z-index: 2;
       position: fixed;
     }
-    
+
     &::after {
-      content: '';
+      content: "";
       display: none;
       position: fixed;
       top: 0;
@@ -243,19 +256,15 @@ label[for="hamburger"].hamburger {
   }
 }
 
-input[type=checkbox]#hamburger {
+// hamburger + sidebar
+
+input[type="checkbox"]#hamburger {
   display: none;
 
   @include breakpoint-down(md) {
     + main {
       .l-sidebar {
-        transition: all 0.2s ease-out;
-      }
-      .l-content {
-        transition: all 0.2s ease-out;
-      }
-      
-      label[for="hamburger"].hamburger {
+        margin-left: -$width-sidebar;
         transition: all 0.2s ease-out;
       }
     }
@@ -266,7 +275,7 @@ input[type=checkbox]#hamburger {
       .l-sidebar {
         margin-left: 0;
       }
-      
+
       label[for="hamburger"].hamburger {
         &::after {
           display: block;
@@ -281,11 +290,6 @@ input[type=checkbox]#hamburger {
 
   .l-sidebar {
     flex: 0 0 $width-sidebar;
-    box-sizing: border-box;
-    
-    @include breakpoint-down(md) {
-      margin-left: -$width-sidebar;
-    }
   }
 
   .l-content {
@@ -298,31 +302,34 @@ input[type=checkbox]#hamburger {
 // page design
 
 .sidebar {
+  position: sticky;
+  top: 0;
   padding: 1rem;
 
   h1 {
     @include font(1rem);
-    &:first-child {
-      margin-top: 2rem;
-    }
+    margin-top: 0.5rem;
+    padding: 0 1rem;
   }
 
   ul {
-    list-style: none;
-    padding-left: 1rem;
+    @include reset-ul;
+    display: block;
 
     li {
+      display: block;
     }
   }
 
   a {
     @include font(0.875rem);
-    color: $color-black;
+    display: block;
+    padding: 0.5rem 1rem;
   }
 }
 
 .content {
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
 }
 
 .hidden {
@@ -330,8 +337,6 @@ input[type=checkbox]#hamburger {
 }
 
 .title {
-  font-size: 2.25rem !important;
+  font-size: 2.5rem !important;
   font-weight: 100 !important;
-  padding-top: 2rem !important;
-  padding-bottom: 2rem !important;
 }
