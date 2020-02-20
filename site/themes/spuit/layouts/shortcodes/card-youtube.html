@@ -1,0 +1,27 @@
+{{/*
+
+{{< card-youtube id="xxx" >}}
+
+<div style="position: relative; padding-bottom: 56.25%; padding-top: 30px; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/{{ $id }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" allowfullscreen="" frameborder="0" title="YouTube Video"></iframe>
+</div>
+
+*/}}
+
+<section class="card is-youtuve">
+  {{ $id := (.Get "id") }}
+  {{ $title := (.Get "title") }}
+  <h5>Youtube</h5>
+
+  <a href="https://www.youtube.com/watch?v={{ $id }}" target="_blank" class="card__link">
+    <span class="card__img">
+      <img src="http://i.ytimg.com/vi/{{ $id }}/maxresdefault.jpg" alt="" />
+    </span>
+
+    <span class="card__info">
+      <span class="card__title">{{ $title }}</span>
+      <span class="card__url">https://www.youtube.com/watch?v={{ $id }}</span>
+    </span>
+  </a>
+
+</section>

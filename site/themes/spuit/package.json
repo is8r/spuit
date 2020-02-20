@@ -1,0 +1,46 @@
+{
+  "name": "hugo-bootstrap",
+  "version": "0.0.1",
+  "description": "xxx",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/is8r/spuit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "autoprefixer": "^9.1.1",
+    "bootstrap": ">=4.3.1",
+    "css-loader": "^2.1.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "font-awesome": "^4.7.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.7.2",
+    "popper.js": "^1.14.3",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.0.1",
+    "spuit": "0.0.13",
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.2",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": ">=3.1.11",
+    "webpack-manifest-plugin": "^2.0.0-rc.2"
+  },
+  "scripts": {
+    "dev": "webpack --watch --mode production",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "lunr": "^2.2.0",
+    "npm-check-updates": "^3.0.3"
+  }
+}

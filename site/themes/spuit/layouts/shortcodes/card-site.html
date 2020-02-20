@@ -1,0 +1,22 @@
+{{/*
+
+{{< card-site href="https://xxx.com/" title="title" description="description" src="/images/2017/xxxxxx/ogp.png" >}}
+
+*/}}
+<section class="card">
+  {{ $href := (.Get "href") }}
+  {{ $title := (.Get "title") }}
+  {{ $src := (.Get "src") }}
+  {{ $description := (.Get "description") }}
+  <h5>Website</h5>
+  <a href="{{ $href }}" target="_blank" rel="noreferrer" class="card__link">
+    <span class="card__img">
+      <img src="{{ $src }}" alt="" />
+    </span>
+    <span class="card__info">
+      <span class="card__title">{{ $title }}</span>
+      <span class="card__url">{{ $href }}</span>
+      <span class="card__description">{{ $description }}</span>
+    </span>
+  </a>
+</section>

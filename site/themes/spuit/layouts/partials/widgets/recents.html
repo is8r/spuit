@@ -1,0 +1,14 @@
+{{ if not (eq (len .Site.Pages) 0) }}
+<div class="widget">
+  <h5>Recents</h5>
+  <ul>
+    {{ range first 5 (where .Site.Pages "Section" "posts") }}
+      {{ if not (eq .URL "/posts/") }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

@@ -1,0 +1,24 @@
+baseURL = "http://example.org/"
+languageCode = "ja"
+title = "Test"
+theme = "spuit"
+copyright = "copyright"
+
+pygmentsCodefences = true
+pygmentsCodeFencesGuessSyntax = true
+pygmentsStyle = "monokai"
+pygmentsUseClasses = true
+pygmentsoptions = "linenos=inline"
+
+[params]
+description = "description"
+keywords = "keywords"
+googleAnalyticsId = ""
+fbAppId = ""
+
+[permalinks]
+post = "/:year/:month/:title/"
+
+[taxonomies]
+tag = "tags"
+category = "categories"

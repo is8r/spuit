@@ -1,0 +1,28 @@
+{{/*
+
+howto:
+
+```/content/search.adoc
+  ---
+  date: "2018-01-01"
+  type: "json"
+  url: "search.json"
+  ---
+```
+*/}}
+
+[
+  {{ range $index, $page := .Site.Pages }}
+    {{ if $index }},{{ end }}
+    {
+      "id": "{{ $index }}",
+      "url": "{{ $page.Permalink }}",
+      "title": "{{ $page.Title }}",
+      "section": "{{ .Section }}",
+      "tags": ["{{ if $page.Params.tags }}{{ delimit $page.Params.tags "\",\"" }}{{ else }}{{ end }}"],
+      "content": "{{ lower (replace (replace (replace $page.Plain "\t" "") "\n" "") "\\" "") }}",
+      "date": "{{ .Date.Format "Jan 2, 2006" }}",
+      "summary": "{{ replace (replace (replace .Summary "\n" "") "\n" "") "\\" "" }}"
+    }
+  {{ end }}
+]

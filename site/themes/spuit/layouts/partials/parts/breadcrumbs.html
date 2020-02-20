@@ -1,0 +1,36 @@
+{{/*
+form: https://tmnm.tech/2017/01/15/hugo-breadcrumbs/
+*/}}
+
+{{ $this := . }}
+{{ $i := 1 }}
+<div class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope
+        itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="/">
+      <span itemprop="name">ホーム</span></a>
+    <meta itemprop="position" content="{{$i}}" />
+    </li>
+    {{range sort .Site.AllPages "URL"}}
+    {{ if ne .URL "/" }}
+    {{ if eq $this.URL .URL }}
+    <li itemprop="itemListElement" itemscope
+        itemtype="https://schema.org/ListItem">
+        <span itemprop="name">{{.Title}}</span>
+      <meta itemprop="position" content="{{$i}}" />
+    </li>
+    {{ else if hasPrefix $this.URL (printf "%s/" .URL) }}
+    {{ $i := add $i 1 }}
+    <li itemprop="itemListElement" itemscope
+        itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="{{.URL}}">
+        <span itemprop="name">{{.Title}}</span></a>
+      <meta itemprop="position" content="{{$i}}" />
+    </li>
+
+    {{ end }}
+    {{ end }}
+    {{ end }}
+  </ol>
+</div>

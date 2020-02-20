@@ -1,0 +1,18 @@
+{{/*
+
+{{< previews >}}
+
+*/}}
+
+{{ if .Page.Params.Previews }}
+<section class="previews">
+  <h5>Previews</h5>
+  <ul>
+    {{ range .Page.Params.Previews }}
+    <li>
+      <img src="{{ . }}" alt="" />
+    </li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

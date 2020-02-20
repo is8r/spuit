@@ -1,0 +1,23 @@
+{{ if gt .Paginator.TotalPages 1 }}
+<section class="pager">
+  {{ if .Paginator.HasPrev }}
+  <a href="{{ .Paginator.Prev.URL }}">
+    Newer
+  </a>
+  {{ else }}
+  <a class="is-disabled">
+    Newer
+  </a>
+  {{ end }}
+
+  {{ if .Paginator.HasNext }}
+  <a href="{{ .Paginator.Next.URL }}">
+    Older
+  </a>
+  {{ else }}
+  <a class="is-disabled">
+    Older
+  </a>
+  {{ end }}
+</section>
+{{ end }}

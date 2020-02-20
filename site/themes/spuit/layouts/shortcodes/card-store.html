@@ -1,0 +1,28 @@
+{{/*
+
+{{< card-store url="xxx" title="xxx" >}}
+
+*/}}
+{{ $url := (.Get "url") }}
+{{ $src := (.Get "src") }}
+{{ $title := (.Get "title") }}
+{{ $type := (.Get "type") }}
+
+<section class="card is-{{ $type }}">
+
+  {{ if eq $type "apple" }}
+  <h5>App Store</h5>
+  {{ else if eq $type "google" }}
+  <h5>Google Play</h5>
+  {{ end }}
+
+  <a href="{{ $url }}" target="_blank" class="card__link">
+    <span class="card__img">
+      <img src="{{ $src }}" alt="" />
+    </span>
+    <span class="card__info">
+      <span class="card__title">{{ $title }}</span>
+      <span class="card__url">{{ $url }}</span>
+    </span>
+  </a>
+</section>

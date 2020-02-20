@@ -1,0 +1,160 @@
+.card {
+  $b: &;
+  border: 0;
+  margin: 0;
+  padding: 1rem 0;
+
+  h5 {
+    @include font(.6125rem, 1);
+    color: #ddd;
+    text-transform: uppercase;
+  }
+
+  &__link {
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #eee;
+    text-decoration: none;
+    line-height: 1.5rem;
+    padding: 20px;
+    position: relative;
+    @include breakpoint-down(md) {
+      flex-wrap: wrap;
+    }
+
+    &::before {
+      @include fa;
+      content: '\f108';
+      font-size: .75rem;
+      line-height: 2rem;
+      position: absolute;
+      bottom: -1px;
+      right: 0;
+      padding: 10px 8px;
+      transform: translateX(100%);
+      background: #eee;
+      color: #fff;
+      border-radius: 0 5px 5px 0;
+      opacity: 1;
+      @include breakpoint-down(md) {
+        font-size: 1rem;
+        line-height: 1;
+        width: 5rem;
+        border-radius: 5px 5px 0 0;
+        padding: 8px 10px;
+        text-align: center;
+        top: -1px;
+        bottom: auto;
+        right: -1px;
+        left: auto;
+        transform: translateX(0) translateY(-100%);
+      }
+    }
+
+    &:hover {
+      color: $color-blue;
+      border-color: $color-blue;
+      text-decoration: none;
+      &::before {
+        background: $color-blue;
+      }
+    }
+  }
+  &__img {
+    display: block;
+    flex: 1 0 150px;
+    max-width: 150px;
+    height: auto;
+    img {
+      width: 100%;
+    }
+    @include breakpoint-down(md) {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+  &__info {
+    padding: 0 0 0 20px;
+    @include breakpoint-down(md) {
+      width: 100%;
+      padding: 20px 0 0 0;
+    }
+  }
+  &__title {
+    @include font(1rem, 1.8rem);
+    display: block;
+  }
+  &__url {
+    @include font(.75rem, 1.2rem);
+    @include word-break;
+    display: block;
+    padding-top: 5px;
+  }
+  &__description {
+    @include font(.75rem, 1.2rem);
+    display: block;
+    color: $color-gray;
+    padding-top: 5px;
+  }
+
+  &.is-amazon,
+  &.is-apple,
+  &.is-google {
+    #{$b}__link {
+      @include breakpoint-down(md) {
+        justify-content: center;
+      }
+    }
+    #{$b}__img {
+      @include breakpoint-down(md) {
+        flex: 0 1 100px;
+      }
+    }
+    #{$b}__info {
+      @include breakpoint-down(md) {
+        flex: 1 0 100%;
+      }
+    }
+  }
+
+  &.is-youtuve {
+    #{$b}__img {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background: #000;
+      @include breakpoint-down(md) {
+        padding-top: 0;
+        padding-bottom: 0;
+        background: transparent;
+      }
+    }
+  }
+
+  &.is-apple,
+  &.is-google {
+    margin: 1rem 0;
+    #{$b}__img {
+      img {
+        border-radius: 5px;
+      }
+    }
+  }
+  &.is-apple {
+    #{$b}__link {
+      &::before {
+        content: '\f179';
+      }
+    }
+  }
+  &.is-google {
+    #{$b}__link {
+      &::before {
+        content: '\f1a0';
+      }
+    }
+  }
+
+}
