@@ -1,0 +1,8 @@
+@include include-opensans;
+
+@mixin font($size: null, $line-height: null, $weight: null) {
+  font-family: 'Open Sans', $font-sans;
+  font-size: map-get($font-sizes, $size);
+  line-height: map-get($line-heights, $line-height);
+  font-weight: $weight;
+}

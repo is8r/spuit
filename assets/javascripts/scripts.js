@@ -1,4 +1,0 @@
-// const $ = require('jquery')
-
-// $(function() {
-// })

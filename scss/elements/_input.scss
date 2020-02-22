@@ -1,35 +1,50 @@
-@mixin input-base($w: auto, $p: 10px 10px) {
+@mixin input-base($w: auto, $p: 0.4rem 0.5rem) {
   @include reset-form;
+  
   font-size: inherit;
   display: inline-block;
   width: $w;
   padding: $p;
   box-sizing: border-box;
   line-height: 1;
+
   &::placeholder {
     font-size: inherit;
   }
+}
+
+@mixin input-normal($w: auto, $p: 0.4rem 0.5rem, $r: 2px, $c: rgba(#529ef6, 0.5)) {
+  @include input-base($w, $p);
+
+  border-radius: $r;
+  border: 1px solid #ddd;
+
+  &::placeholder {
+    color: #ddd;
+  }
+
+  &:hover {
+    border-color: $c;
+  }
+
   &:focus {
-    outline: 0;
+    border: 1px solid $c;
+    outline: 5px solid rgba($c, 0.2);
   }
 }
 
-@mixin input-normal($w: auto, $p: 10px 10px) {
-  @include reset-form;
+@mixin file-normal($w: auto, $p: 0.4rem 0.5rem, $r: 2px, $c: rgba(#529ef6, 0.5)) {
   @include input-base($w, $p);
 
-  $color-border: #ddd;
-  $color-border-key: rgba(#529ef6, 0.5);
-  $color-bg-select: #fffff2;
-
-  border: 1px solid $color-border;
+  border-radius: $r;
+  border: 1px solid #ddd;
 
   &::placeholder {
     color: #ddd;
   }
 
   &:focus {
-    border: 1px solid $color-border-key;
-    background: $color-bg-select;
+    border: 1px solid $c;
+    outline: 3px solid rgba($c, 0.2);
   }
 }

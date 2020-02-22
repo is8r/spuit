@@ -1,0 +1,52 @@
+<div class="sidebar">
+  {{/* partial "widgets/recents" . */}}
+  {{/* partial "widgets/categories" . */}}
+  {{/* partial "widgets/tags" . */}}
+  {{/* partial "widgets/archive" . */}}
+  {{/* partial "widgets/search" . */}}
+
+  {{ if eq .IsHome true }}
+  <div class="widget">
+    <ul>
+      <li>
+        <a href="#" data-toggle="modal" data-target="#search">Search</a>
+      </li>
+      <li>
+        <a href="/posts/components/">Components</a>
+      </li>
+    </ul>
+  </div>
+  {{ end }}
+  {{ if eq .IsHome false }}
+  <div class="widget">
+    <ul>
+      <li>
+        <a href="#typefaces">Typefaces</a>
+      </li>
+      <li>
+        <a href="#buttons">Buttons</a>
+      </li>
+      <li>
+        <a href="#group">Group</a>
+      </li>
+      <li>
+        <a href="#form">Form</a>
+      </li>
+      <li>
+        <a href="#table">Table</a>
+      </li>
+      <li>
+        <a href="#icons">Icons</a>
+      </li>
+      <li>
+        <a href="#balloon">Balloon</a>
+      </li>
+      <li>
+        <a href="#utilities">Utilities</a>
+      </li>
+    </ul>
+  </div>
+  {{ end }}
+</div>
+
+{{ partial "widgets/search-modal" . }}

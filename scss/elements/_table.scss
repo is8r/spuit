@@ -1,4 +1,4 @@
-@mixin table-base($p: 5px 10px) {
+@mixin table-base($p: 0.5rem 1rem) {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 0;
@@ -13,9 +13,7 @@
   }
 }
 
-//  .table--normal
-//    +table-normal
-@mixin table-normal($p: 5px 10px, $border-top: 2px solid #eee, $border: 1px solid #eee) {
+@mixin table-normal($p: 0.5rem 1rem, $border-top: 2px solid #eee, $border: 1px solid #eee) {
   @include table-base($p);
   border-top: $border;
 
@@ -23,7 +21,6 @@
     tr {
       th,
       td {
-        font-size: 0.8rem;
         border: $border;
         border-bottom: $border-top;
       }
@@ -51,9 +48,7 @@
   }
 }
 
-//  .table--line
-//    +table-line
-@mixin table-line($border-top: 2px solid #eee, $border: 1px solid #eee) {
+@mixin table-line($p: 0.5rem 1rem, $border-top: 2px solid #eee, $border: 1px solid #eee) {
   @include table-base;
 
   thead {
@@ -80,9 +75,7 @@
   }
 }
 
-//  .table--stripe
-//    +table-stripe
-@mixin table-stripe($color-thead: #fff, $color-even: #eee, $color-odd: #f8f8f8) {
+@mixin table-stripe($p: 0.5rem 1rem, $color-thead: #fff, $color-even: #fff, $color-odd: #f8f8f8) {
   @include table-base;
 
   thead {

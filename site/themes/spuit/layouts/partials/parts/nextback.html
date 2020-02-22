@@ -1,0 +1,9 @@
+<section class="nextback">
+  {{ with .PrevInSection }}
+    <a class="prev" href="{{.Permalink}}">前の仕事:  {{.Title}}</a>
+  {{ end }}
+
+  {{ with .NextInSection }}
+    <a class="next" href="{{.Permalink}}">次の仕事:  {{.Title}}</a>
+  {{ end }}
+</section>

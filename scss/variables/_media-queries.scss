@@ -1,4 +1,4 @@
-$grid-breakpoints: (
+$grid-breakpoints-em: (
   xs: 0,
   sm: 34em,
   md: 48em,
@@ -6,7 +6,7 @@ $grid-breakpoints: (
   xl: 75em
 ) !default;
 
-$grid-breakpoints-px: (
+$grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 768px,

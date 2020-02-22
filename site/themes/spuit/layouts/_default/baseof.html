@@ -1,0 +1,27 @@
+{{ partial "head" . }}
+
+{{ partial "header" . }}
+
+<div class="l-2col" id="hamburger">
+  <aside>
+    {{ partial "sidebar" . }}
+  </aside>
+
+  <main>
+    <button class="hamburger" data-onof="open" data-onof-target="#hamburger">
+      <i class="icon-hamburger"></i>
+    </button>
+
+    {{ if eq .IsHome false }}
+    {{/* partial "parts/breadcrumbs" . */}}
+    {{ end }}
+
+    <div class="content">
+      {{ block "main" . }}
+      {{ end }}
+    </div>
+  </main>
+</div>
+
+{{ partial "footer" . }}
+{{ partial "foot" . }}

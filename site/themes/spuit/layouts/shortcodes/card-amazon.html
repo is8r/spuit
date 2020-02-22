@@ -1,0 +1,28 @@
+{{/*
+
+{{< card-amazon id="xxx" title="xxx" src="/images/xxx.png" >}}
+
+*/}}
+<section class="card is-amazon">
+  {{ $id := (.Get "id") }}
+  {{ $title := (.Get "title") }}
+  {{ $src := (.Get "src") }}
+  {{ $name := (.Get "name") }}
+  <h5>Amazon</h5>
+  <a href="https://www.amazon.co.jp/o/ASIN/{{ $id }}" target="_blank" class="card__link">
+    <span class="card__img">
+      <img src="{{ $src }}" alt="" />
+    </span>
+    <span class="card__info">
+      <span class="card__title">
+        {{ $title }}
+        {{ if ne $name nil }}
+          / {{ $name }}
+        {{ end }}
+      </span>
+      <span class="card__url">
+        https://www.amazon.co.jp/o/ASIN/{{ $id }}
+      </span>
+    </span>
+  </a>
+</section>

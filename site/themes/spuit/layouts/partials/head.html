@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{ if eq .IsHome false }}
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+    {{ else }}
+    <title>{{ .Site.Title }}</title>
+    {{ end }}
+    <meta name="description" content="{{ .Site.Params.Description }}" />
+    <meta name="keywords" content="{{ .Site.Params.Keywords }}" />
+
+    {{ if eq .IsHome false }}
+    <meta property="og:title" content="{{ .Title }} | {{ .Site.Title }}" />
+    {{ else }}
+    <meta property="og:title" content="{{ .Site.Title }}" />
+    {{ end }}
+
+    {{ if eq .IsHome false }}
+    <meta property="og:type" content="article" />
+    {{ else }}
+    <meta property="og:type" content="website" />
+    {{ end }}
+    <meta property="og:url" content="{{ .Permalink }}" />
+
+    {{ if ne .Params.ogp nil }}
+    <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.ogp }}" />
+    {{ else }}
+    <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Site.Params.ImageOgp }}" />
+    {{ end }}
+
+    {{ if .RSSLink }}
+      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+      <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ end }}
+
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:description" content="{{ .Site.Params.Description }}" />
+    <meta property="fb:app_id" content="{{ .Site.Params.fbAppId }}" />
+
+    <!-- referrer -->
+    <meta name="referrer" content="no-referrer">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.Params.ImageFavicon }}">
+    <link rel="apple-touch-icon" href="{{ .Site.Params.ImageAppleTouchIcon }}">
+
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}stylesheets/styles.css">
+
+  </head>
+  <body>

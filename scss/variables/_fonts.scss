@@ -1,6 +1,51 @@
+// family
 $font-sans: -apple-system,BlinkMacSystemFont,Helvetica Neue,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ ProN W3,Arial,メイリオ,Meiryo,Osaka,sans-serif !default;
 $font-serif: 'ヒラギノ明朝 Pro W6', 'Hiragino Mincho Pro', 'HGS明朝E', 'ＭＳ Ｐ明朝', serif !default;
 
 $font-yu: YuGothic, '游ゴシック',$font-sans !default;
 $font-yumin: YuMincho, '游明朝',$font-serif !default;
 $font-code: Consolas, 'Courier New', Courier, monospace !default;
+
+// hms
+// from: https://standard.shiftbrain.com/blog/harmonic-modular-scale-tools
+$font-size-7: calc(1rem * 8);//128
+$font-size-6: calc(1rem * 8 / 2);//64
+$font-size-5: calc(1rem * 8 / 3);//42.666
+$font-size-4: calc(1rem * 8 / 4);//32px
+$font-size-3: calc(1rem * 8 / 5);//25.6px
+$font-size-2: calc(1rem * 8 / 6);//21.333px
+$font-size-1: calc(1rem * 8 / 7);//18.286px
+$font-size-0: 1rem;//16px
+$font-size-m1: calc(1rem * 8 / 9);//14.222px
+$font-size-m2: calc(1rem * 8 / 10);//12.8px
+$font-size-m3: calc(1rem * 8 / 11);//11.636px
+$font-size-m4: calc(1rem * 8 / 12);//10.667px
+
+$line-height-3: calc(1em * 70 / 32);//28px
+$line-height-2: calc(1em * 60 / 32);//24px
+$line-height-1: calc(1em * 50 / 32);//20px
+$line-height-0: calc(1em * 40 / 32);//16px
+$line-height-m1: calc(1em * 30 / 32);//12px
+
+$font-sizes: (
+  0: $font-size-0,
+  1: $font-size-1,
+  2: $font-size-2,
+  3: $font-size-3,
+  4: $font-size-4,
+  5: $font-size-5,
+  6: $font-size-6,
+  7: $font-size-7,
+  -1: $font-size-m1,
+  -2: $font-size-m2,
+  -3: $font-size-m3,
+  -4: $font-size-m4
+);
+
+$line-heights: (
+  0: $line-height-0,
+  1: $line-height-1,
+  2: $line-height-2,
+  3: $line-height-3,
+  -1: $line-height-m1
+);
