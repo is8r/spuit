@@ -66,6 +66,10 @@ a {
   &:active {
     outline: $outline-active;
   }
+  
+  &.no-underline {
+    text-decoration: none;
+  }
 }
 
 // layouts
@@ -182,7 +186,6 @@ $width-sidebar: 14rem;
 
 .footer {
   padding: 2rem;
-  font-size: 0.5rem;
 }
 
 .sidebar {
@@ -192,68 +195,12 @@ $width-sidebar: 14rem;
   padding: 2rem;
 }
 
-.widget {
-  h5 {
-    font-size: 0.75rem;
-    margin: 0;
-  }
-  ul {
-    @include reset-ul;
-
-    li {
-      font-size: 0.875rem;
-      display: block;
-
-      a {
-        font-size: 0.875rem;
-      }
-    }
-  }
-
-  + .widget {
-    margin-top: 2rem;
-  }
-}
-
-.info {
-  margin-bottom: 4rem;
-  font-size: 0.75rem;
-  color: $color-gray;
-
-  a {
-    font-size: 0.75rem;
-  }
-}
-
-.breadcrumbs {
-  padding: 2rem 2rem 0;
-
-  ol {
-    @include reset-ul;
-
-    li {
-      font-size: 0.75rem;
-      color: $color-gray;
-
-      a {
-        font-size: 0.75rem;
-      }
-
-      + li {
-        &:before {
-          content: " > ";
-          color: #aaa;
-        }
-      }
-    }
-  }
-}
-
 .content {
+  @include word-break;
   padding: 2rem;
 }
 
-.modal {
+.search-modal.modal {
   .modal-dialog {
     margin-top: -1px;
     max-width: 700px;
@@ -288,6 +235,268 @@ $width-sidebar: 14rem;
     }
   }
 }
+
+//--------------------------------------------------
+
+.layout-preview {
+  padding: 1rem;
+  background-color: adjust-hue(lighten(red, 40%), 0%);
+
+  @for $i from 0 to 36 {
+    &.c#{$i} {
+      background-color: adjust-hue(lighten(red, 40%), $i * 10%);
+    }
+  }
+}
+
+.preview {
+  @include word-break;
+  border: 1px solid #eee;
+  margin: 1rem 0;
+  padding: 1rem;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 1rem;
+    padding: 0;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h1 {
+    @include font(6, 1, bold);
+  }
+  h2 {
+    @include font(5, 1, bold);
+  }
+  h3 {
+    @include font(4, 1, bold);
+  }
+  h4 {
+    @include font(3, 1, bold);
+  }
+  h5 {
+    @include font(2, 1, bold);
+  }
+  h6 {
+    @include font(1, 1, bold);
+  }
+  p {
+    @include font(0, 1);
+
+    a {
+      @include font;
+    }
+  }
+  small {
+    @include font(-3, 1);
+  }
+
+  p,
+  small {
+    &.red {
+      color: red;
+    }
+
+    &.small {
+      @include font(-3, 1);
+      color: #aaa;
+      background-color: #f8f8f8;
+      display: inline-block;
+    }
+  }
+
+  .button {
+    @include button-normal;
+
+    &.has-loading {
+      @include button-loading;
+    }
+  }
+
+  .button-semiflat {
+    @include font;
+    @include button-semiflat;
+  }
+  .button-outline {
+    @include font;
+    @include button-outline;
+  }
+  .button-emboss {
+    @include font;
+    @include button-emboss;
+  }
+  .button-link {
+    @include button-base;
+  }
+
+  .fieldset {
+    &-horizontal {
+      @include fieldset-horizontal;
+    }
+
+    &-vertical {
+      @include fieldset-vertical;
+    }
+  }
+
+  label,
+  legend,
+  select {
+    @include font(0, 1);
+  }
+
+  input[type="text"],
+  textarea {
+    @include input-normal(100%);
+    @include font(0, 1);
+  }
+
+  input[type="file"] {
+    @include file-normal(100%);
+    @include font(-1, 1);
+  }
+
+  textarea {
+    height: 120px;
+  }
+
+  .radio,
+  .checkbox {
+    @include radio-normal;
+  }
+
+  .custom-radio {
+    @include custom-radio-normal;
+  }
+
+  .custom-checkbox {
+    @include custom-checkbox-normal;
+  }
+
+  .switch {
+    @include switch-normal(38px, 20px, #529ef6, 5px);
+  }
+
+  .select {
+    @include select-normal;
+  }
+
+  .table {
+    @include table-normal;
+    @include font(-1, 1);
+
+    &-line {
+      @include table-line;
+      @include font(-1, 1);
+    }
+
+    &-stripe {
+      @include table-stripe;
+      @include font(-1, 1);
+    }
+  }
+
+  .reset-ul {
+    @include reset-ul;
+  }
+
+  .word-break {
+    @include word-break;
+    display: inline-block;
+    width: 100px;
+    background: #f8f8f8;
+    padding: 10px;
+  }
+
+  .no-word-break {
+    @include word-break(false);
+    display: inline-block;
+    width: 100px;
+    background: #f8f8f8;
+    padding: 1rem;
+  }
+
+  .text-overflow {
+    @include text-overflow();
+    display: inline-block;
+    width: 100px;
+    background: #f8f8f8;
+    padding: 1rem;
+  }
+
+  .wordwrap-fadeout {
+    @include wordwrap-fadeout;
+  }
+
+  .balloon {
+    $c: rgba($color-black, 0.2);
+    display: inline-block;
+    width: 6rem;
+    height: 2rem;
+    background-color: $c;
+
+    &.l {
+      @include triangle($c, 0.4rem, 0.7rem, 0, 50%, "left", "after");
+    }
+    &.t {
+      @include triangle($c, 0.7rem, 0.4rem, 50%, 0, "top", "after");
+    }
+    &.r {
+      @include triangle($c, 0.4rem, 0.7rem, 0, 50%, "right", "after");
+    }
+    &.b {
+      @include triangle($c, 0.7rem, 0.4rem, 50%, 0, "bottom", "after");
+    }
+  }
+
+  .icon {
+    &-twitter {
+      @include icon-twitter;
+    }
+    &-facebook {
+      @include icon-facebook;
+    }
+    &-hatena {
+      @include icon-hatena;
+    }
+    &-hamburger {
+      @include icon-hamburger;
+    }
+
+    &-svg {
+      &::before {
+        content: "";
+        @include background-map-svg($map-svg-star);
+      }
+    }
+  }
+}
+
+.group {
+  &-stretch {
+    @include group-stretch;
+  }
+
+  &-center {
+    @include group-center;
+  }
+
+  &-vertical {
+    @include group-vertical;
+  }
+
+  &-lined {
+    @include group-lined;
+  }
+}
+
+//--------------------------------------------------
 
 // .btn {
 //   @include button;
@@ -545,263 +754,3 @@ $width-sidebar: 14rem;
 //     border-radius: 3px;
 //   }
 // }
-
-//--------------------------------------------------
-
-.layout-preview {
-  padding: 1rem;
-  background-color: adjust-hue(lighten(red, 40%), 0%);
-
-  @for $i from 0 to 36 {
-    &.c#{$i} {
-      background-color: adjust-hue(lighten(red, 40%), $i * 10%);
-    }
-  }
-}
-
-.preview {
-  @include word-break;
-  border: 1px solid #eee;
-  margin: 1rem 0;
-  padding: 1rem;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0 0 1rem;
-    padding: 0;
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-
-  h1 {
-    @include font(6, 1, bold);
-  }
-  h2 {
-    @include font(5, 1, bold);
-  }
-  h3 {
-    @include font(4, 1, bold);
-  }
-  h4 {
-    @include font(3, 1, bold);
-  }
-  h5 {
-    @include font(2, 1, bold);
-  }
-  h6 {
-    @include font(1, 1, bold);
-  }
-  p {
-    @include font(0, 1);
-
-    a {
-      @include font;
-    }
-  }
-  small {
-    @include font(-3, 1);
-  }
-
-  p,
-  small {
-    &.red {
-      color: red;
-    }
-
-    &.small {
-      @include font(-3, 1);
-      color: #aaa;
-      background-color: #f8f8f8;
-      display: inline-block;
-    }
-  }
-
-  .button {
-    @include button-normal;
-
-    &.has-loading {
-      @include button-loading;
-    }
-  }
-
-  .button-semiflat {
-    @include font;
-    @include button-semiflat;
-  }
-  .button-outline {
-    @include font;
-    @include button-outline;
-  }
-  .button-emboss {
-    @include font;
-    @include button-emboss;
-  }
-  .button-link {
-    @include button-base;
-  }
-
-  .group {
-    &-stretch {
-      @include group-stretch;
-    }
-
-    &-center {
-      @include group-center;
-    }
-
-    &-vertical {
-      @include group-vertical;
-    }
-
-    &-lined {
-      @include group-lined;
-    }
-  }
-
-  .fieldset {
-    &-horizontal {
-      @include fieldset-horizontal;
-    }
-
-    &-vertical {
-      @include fieldset-vertical;
-    }
-  }
-
-  label,
-  legend,
-  select {
-    @include font(0, 1);
-  }
-
-  input[type="text"],
-  textarea {
-    @include input-normal(100%);
-    @include font(0, 1);
-  }
-
-  input[type="file"] {
-    @include file-normal(100%);
-    @include font(-1, 1);
-  }
-
-  textarea {
-    height: 120px;
-  }
-
-  .radio,
-  .checkbox {
-    @include radio-normal;
-  }
-
-  .custom-radio {
-    @include custom-radio-normal;
-  }
-
-  .custom-checkbox {
-    @include custom-checkbox-normal;
-  }
-
-  .switch {
-    @include switch-normal(38px, 20px, #529ef6, 5px);
-  }
-
-  .select {
-    @include select-normal;
-  }
-
-  .table {
-    @include table-normal;
-    @include font(-1, 1);
-
-    &-line {
-      @include table-line;
-      @include font(-1, 1);
-    }
-
-    &-stripe {
-      @include table-stripe;
-      @include font(-1, 1);
-    }
-  }
-
-  .reset-ul {
-    @include reset-ul;
-  }
-
-  .word-break {
-    @include word-break;
-    display: inline-block;
-    width: 100px;
-    background: #f8f8f8;
-    padding: 10px;
-  }
-
-  .no-word-break {
-    @include word-break(false);
-    display: inline-block;
-    width: 100px;
-    background: #f8f8f8;
-    padding: 1rem;
-  }
-
-  .text-overflow {
-    @include text-overflow();
-    display: inline-block;
-    width: 100px;
-    background: #f8f8f8;
-    padding: 1rem;
-  }
-
-  .wordwrap-fadeout {
-    @include wordwrap-fadeout;
-  }
-
-  .balloon {
-    $c: rgba($color-black, 0.2);
-    display: inline-block;
-    width: 6rem;
-    height: 2rem;
-    background-color: $c;
-
-    &.l {
-      @include triangle($c, 0.4rem, 0.7rem, 0, 50%, "left", "after");
-    }
-    &.t {
-      @include triangle($c, 0.7rem, 0.4rem, 50%, 0, "top", "after");
-    }
-    &.r {
-      @include triangle($c, 0.4rem, 0.7rem, 0, 50%, "right", "after");
-    }
-    &.b {
-      @include triangle($c, 0.7rem, 0.4rem, 50%, 0, "bottom", "after");
-    }
-  }
-
-  .icon {
-    &-twitter {
-      @include icon-twitter;
-    }
-    &-facebook {
-      @include icon-facebook;
-    }
-    &-hatena {
-      @include icon-hatena;
-    }
-    &-hamburger {
-      @include icon-hamburger;
-    }
-
-    &-svg {
-      &::before {
-        content: "";
-        @include background-map-svg($map-svg-star);
-      }
-    }
-  }
-}

@@ -1,8 +1,8 @@
 baseURL = "http://example.org/"
 languageCode = "ja"
-title = "spuit"
+title = "Spuit"
 theme = "spuit"
-copyright = "copyright"
+copyright = "🍄"
 
 pygmentsCodefences = true
 pygmentsCodeFencesGuessSyntax = true
