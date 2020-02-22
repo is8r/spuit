@@ -1,9 +1,8 @@
 .sass-cache
 .DS_Store
-assets
 bin
 design
-dist
+site
 lib
 node_modules
 pkg
