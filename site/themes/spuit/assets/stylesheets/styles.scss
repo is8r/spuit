@@ -763,12 +763,11 @@ $width-sidebar: 14rem;
   }
 
   .balloon {
-    $c: $color-black;
+    $c: rgba($color-black, 0.2);
     display: inline-block;
-    width: 5rem;
+    width: 6rem;
     height: 2rem;
     background-color: $c;
-    border-radius: 0.6rem;
 
     &.l {
       @include triangle($c, 0.4rem, 0.7rem, 0, 50%, "left", "after");

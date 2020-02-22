@@ -9654,10 +9654,9 @@ a {
       height: 50px; }
   .preview .balloon {
     display: inline-block;
-    width: 5rem;
+    width: 6rem;
     height: 2rem;
-    background-color: #222;
-    border-radius: 0.6rem; }
+    background-color: rgba(34, 34, 34, 0.2); }
     .preview .balloon.l {
       position: relative; }
       .preview .balloon.l:after {
@@ -9668,7 +9667,7 @@ a {
         height: 0;
         width: 0; }
       .preview .balloon.l:after {
-        border-color: transparent #222 transparent transparent;
+        border-color: transparent rgba(34, 34, 34, 0.2) transparent transparent;
         border-width: 0.35rem 0.4rem 0.35rem 0;
         left: -0.4rem;
         top: calc(50% - 0.35rem); }
@@ -9682,7 +9681,7 @@ a {
         height: 0;
         width: 0; }
       .preview .balloon.t:after {
-        border-color: transparent transparent #222;
+        border-color: transparent transparent rgba(34, 34, 34, 0.2);
         border-width: 0 0.35rem 0.4rem;
         left: calc(50% - 0.35rem);
         top: -0.4rem; }
@@ -9696,7 +9695,7 @@ a {
         height: 0;
         width: 0; }
       .preview .balloon.r:after {
-        border-color: transparent transparent transparent #222;
+        border-color: transparent transparent transparent rgba(34, 34, 34, 0.2);
         border-width: 0.35rem 0 0.35rem 0.4rem;
         right: -0.4rem;
         top: calc(50% - 0.35rem); }
@@ -9710,7 +9709,7 @@ a {
         height: 0;
         width: 0; }
       .preview .balloon.b:after {
-        border-color: #222 transparent transparent;
+        border-color: rgba(34, 34, 34, 0.2) transparent transparent;
         border-width: 0.4rem 0.35rem 0;
         left: calc(50% - 0.35rem);
         bottom: -0.4rem; }
