@@ -13,6 +13,10 @@
   background-position: right 12px top 15px;
   background-size: 6px 10px;
 
+  &:hover {
+    outline: $outline-active;
+  }
+  
   select {
     padding: 5px 12px;
     width: 130%;
@@ -28,4 +32,6 @@
       outline: none;
     }
   }
+  
+  
 }

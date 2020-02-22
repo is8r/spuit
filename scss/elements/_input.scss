@@ -28,3 +28,19 @@
     outline: 5px solid rgba($c, 0.2);
   }
 }
+
+@mixin file-normal($w: auto, $p: 0.4rem 0.5rem, $r: 2px, $c: rgba(#529ef6, 0.5)) {
+  @include input-base($w, $p);
+
+  border-radius: $r;
+  border: 1px solid #ddd;
+
+  &::placeholder {
+    color: #ddd;
+  }
+
+  &:focus {
+    border: 1px solid $c;
+    outline: 3px solid rgba($c, 0.2);
+  }
+}

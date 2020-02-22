@@ -9271,7 +9271,6 @@ a {
     font-size: 1rem;
     line-height: calc(1em * 50 / 32); }
   .preview input[type="text"],
-  .preview input[type="file"],
   .preview textarea {
     margin: 0;
     padding: 0;
@@ -9295,27 +9294,51 @@ a {
     font-size: 1rem;
     line-height: calc(1em * 50 / 32); }
     .preview input[type="text"]:focus,
-    .preview input[type="file"]:focus,
     .preview textarea:focus {
       border: none;
       outline: none; }
     .preview input[type="text"]::placeholder,
-    .preview input[type="file"]::placeholder,
     .preview textarea::placeholder {
       font-size: inherit; }
     .preview input[type="text"]::placeholder,
-    .preview input[type="file"]::placeholder,
     .preview textarea::placeholder {
       color: #ddd; }
     .preview input[type="text"]:focus,
-    .preview input[type="file"]:focus,
     .preview textarea:focus {
       border: 1px solid rgba(82, 158, 246, 0.5);
       outline: 5px solid rgba(82, 158, 246, 0.2); }
   .preview input[type="file"] {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    background-image: none;
+    background: transparent;
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    font-size: inherit;
+    display: inline-block;
+    width: 100%;
+    padding: 0.4rem 0.5rem;
+    box-sizing: border-box;
+    line-height: 1;
+    border-radius: 2px;
+    border: 1px solid #ddd;
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
     font-size: calc(1rem * 8 / 9);
     line-height: calc(1em * 50 / 32); }
+    .preview input[type="file"]:focus {
+      border: none;
+      outline: none; }
+    .preview input[type="file"]::placeholder {
+      font-size: inherit; }
+    .preview input[type="file"]::placeholder {
+      color: #ddd; }
+    .preview input[type="file"]:focus {
+      border: 1px solid rgba(82, 158, 246, 0.5);
+      outline: 3px solid rgba(82, 158, 246, 0.2); }
   .preview textarea {
     height: 120px; }
   .preview .radio,
@@ -9486,6 +9509,8 @@ a {
     background-repeat: no-repeat;
     background-position: right 12px top 15px;
     background-size: 6px 10px; }
+    .preview .select:hover {
+      outline: 3px solid rgba(82, 158, 246, 0.2); }
     .preview .select select {
       padding: 5px 12px;
       width: 130%;
@@ -9502,7 +9527,10 @@ a {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 0;
-    border-top: 1px solid #eee; }
+    border-top: 1px solid #eee;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
+    font-size: calc(1rem * 8 / 9);
+    line-height: calc(1em * 50 / 32); }
     .preview .table th {
       font-weight: bold; }
     .preview .table th,
@@ -9524,7 +9552,10 @@ a {
     .preview .table-line {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
+      font-size: calc(1rem * 8 / 9);
+      line-height: calc(1em * 50 / 32); }
       .preview .table-line th {
         font-weight: bold; }
       .preview .table-line th,
@@ -9542,7 +9573,10 @@ a {
     .preview .table-stripe {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 0; }
+      margin-bottom: 0;
+      font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
+      font-size: calc(1rem * 8 / 9);
+      line-height: calc(1em * 50 / 32); }
       .preview .table-stripe th {
         font-weight: bold; }
       .preview .table-stripe th,
@@ -9569,14 +9603,14 @@ a {
     width: 100px;
     background: #f8f8f8;
     padding: 10px; }
-  .preview .word-break-none {
+  .preview .no-word-break {
     white-space: nowrap;
     word-break: keep-all;
     word-wrap: normal;
     display: inline-block;
     width: 100px;
     background: #f8f8f8;
-    padding: 10px; }
+    padding: 1rem; }
   .preview .text-overflow {
     overflow: hidden;
     white-space: nowrap;
@@ -9584,7 +9618,7 @@ a {
     display: inline-block;
     width: 100px;
     background: #f8f8f8;
-    padding: 10px; }
+    padding: 1rem; }
   .preview .wordwrap-fadeout {
     position: relative;
     overflow: hidden; }

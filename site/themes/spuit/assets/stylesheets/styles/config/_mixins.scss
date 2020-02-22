@@ -6,15 +6,3 @@
   line-height: map-get($line-heights, $line-height);
   font-weight: $weight;
 }
-
-@mixin button {
-  @include button-normal;
-}
-
-@mixin input {
-  @include input-normal(100%);
-}
-
-@mixin table {
-  @include table-normal;
-}

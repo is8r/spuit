@@ -263,7 +263,7 @@ $width-sidebar: 14rem;
   }
 
   input {
-    @include input;
+    @include input-normal(100%);
     margin: 0;
   }
   ul {
@@ -605,17 +605,17 @@ $width-sidebar: 14rem;
   small {
     @include font(-3, 1);
   }
-  
+
   .red {
     color: red;
   }
-  
+
   .gray {
     color: gray;
   }
 
   .button {
-    @include button;
+    @include button-normal;
 
     &.has-loading {
       @include button-loading;
@@ -672,20 +672,20 @@ $width-sidebar: 14rem;
   }
 
   input[type="text"],
-  input[type="file"],
   textarea {
-    @include input;
+    @include input-normal(100%);
     @include font(0, 1);
   }
 
   input[type="file"] {
+    @include file-normal(100%);
     @include font(-1, 1);
   }
 
   textarea {
     height: 120px;
   }
-  
+
   .radio,
   .checkbox {
     @include radio-normal;
@@ -702,26 +702,30 @@ $width-sidebar: 14rem;
   .switch {
     @include switch-normal(38px, 20px, #529ef6, 5px);
   }
-  
+
   .select {
     @include select-normal;
   }
-  
+
   .table {
-    @include table;
+    @include table-normal;
+    @include font(-1, 1);
 
     &-line {
       @include table-line;
+      @include font(-1, 1);
     }
+    
     &-stripe {
       @include table-stripe;
+      @include font(-1, 1);
     }
   }
 
   .reset-ul {
     @include reset-ul;
   }
-  
+
   .word-break {
     @include word-break;
     display: inline-block;
@@ -729,19 +733,21 @@ $width-sidebar: 14rem;
     background: #f8f8f8;
     padding: 10px;
   }
-  .word-break-none {
+
+  .no-word-break {
     @include word-break(false);
     display: inline-block;
     width: 100px;
     background: #f8f8f8;
-    padding: 10px;
+    padding: 1rem;
   }
+
   .text-overflow {
     @include text-overflow();
     display: inline-block;
     width: 100px;
     background: #f8f8f8;
-    padding: 10px;
+    padding: 1rem;
   }
 
   .wordwrap-fadeout {
