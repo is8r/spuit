@@ -49,13 +49,13 @@ categories:
     <a href="#" class="button">Button</a>
     <a href="#" class="button">Button</a>
   </div>
-  <div class="mt-4"></div>
+  <div class="mt-5"></div>
   <p>group-center</p>
   <div class="group-center">
     <a href="#" class="button">Button</a>
     <a href="#" class="button-outline">Button</a>
   </div>
-  <div class="mt-4"></div>
+  <div class="mt-5"></div>
   <p>group-vertical</p>
   <div class="group-vertical">
     <a href="#" class="button">Button</a>
@@ -64,7 +64,7 @@ categories:
     <a href="#" class="button">Button</a>
     <a href="#" class="button">Button</a>
   </div>
-  <div class="mt-4"></div>
+  <div class="mt-5"></div>
   <p>group-lined</p>
   <div class="group-lined">
     <a href="#" class="button">ButtonButton</a>
@@ -81,7 +81,7 @@ categories:
 
 
 <div style="display: none;">
-  <div class="mt-4"></div>
+  <div class="mt-5"></div>
   <p>group-vertical > fieldset-horizontal</p>
   <div class="group-vertical">
     <div class="fieldset-horizontal has-input">
@@ -125,7 +125,7 @@ categories:
       </div>
     </div>
   </div>
-  <div class="mt-4"></div>
+  <div class="mt-5"></div>
   <p>group-vertical > fieldset-vertical</p>
   <div class="group-vertical">
     <div class="fieldset-vertical">
@@ -142,9 +142,7 @@ categories:
         <small>注意書き</small>
       </div>
     </div>
-  </div>
-
-  
+  </div>  
 </div>
   
   
@@ -157,34 +155,35 @@ categories:
 <section class="preview" id="form">
   <form>
     
-    <p>fieldset-horizontal</p>
+    <p class="gray">fieldset-horizontal:</p>
     <div class="fieldset-horizontal has-input">
-      <label for="">Label</label>
+      <label for="">Label <small class="red">[must]</small></label>
       <div>
         <input type="text" class="input" placeholder="placeholder" />
         <small>explanation</small>
       </div>
     </div>
     
-    <div class="mt-4"></div>
-    <p>fieldset-vertical</p>
-    <div class="fieldset-vertical">
-      <label for="">Label</label>
-      <div>
-        <input type="text" class="input" placeholder="placeholder" />
-        <small>explanation</small>
+    <div class="mt-5"></div>
+    <p class="gray">fieldset-vertical:</p>
+    
+    <div class="group-vertical">
+      <div class="fieldset-vertical">
+        <label for="">Label</label>
+        <div>
+          <input type="text" class="input" placeholder="placeholder" />
+          <small>explanation</small>
+        </div>
+      </div>
+      
+      <div class="fieldset-vertical">
+        <legend>legend</legend>
+        <textarea cols="50" id="field-textarea" placeholder="placeholder" rows="10"></textarea>
       </div>
     </div>
     
-    <div class="mt-4"></div>
-    <p>fieldset-vertical</p>
-    <div class="fieldset-vertical">
-      <legend>legend</legend>
-      <textarea cols="50" id="field-textarea" placeholder="placeholder" rows="10"></textarea>
-    </div>
-    
-    <div class="mt-4"></div>
-    <p><small>group-lined /</small> radio</p>
+    <div class="mt-5"></div>
+    <p class="gray"><small>group-lined /</small> radio:</p>
     <ul class="group-lined">
       <li class="radio">
         <input id="field-radio2-0" name="field-radio2" type="radio" value="0">
@@ -206,8 +205,8 @@ categories:
       </li>
     </ul>
     
-    <div class="mt-4"></div>
-    <p><small>group-lined /</small> radio(nested)</p>
+    <div class="mt-5"></div>
+    <p class="gray"><small>group-lined /</small> radio(nested):</p>
     <ul class="group-lined">
       <li class="radio">
         <label for="field-radio3-0">
@@ -229,8 +228,8 @@ categories:
       </li>
     </ul>
     
-    <div class="mt-4"></div>
-    <p><small>group-lined /</small> custom-radio</p>
+    <div class="mt-5"></div>
+    <p class="gray"><small>group-lined /</small> custom-radio:</p>
     <ul class="group-lined">
       <li class="custom-radio">
         <input id="field-radio4-0" name="field-radio4" type="radio" value="0">
@@ -252,8 +251,8 @@ categories:
       </li>
     </ul>
     
-    <div class="mt-4"></div>
-    <p><small>group-lined /</small> checkbox</p>
+    <div class="mt-5"></div>
+    <p class="gray"><small>group-lined /</small> checkbox:</p>
     <ul class="group-lined">
       <li class="checkbox">
         <input id="field-checkbox2-0" name="field-checkbox2" type="checkbox" value="0">
@@ -275,8 +274,8 @@ categories:
       </li>
     </ul>
     
-    <div class="mt-4"></div>
-    <p><small>group-lined /</small> checkbox(nested)</p>
+    <div class="mt-5"></div>
+    <p class="gray"><small>group-lined /</small> checkbox(nested):</p>
     <ul class="group-lined">
       <li class="checkbox">
         <label for="field-checkbox3-0">
@@ -298,8 +297,8 @@ categories:
       </li>
     </ul>
     
-    <div class="mt-4"></div>
-    <p><small>group-lined /</small> custom-checkbox</p>
+    <div class="mt-5"></div>
+    <p class="gray"><small>group-lined /</small> custom-checkbox:</p>
     <ul class="group-lined">
       <li class="custom-checkbox">
         <input id="field-checkbox4-0" name="field-checkbox4" type="checkbox" value="0">
@@ -321,10 +320,10 @@ categories:
       </li>
     </ul>
     
-    <hr><hr><hr>
-    
-    <div class="fieldset">
-      <legend>スイッチ（チェックボックス）</legend>
+    <div class="mt-5"></div>
+    <p class="gray">switch(checkbox):</p>
+    <div class="fieldset-horizontal">
+      <legend>legend</legend>
       <ul class="reset-ul">
         <li>
           <div class="switch">
@@ -334,29 +333,33 @@ categories:
         </li>
       </ul>
     </div>
-    <div class="fieldset">
-      <legend>セレクトボックス</legend>
+
+    <div class="mt-5"></div>
+    <p class="gray">selectbox:</p>
+    <div class="fieldset-horizontal has-input">
+      <legend>legend</legend>
       <div class="select">
         <select id="field-select">
-          <option value="1">選択肢1</option>
-          <option value="2">選択肢2</option>
-          <option value="3">選択肢3</option>
+          <option disabled selected>choose...</option>
+          <option value="1">option</option>
+          <option value="2">option</option>
+          <option value="3">option</option>
         </select>
       </div>
     </div>
-    <div class="fieldset">
-      <legend>ファイルアップロード</legend>
-      <div class="file-upload">
+    
+    <div class="mt-5"></div>
+    <p class="gray">fileupload:</p>
+    <div class="fieldset-horizontal has-input">
+      <legend>legend</legend>
+      <div>
         <input type="file" name="file-upload" id="file-upload">
-        <label for="file-upload">ファイルを選択する</label>
-        <span class="selected"></span>
+        <label for="file-upload"><small>Choose files</small></label>
       </div>
     </div>
     
-    <hr><hr><hr>
-    
-    <div class="mt-4"></div>
-    <p>actions</p>
+    <div class="mt-5"></div>
+    <p>actions:</p>
     <div class="group-center">
       <input class="button" type="submit" value="Submit" />
       <input class="button-outline" type="reset" value="Reset" />

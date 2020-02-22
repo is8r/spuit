@@ -9018,6 +9018,10 @@ a {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
     font-size: calc(1rem * 8 / 11);
     line-height: calc(1em * 50 / 32); }
+  .preview .red {
+    color: red; }
+  .preview .gray {
+    color: gray; }
   .preview .button {
     cursor: pointer;
     appearance: none;
@@ -9264,7 +9268,7 @@ a {
   .preview label,
   .preview legend {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
-    font-size: calc(1rem * 8 / 9);
+    font-size: 1rem;
     line-height: calc(1em * 50 / 32); }
   .preview input[type="text"],
   .preview input[type="file"],
@@ -9308,6 +9312,10 @@ a {
     .preview textarea:focus {
       border: 1px solid rgba(82, 158, 246, 0.5);
       outline: 5px solid rgba(82, 158, 246, 0.2); }
+  .preview input[type="file"] {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
+    font-size: calc(1rem * 8 / 9);
+    line-height: calc(1em * 50 / 32); }
   .preview textarea {
     height: 120px; }
   .preview .radio,
@@ -9431,6 +9439,41 @@ a {
     .preview .custom-checkbox input[type="checkbox"]:checked + label::before {
       background-color: #529ef6;
       border-color: #529ef6; }
+  .preview .switch input[type="checkbox"] {
+    display: none; }
+  .preview .switch label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 38px;
+    height: 20px;
+    background: #777;
+    display: block;
+    border-radius: 20px;
+    position: relative; }
+    .preview .switch label:after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      background: #fff;
+      border-radius: 10px;
+      transition: 0.3s; }
+    .preview .switch label:hover {
+      background: #6a6a6a; }
+    .preview .switch label:active {
+      border-radius: 10px;
+      outline: 3px solid rgba(82, 158, 246, 0.2); }
+  .preview .switch input[type="checkbox"]:checked + label {
+    background: #529ef6; }
+    .preview .switch input[type="checkbox"]:checked + label:after {
+      left: calc(100% - 5px);
+      transform: translateX(-100%); }
+    .preview .switch input[type="checkbox"]:checked + label:hover {
+      background: #3a90f5; }
+  .preview .switch label:active:after {
+    width: 20px; }
   .preview .select {
     padding: 0;
     margin: 0;
@@ -9459,8 +9502,7 @@ a {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 0;
-    border-top: 1px solid #eee;
-    margin-bottom: 10px; }
+    border-top: 1px solid #eee; }
     .preview .table th {
       font-weight: bold; }
     .preview .table th,
@@ -9482,8 +9524,7 @@ a {
     .preview .table-line {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 0;
-      margin-bottom: 10px; }
+      margin-bottom: 0; }
       .preview .table-line th {
         font-weight: bold; }
       .preview .table-line th,
@@ -9501,8 +9542,7 @@ a {
     .preview .table-stripe {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 0;
-      margin-bottom: 10px; }
+      margin-bottom: 0; }
       .preview .table-stripe th {
         font-weight: bold; }
       .preview .table-stripe th,
@@ -9514,34 +9554,6 @@ a {
         background-color: #eee; }
       .preview .table-stripe tbody tr:nth-child(odd) {
         background-color: #f8f8f8; }
-  .preview .switch input[type=checkbox] {
-    display: none; }
-  .preview .switch label {
-    cursor: pointer;
-    text-indent: -9999px;
-    width: 38px;
-    height: 20px;
-    background: grey;
-    display: block;
-    border-radius: 20px;
-    position: relative; }
-    .preview .switch label:after {
-      content: '';
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      width: 16px;
-      height: 16px;
-      background: #fff;
-      border-radius: 16px;
-      transition: 0.3s; }
-  .preview .switch input:checked + label {
-    background: #529ef6; }
-    .preview .switch input:checked + label:after {
-      left: calc(100% - 2px);
-      transform: translateX(-100%); }
-  .preview .switch label:active:after {
-    width: 20px; }
   .preview .reset-ul {
     margin: 0;
     padding: 0;

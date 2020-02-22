@@ -605,6 +605,14 @@ $width-sidebar: 14rem;
   small {
     @include font(-3, 1);
   }
+  
+  .red {
+    color: red;
+  }
+  
+  .gray {
+    color: gray;
+  }
 
   .button {
     @include button;
@@ -660,7 +668,7 @@ $width-sidebar: 14rem;
 
   label,
   legend {
-    @include font(-1, 1);
+    @include font(0, 1);
   }
 
   input[type="text"],
@@ -668,6 +676,10 @@ $width-sidebar: 14rem;
   textarea {
     @include input;
     @include font(0, 1);
+  }
+
+  input[type="file"] {
+    @include font(-1, 1);
   }
 
   textarea {
@@ -680,53 +692,36 @@ $width-sidebar: 14rem;
   }
 
   .custom-radio {
-    @include custom-radio-base;
+    @include custom-radio-normal;
   }
 
   .custom-checkbox {
-    @include custom-checkbox-base;
+    @include custom-checkbox-normal;
   }
 
-
-  // .radio {
-  //   @include radio-base;
-  // }
-  // .radio-inside {
-  //   @include radio-base(span);
-  // }
-  // .checkbox {
-  //   @include checkbox-base;
-  // }
-  // .checkbox-inside {
-  //   @include checkbox-base(span);
-  // }
+  .switch {
+    @include switch-normal(38px, 20px, #529ef6, 5px);
+  }
   
   .select {
-    @include select-base;
+    @include select-normal;
   }
+  
   .table {
     @include table;
-    margin-bottom: 10px;
 
     &-line {
       @include table-line;
-      margin-bottom: 10px;
     }
     &-stripe {
       @include table-stripe;
-      margin-bottom: 10px;
     }
   }
-  // .fieldset {
-  //   @include fieldset-flex;
-  // }
 
-  .switch {
-    @include switch-base(38px, 20px, #529ef6, 2px);
-  }
   .reset-ul {
     @include reset-ul;
   }
+  
   .word-break {
     @include word-break;
     display: inline-block;
