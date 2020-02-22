@@ -13,10 +13,8 @@
 
 @import "styles/components/syntax";
 
-@include include-animations;
 @include include-normalize;
-@include include-grid;
-
+// @include include-animations;
 // @include include-spacers;
 
 // basic styles
