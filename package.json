@@ -8,7 +8,7 @@
     "url": "git+ssh://git@github.com/is8r/spuit.git"
   },
   "keywords": [],
-  "author": "@is8r",
+  "author": "Yu Ishihara",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/is8r/spuit/issues"
