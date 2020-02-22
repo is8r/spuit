@@ -1,31 +1,28 @@
 @mixin button-base($c: transparent) {
-  box-sizing: border-box;
-  box-shadow: none;
-  appearance: none;
-  display: inline-block;
-  border-radius: 0;
-  background-color: $c;
-  background-image: linear-gradient(to top, $c, $c);
-  position: relative;
   cursor: pointer;
-  text-align: center;
-  font-weight: normal;
+  appearance: none;
+  box-sizing: border-box;
+  display: inline-block;
+  background-color: transparent;
+  background-image: none;
+  border: 0;
+  outline: 0;
   margin: 0;
   padding: 0;
-  border: none;
-  outline: none;
+  color: initial;
+  text-align: center;
+  
   &:link,
   &:visited,
   &:hover,
-  &:active,
+  &:focus,
   &:active {
     text-decoration: none;
   }
-  &:focus {
-    outline: none;
+  &:active {
+    outline: 3px solid rgba(#529ef6, 0.2);
   }
-  &:disabled,
-  &.is-disabled {
+  &:disabled {
     @include button-disabled;
     opacity: 0.2;
   }
@@ -39,11 +36,15 @@
 @mixin button-loading {
   @include button-disabled;
   @include icon-loading;
-  opacity: 0.6;
+  opacity: 0.2;
+  
+  &::before {
+    margin-right: 0.6rem;
+  }
 }
 
-// @include button-normal(10px 10px, #529ef6, #fff, 2px);
-@mixin button-normal($p: 10px 10px, $c: #529ef6, $c-text: #fff, $r: 2px) {
+// @include button-normal(0.6rem 1rem, #529ef6, #fff, 2px);
+@mixin button-normal($p: 0.6rem 1rem, $c: #529ef6, $c-text: #fff, $r: 2px) {
   @include button-base;
   border-radius: $r;
   border: 1px solid $c;
@@ -59,14 +60,14 @@
   &:hover,
   &:active,
   &.is-current {
-    background-color: darken($c, 10%);
     color: $c-text;
-    border-color: $c;
+    background-color: darken($c, 10%);
+    border-color: darken($c, 10%);
   }
 }
 
-// @include button-semiflat(10px 10px, #529ef6, 10%, #fff, 2px);
-@mixin button-semiflat($p: 10px 10px, $c: #529ef6, $strangth: 5%, $c-text: #fff, $r: 4px) {
+// @include button-semiflat(0.6rem 1rem, #529ef6, 10%, #fff, 2px);
+@mixin button-semiflat($p: 0.6rem 1rem, $c: #529ef6, $strangth: 10%, $c-text: #fff, $r: 2px) {
   @include button-base;
   border-radius: $r;
   background-color: $c;
@@ -89,8 +90,8 @@
   }
 }
 
-// @include button-border(10px 10px, #529ef6, #fff);
-@mixin button-border($p: 10px 10px, $c: #529ef6, $c-text: #fff, $border: 1px, $r: 2px) {
+// @include button-outline(0.6rem 1rem, #529ef6, #fff);
+@mixin button-outline($p: 0.6rem 1rem, $c: #529ef6, $c-text: #fff, $border: 1px, $r: 2px) {
   @include button-base;
   border-radius: $r;
   background-color: transparent;
@@ -113,8 +114,8 @@
   }
 }
 
-// +button-emboss(10px 10px, #529ef6, #fff, 6px, 4px);
-@mixin button-emboss($p: 10px 10px, $c: #529ef6, $c-text: #fff, $thickness: 6px, $r: 4px) {
+// +button-emboss(0.6rem 1rem, #529ef6, #fff, 6px, 4px);
+@mixin button-emboss($p: 0.6rem 1rem, $c: #529ef6, $c-text: #fff, $thickness: 6px, $r: 4px) {
   @include button-base;
   transition: all 0.05s ease-out;
   transform: translateY(-$thickness);

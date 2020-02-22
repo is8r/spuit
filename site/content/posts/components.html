@@ -3,140 +3,326 @@ title: Components
 draft: false
 date: 2020-01-01
 tags:
-  - tagname
+- tagname
 categories:
-  - categoryname
+- categoryname
 ---
 
-<section class="demo-block" id="typefaces">
-  <h2 class="title">Typefaces</h2>
+<h2>Typefaces</h2>
+
+<section class="preview" id="typefaces">
   <h1>heading 1</h1>
   <h2>heading 2</h2>
   <h3>heading 3</h3>
   <h4>heading 4</h4>
   <h5>heading 5</h5>
   <h6>heading 6</h6>
-  <p>paragraf <a href="#">link</a> <b>bold</b></p>
+  <p>
+    paragrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagraf
+  </p>
+  <p><a href="#">linklinklinklinklinklink</a></p>
+  <p><b>boldboldboldboldboldboldbold</b></p>
+  <p><small>smallsmallsmallsmallsmallsmallsmallsmall</small></p>
 </section>
 
-<section class="demo-block" id="form">
-  <h2 class="title">Form</h2>
+<h2>Buttons</h2>
 
-  <form>
-    <div class="fieldset">
-      <legend>お名前</legend>
+<section class="preview" id="buttons">
+  <div class="group-lined">
+    <a href="#" class="button">Button</a>
+    <input type="submit" class="button" value="Input" />
+    <button type="button" class="button">Button</button>
+    <a href="#" class="button has-loading">Button with loading</a>
+    <a href="#" class="button-semiflat">Semiflat</a>
+    <a href="#" class="button-outline">Outline</a>
+    <a href="#" class="button-emboss">Emboss</a>
+    <a href="#" class="button-link">Link</a>
+  </div>
+</section>
+
+<h2>Group</h2>
+
+<section class="preview" id="groups">
+  <p>group-stretch</p>
+  <div class="group-stretch">
+    <a href="#" class="button">ButtonButtonButton</a>
+    <a href="#" class="button">Button</a>
+    <a href="#" class="button">Button</a>
+  </div>
+  <div class="mt-4"></div>
+  <p>group-center</p>
+  <div class="group-center">
+    <a href="#" class="button">Button</a>
+    <a href="#" class="button-outline">Button</a>
+  </div>
+  <div class="mt-4"></div>
+  <p>group-vertical</p>
+  <div class="group-vertical">
+    <a href="#" class="button">Button</a>
+    <a href="#" class="button">Button</a>
+    <a href="#" class="button">Button</a>
+    <a href="#" class="button">Button</a>
+    <a href="#" class="button">Button</a>
+  </div>
+  <div class="mt-4"></div>
+  <p>group-lined</p>
+  <div class="group-lined">
+    <a href="#" class="button">ButtonButton</a>
+    <a href="#" class="button">Button</a>
+    <a href="#" class="button">Button</a>
+    <a href="#" class="button">Button</a>
+    <a href="#" class="button">Button</a>
+    <a href="#" class="button">Button</a>
+    <a href="#" class="button">Button</a>
+    <a href="#" class="button">Button</a>
+  </div>
+</section>
+
+
+
+<div style="display: none;">
+  <div class="mt-4"></div>
+  <p>group-vertical > fieldset-horizontal</p>
+  <div class="group-vertical">
+    <div class="fieldset-horizontal has-input">
+      <label for="">Label</label>
       <div>
-        <input id="field-text" placeholder="お名前" type="text">
+        <input type="text" class="input" />
+        <small>注意書き</small>
       </div>
     </div>
-    <div class="fieldset">
-      <legend>お問い合わせ内容</legend>
-      <textarea cols="50" id="field-textarea" placeholder="お問い合わせ内容を入力下さい" rows="10"></textarea>
+    <div class="fieldset-horizontal has-input">
+      <legend>Legend</legend>
+      <div>
+        <input type="text" class="input" />
+        <small>注意書き</small>
+      </div>
     </div>
-    <div class="fieldset">
-      <legend>ラジオボタン（並列）</legend>
-      <ul class="reset-ul">
-        <li class="radio">
-          <input id="field-radio-0" name="field-radio" type="radio" value="0">
-          <label for="field-radio-0">
-            ラジオボタン 0
-          </label>
-        </li>
-        <li class="radio">
-          <input id="field-radio-1" name="field-radio" type="radio" value="1">
-          <label for="field-radio-1">
-            ラジオボタン 1
-          </label>
-        </li>
-        <li class="radio">
-          <input id="field-radio-2" name="field-radio" type="radio" value="2">
-          <label for="field-radio-2">
-            ラジオボタン 2
-          </label>
-        </li>
-      </ul>
+    <div class="fieldset-horizontal">
+      <legend>Legend</legend>
+      <div>
+        <ul class="group-lined">
+          <li class="radio">
+            <input id="field-radio-0" name="field-radio" type="radio" value="0">
+            <label for="field-radio-0">
+              Radio
+            </label>
+          </li>
+          <li class="radio">
+            <input id="field-radio-1" name="field-radio" type="radio" value="1">
+            <label for="field-radio-1">
+              Radio
+            </label>
+          </li>
+          <li class="radio">
+            <input id="field-radio-2" name="field-radio" type="radio" value="2">
+            <label for="field-radio-2">
+              Radio
+            </label>
+          </li>
+        </ul>
+        <small>注意書き</small>
+      </div>
     </div>
-    <div class="fieldset">
-      <legend>ラジオボタン（入れ子）</legend>
-      <ul class="reset-ul">
-        <li class="radio-inside">
-          <label for="field-radio-inside-0">
-            <input id="field-radio-inside-0" name="field-radio-inside" type="radio" value="0">
-            <span>
-              ラジオボタン 0
-            </span>
-          </label>
-        </li>
-        <li class="radio-inside">
-          <label for="field-radio-inside-1">
-            <input id="field-radio-inside-1" name="field-radio-inside" type="radio" value="1">
-            <span>
-              ラジオボタン 1
-            </span>
-          </label>
-        </li>
-        <li class="radio-inside">
-          <label for="field-radio-inside-2">
-            <input id="field-radio-inside-2" name="field-radio-inside" type="radio" value="2">
-            <span>
-              ラジオボタン 2
-            </span>
-          </label>
-        </li>
-      </ul>
+  </div>
+  <div class="mt-4"></div>
+  <p>group-vertical > fieldset-vertical</p>
+  <div class="group-vertical">
+    <div class="fieldset-vertical">
+      <label for="">Label</label>
+      <div>
+        <input type="text" class="input" />
+        <small>注意書き</small>
+      </div>
     </div>
-    <div class="fieldset">
-      <legend>チェックボックス（並列）</legend>
-      <ul class="reset-ul">
-        <li class="checkbox">
-          <input id="field-checkbox-0" type="checkbox" value="0">
-          <label for="field-checkbox-0">
-            チェックボックス 0
-          </label>
-        </li>
-        <li class="checkbox">
-          <input id="field-checkbox-1" type="checkbox" value="1">
-          <label for="field-checkbox-1">
-            チェックボックス 1
-          </label>
-        </li>
-        <li class="checkbox">
-          <input id="field-checkbox-2" type="checkbox" value="2">
-          <label for="field-checkbox-2">
-            チェックボックス 2
-          </label>
-        </li>
-      </ul>
+    <div class="fieldset-vertical">
+      <legend>Legend</legend>
+      <div>
+        <input type="text" class="input" />
+        <small>注意書き</small>
+      </div>
     </div>
-    <div class="fieldset">
-      <legend>チェックボックス（入れ子）</legend>
-      <ul class="reset-ul">
-        <li class="checkbox-inside">
-          <label for="field-checkbox-inside-0">
-            <input id="field-checkbox-inside-0" type="checkbox" value="0">
-            <span>
-              チェックボックス 0
-            </span>
-          </label>
-        </li>
-        <li class="checkbox-inside">
-          <label for="field-checkbox-inside-1">
-            <input id="field-checkbox-inside-1" type="checkbox" value="1">
-            <span>
-              チェックボックス 1
-            </span>
-          </label>
-        </li>
-        <li class="checkbox-inside">
-          <label for="field-checkbox-inside-2">
-            <input id="field-checkbox-inside-2" type="checkbox" value="2">
-            <span>
-              チェックボックス 2
-            </span>
-          </label>
-        </li>
-      </ul>
+  </div>
+
+  
+</div>
+  
+  
+  
+  
+  
+  
+<h2>Form</h2>
+
+<section class="preview" id="form">
+  <form>
+    
+    <p>fieldset-horizontal</p>
+    <div class="fieldset-horizontal has-input">
+      <label for="">Label</label>
+      <div>
+        <input type="text" class="input" placeholder="placeholder" />
+        <small>explanation</small>
+      </div>
     </div>
+    
+    <div class="mt-4"></div>
+    <p>fieldset-vertical</p>
+    <div class="fieldset-vertical">
+      <label for="">Label</label>
+      <div>
+        <input type="text" class="input" placeholder="placeholder" />
+        <small>explanation</small>
+      </div>
+    </div>
+    
+    <div class="mt-4"></div>
+    <p>fieldset-vertical</p>
+    <div class="fieldset-vertical">
+      <legend>legend</legend>
+      <textarea cols="50" id="field-textarea" placeholder="placeholder" rows="10"></textarea>
+    </div>
+    
+    <div class="mt-4"></div>
+    <p><small>group-lined /</small> radio</p>
+    <ul class="group-lined">
+      <li class="radio">
+        <input id="field-radio2-0" name="field-radio2" type="radio" value="0">
+        <label for="field-radio2-0">
+          Radio
+        </label>
+      </li>
+      <li class="radio">
+        <input id="field-radio2-1" name="field-radio2" type="radio" value="1">
+        <label for="field-radio2-1">
+          Radio
+        </label>
+      </li>
+      <li class="radio">
+        <input id="field-radio2-2" name="field-radio2" type="radio" value="2">
+        <label for="field-radio2-2">
+          Radio
+        </label>
+      </li>
+    </ul>
+    
+    <div class="mt-4"></div>
+    <p><small>group-lined /</small> radio(nested)</p>
+    <ul class="group-lined">
+      <li class="radio">
+        <label for="field-radio3-0">
+          <input id="field-radio3-0" name="field-radio3" type="radio" value="0">
+          Radio
+        </label>
+      </li>
+      <li class="radio">
+        <label for="field-radio3-1">
+          <input id="field-radio3-1" name="field-radio3" type="radio" value="1">
+          Radio
+        </label>
+      </li>
+      <li class="radio">
+        <label for="field-radio3-2">
+          <input id="field-radio3-2" name="field-radio3" type="radio" value="2">
+          Radio
+        </label>
+      </li>
+    </ul>
+    
+    <div class="mt-4"></div>
+    <p><small>group-lined /</small> custom-radio</p>
+    <ul class="group-lined">
+      <li class="custom-radio">
+        <input id="field-radio4-0" name="field-radio4" type="radio" value="0">
+        <label for="field-radio4-0">
+          Custom Radio
+        </label>
+      </li>
+      <li class="custom-radio">
+        <input id="field-radio4-1" name="field-radio4" type="radio" value="1">
+        <label for="field-radio4-1">
+          Custom Radio
+        </label>
+      </li>
+      <li class="custom-radio">
+        <input id="field-radio4-2" name="field-radio4" type="radio" value="2">
+        <label for="field-radio4-2">
+          Custom Radio
+        </label>
+      </li>
+    </ul>
+    
+    <div class="mt-4"></div>
+    <p><small>group-lined /</small> checkbox</p>
+    <ul class="group-lined">
+      <li class="checkbox">
+        <input id="field-checkbox2-0" name="field-checkbox2" type="checkbox" value="0">
+        <label for="field-checkbox2-0">
+          checkbox
+        </label>
+      </li>
+      <li class="checkbox">
+        <input id="field-checkbox2-1" name="field-checkbox2" type="checkbox" value="1">
+        <label for="field-checkbox2-1">
+          checkbox
+        </label>
+      </li>
+      <li class="checkbox">
+        <input id="field-checkbox2-2" name="field-checkbox2" type="checkbox" value="2">
+        <label for="field-checkbox2-2">
+          checkbox
+        </label>
+      </li>
+    </ul>
+    
+    <div class="mt-4"></div>
+    <p><small>group-lined /</small> checkbox(nested)</p>
+    <ul class="group-lined">
+      <li class="checkbox">
+        <label for="field-checkbox3-0">
+          <input id="field-checkbox3-0" name="field-checkbox3" type="checkbox" value="0">
+          checkbox
+        </label>
+      </li>
+      <li class="checkbox">
+        <label for="field-checkbox3-1">
+          <input id="field-checkbox3-1" name="field-checkbox3" type="checkbox" value="1">
+          checkbox
+        </label>
+      </li>
+      <li class="checkbox">
+        <label for="field-checkbox3-2">
+          <input id="field-checkbox3-2" name="field-checkbox3" type="checkbox" value="2">
+          checkbox
+        </label>
+      </li>
+    </ul>
+    
+    <div class="mt-4"></div>
+    <p><small>group-lined /</small> custom-checkbox</p>
+    <ul class="group-lined">
+      <li class="custom-checkbox">
+        <input id="field-checkbox4-0" name="field-checkbox4" type="checkbox" value="0">
+        <label for="field-checkbox4-0">
+          Custom checkbox
+        </label>
+      </li>
+      <li class="custom-checkbox">
+        <input id="field-checkbox4-1" name="field-checkbox4" type="checkbox" value="1">
+        <label for="field-checkbox4-1">
+          Custom checkbox
+        </label>
+      </li>
+      <li class="custom-checkbox">
+        <input id="field-checkbox4-2" name="field-checkbox4" type="checkbox" value="2">
+        <label for="field-checkbox4-2">
+          Custom checkbox
+        </label>
+      </li>
+    </ul>
+    
+    <hr><hr><hr>
+    
     <div class="fieldset">
       <legend>スイッチ（チェックボックス）</legend>
       <ul class="reset-ul">
@@ -158,25 +344,29 @@ categories:
         </select>
       </div>
     </div>
-    <!-- <div class="fieldset">
-                                  <legend>ファイルアップロード</legend>
-                                  <div class="file-upload">
-                                    <input type="file" name="file-upload" id="file-upload">
-                                    <label for="file-upload">ファイルを選択する</label>
-                                    <span class="selected"></span>
-                                  </div>
-                                </div> -->
     <div class="fieldset">
-      <div class="button-group">
-        <input class="button" type="submit" value="送信">
-        <input class="button-border" type="reset" value="リセット">
+      <legend>ファイルアップロード</legend>
+      <div class="file-upload">
+        <input type="file" name="file-upload" id="file-upload">
+        <label for="file-upload">ファイルを選択する</label>
+        <span class="selected"></span>
       </div>
+    </div>
+    
+    <hr><hr><hr>
+    
+    <div class="mt-4"></div>
+    <p>actions</p>
+    <div class="group-center">
+      <input class="button" type="submit" value="Submit" />
+      <input class="button-outline" type="reset" value="Reset" />
     </div>
   </form>
 </section>
 
-<section class="demo-block" id="table">
-  <h2 class="title">Table</h2>
+<h2>Table</h2>
+
+<section class="preview" id="table">
   <table class="table">
     <thead>
       <tr>
@@ -257,34 +447,28 @@ categories:
   </table>
 </section>
 
-<section class="demo-block" id="components">
-  <h2 class="title">Components</h2>
-</section>
+<h2>Icons</h2>
 
-<section class="demo-block" id="buttons">
-  <h2 class="title">Buttons</h2>
-  <a href="#" class="button">Button</a>
-  <input type="submit" class="button" value="Button" />
-  <button type="button" class="button">Button</button>
-  <a href="#" class="button is-loading">Button</a>
-  <a href="#" class="button-semiflat">Button</a>
-  <a href="#" class="button-border">Button</a>
-  <a href="#" class="button-emboss">Button</a>
-</section>
-
-<section class="demo-block" id="icons">
-  <h2 class="title">Icons</h2>
+<section class="preview" id="icons">
   <i class="icon-hamburger"></i>
   <i class="icon-twitter"></i>
   <i class="icon-facebook"></i>
   <i class="icon-hatena"></i>
   <i class="icon-svg"></i>
-
-  <span class="triangle-container"></span>
 </section>
 
-<section class="demo-block" id="utilities">
-  <h2 class="title">Utilities</h2>
+<h2>Balloon</h2>
+
+<section class="preview" id="others">
+  <span class="balloon l"></span>
+  <span class="balloon t"></span>
+  <span class="balloon r"></span>
+  <span class="balloon b"></span>
+</section>
+
+<h2>Utilities</h2>
+
+<section class="preview" id="utilities">
   <h3>word break</h3>
   <p class="word-break">.word-break</p>
   <br>

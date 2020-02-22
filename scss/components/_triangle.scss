@@ -1,7 +1,7 @@
 // Example:
-// @include triangle(#2dd, 15px, 10px, 50%, 0, "down", "after");
+// @include triangle(#2dd, 15px, 10px, 50%, 0, "bottom", "after");
 
-@mixin triangle($c: #2dd, $w: 15px, $h: 10px, $l: 50%, $t: 0, $direction: "down", $element: "after") {
+@mixin triangle($c: #2dd, $w: 15px, $h: 10px, $l: 50%, $t: 0, $direction: "bottom", $element: "after") {
   position: relative;
 
   &:#{$element} {
@@ -13,7 +13,7 @@
     width: 0;
   }
 
-  @if $direction == "up" {
+  @if $direction == "top" {
     &:#{$element} {
       border-color: transparent transparent $c;
       border-width: 0 ($w / 2) $h;
@@ -27,7 +27,7 @@
       right: $l - $w;
       top: calc(#{$t} - #{$h/2});
     }
-  } @else if $direction == "down" {
+  } @else if $direction == "bottom" {
     &:#{$element} {
       border-color: $c transparent transparent;
       border-width: $h ($w / 2) 0;

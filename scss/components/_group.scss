@@ -1,0 +1,50 @@
+@mixin group-stretch {
+  @include reset-ul;
+  display: flex;
+  justify-content: space-between;
+
+  > * {
+    flex-grow: 1;
+
+    + * {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+@mixin group-center {
+  @include reset-ul;
+  display: flex;
+  justify-content: center;
+
+  > * {
+    + * {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+@mixin group-vertical {
+  @include reset-ul;
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    flex-basis: 100%;
+    flex-grow: 1;
+
+    + * {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@mixin group-lined {
+  @include reset-ul;
+  display: block;
+  margin: -0.5rem -0.25rem 0;
+
+  > * {
+    margin: 0.5rem 0.25rem 0;
+  }
+}

@@ -1,9 +1,12 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
 // @import "~spuit/spuit";
 @import "../../../../../scss/spuit";
 @import "../../../../../scss/includes/grid";
 @import "../../../../../scss/components/wrap";
 @import "../../../../../scss/components/wordwrap-fadeout";
 @import "../../../../../scss/components/triangle";
+@import "../../../../../scss/variables/defaults";
 
 @import "styles/config/variables";
 @import "styles/config/mixins";
@@ -13,7 +16,8 @@
 @include include-animations;
 @include include-normalize;
 @include include-grid;
-@include include-spacers;
+
+// @include include-spacers;
 
 // basic styles
 
@@ -28,16 +32,29 @@ html {
 }
 
 body {
-  @include font(1rem);
+  @include font(0);
   color: $color-black;
 
   &.noscroll {
     overflow: hidden;
+    padding-right: 15px;
   }
 }
 
+a,
+button,
+input,
+td,
+li {
+  @include font;
+}
+
+label,
+legend {
+  margin: 0;
+}
+
 a {
-  @include font(1rem);
   color: $color-blue;
   text-decoration: underline;
 
@@ -46,7 +63,7 @@ a {
   }
 
   &:active {
-    outline: 3px solid rgba($color-blue, 0.2);
+    outline: $outline-active;
   }
 }
 
@@ -79,20 +96,20 @@ $width-sidebar: 14rem;
       position: fixed;
       background: #fff;
     }
-    
+
     > main {
       margin-left: 0;
       margin-right: 0;
       transition: all 0.2s ease-out;
     }
-    
+
     &.open {
       margin-left: 0;
-      
+
       > aside {
         margin-left: 0;
       }
-      
+
       > main {
         margin-left: $width-sidebar;
         margin-right: -$width-sidebar;
@@ -119,13 +136,13 @@ $width-sidebar: 14rem;
     transition: all 0.2s ease-out;
     width: 0;
     line-height: 0;
-    
+
     .icon-hamburger {
       @include icon-hamburger;
       z-index: 101;
       position: relative;
       vertical-align: top;
-      
+
       &::before {
         vertical-align: top;
       }
@@ -197,6 +214,16 @@ $width-sidebar: 14rem;
   }
 }
 
+.info {
+  margin-bottom: 4rem;
+  font-size: 0.75rem;
+  color: $color-gray;
+
+  a {
+    font-size: 0.75rem;
+  }
+}
+
 .breadcrumbs {
   padding: 2rem 2rem 0;
 
@@ -205,15 +232,15 @@ $width-sidebar: 14rem;
 
     li {
       font-size: 0.75rem;
-      color: #767676;
-      
+      color: $color-gray;
+
       a {
         font-size: 0.75rem;
       }
-      
+
       + li {
         &:before {
-          content: ' > ';
+          content: " > ";
           color: #aaa;
         }
       }
@@ -249,8 +276,6 @@ $width-sidebar: 14rem;
     }
   }
   #search-results {
-    background-color: #f8f8f8;
-
     h5 {
       font-size: 0.875rem;
     }
@@ -519,3 +544,256 @@ $width-sidebar: 14rem;
 //     border-radius: 3px;
 //   }
 // }
+
+//--------------------------------------------------
+
+.layout-preview {
+  padding: 1rem;
+  background-color: adjust-hue(lighten(red, 40%), 0%);
+
+  @for $i from 0 to 36 {
+    &.c#{$i} {
+      background-color: adjust-hue(lighten(red, 40%), $i * 10%);
+    }
+  }
+}
+
+.preview {
+  @include word-break;
+  border: 1px solid #eee;
+  margin: 1rem 0;
+  padding: 1rem;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0 0 1rem;
+    padding: 0;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h1 {
+    @include font(6, 1, bold);
+  }
+  h2 {
+    @include font(5, 1, bold);
+  }
+  h3 {
+    @include font(4, 1, bold);
+  }
+  h4 {
+    @include font(3, 1, bold);
+  }
+  h5 {
+    @include font(2, 1, bold);
+  }
+  h6 {
+    @include font(1, 1, bold);
+  }
+  p {
+    @include font(0, 1);
+
+    a {
+      @include font;
+    }
+  }
+  small {
+    @include font(-3, 1);
+  }
+
+  .button {
+    @include button;
+
+    &.has-loading {
+      @include button-loading;
+    }
+  }
+
+  .button-semiflat {
+    @include font;
+    @include button-semiflat;
+  }
+  .button-outline {
+    @include font;
+    @include button-outline;
+  }
+  .button-emboss {
+    @include font;
+    @include button-emboss;
+  }
+  .button-link {
+    @include button-base;
+  }
+
+  .group {
+    &-stretch {
+      @include group-stretch;
+    }
+
+    &-center {
+      @include group-center;
+    }
+
+    &-vertical {
+      @include group-vertical;
+    }
+
+    &-lined {
+      @include group-lined;
+    }
+  }
+
+  .fieldset {
+    &-horizontal {
+      @include fieldset-horizontal;
+    }
+
+    &-vertical {
+      @include fieldset-vertical;
+    }
+  }
+
+  label,
+  legend {
+    @include font(-1, 1);
+  }
+
+  input[type="text"],
+  input[type="file"],
+  textarea {
+    @include input;
+    @include font(0, 1);
+  }
+
+  textarea {
+    height: 120px;
+  }
+  
+  .radio,
+  .checkbox {
+    @include radio-normal;
+  }
+
+  .custom-radio {
+    @include custom-radio-base;
+  }
+
+  .custom-checkbox {
+    @include custom-checkbox-base;
+  }
+
+
+  // .radio {
+  //   @include radio-base;
+  // }
+  // .radio-inside {
+  //   @include radio-base(span);
+  // }
+  // .checkbox {
+  //   @include checkbox-base;
+  // }
+  // .checkbox-inside {
+  //   @include checkbox-base(span);
+  // }
+  
+  .select {
+    @include select-base;
+  }
+  .table {
+    @include table;
+    margin-bottom: 10px;
+
+    &-line {
+      @include table-line;
+      margin-bottom: 10px;
+    }
+    &-stripe {
+      @include table-stripe;
+      margin-bottom: 10px;
+    }
+  }
+  // .fieldset {
+  //   @include fieldset-flex;
+  // }
+
+  .switch {
+    @include switch-base(38px, 20px, #529ef6, 2px);
+  }
+  .reset-ul {
+    @include reset-ul;
+  }
+  .word-break {
+    @include word-break;
+    display: inline-block;
+    width: 100px;
+    background: #f8f8f8;
+    padding: 10px;
+  }
+  .word-break-none {
+    @include word-break(false);
+    display: inline-block;
+    width: 100px;
+    background: #f8f8f8;
+    padding: 10px;
+  }
+  .text-overflow {
+    @include text-overflow();
+    display: inline-block;
+    width: 100px;
+    background: #f8f8f8;
+    padding: 10px;
+  }
+
+  .wordwrap-fadeout {
+    @include wordwrap-fadeout;
+  }
+
+  .balloon {
+    $c: $color-black;
+    display: inline-block;
+    width: 5rem;
+    height: 2rem;
+    background-color: $c;
+    border-radius: 0.6rem;
+
+    &.l {
+      @include triangle($c, 0.4rem, 0.7rem, 0, 50%, "left", "after");
+    }
+    &.t {
+      @include triangle($c, 0.7rem, 0.4rem, 50%, 0, "top", "after");
+    }
+    &.r {
+      @include triangle($c, 0.4rem, 0.7rem, 0, 50%, "right", "after");
+    }
+    &.b {
+      @include triangle($c, 0.7rem, 0.4rem, 50%, 0, "bottom", "after");
+    }
+  }
+
+  .icon {
+    &-twitter {
+      @include icon-twitter;
+    }
+    &-facebook {
+      @include icon-facebook;
+    }
+    &-hatena {
+      @include icon-hatena;
+    }
+    &-hamburger {
+      @include icon-hamburger;
+    }
+
+    &-svg {
+      &::before {
+        content: "";
+        @include background-map-svg($map-svg-star);
+      }
+    }
+  }
+}

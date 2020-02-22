@@ -1,3 +1,35 @@
+@mixin reset-button($c: transparent) {
+  box-sizing: border-box;
+  box-shadow: none;
+  appearance: none;
+  display: inline-block;
+  border-radius: 0;
+  background-color: $c;
+  background-image: linear-gradient(to top, $c, $c);
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  &:link,
+  &:visited,
+  &:hover,
+  &:active,
+  &:active {
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
 @mixin reset-form() {
   margin: 0;
   padding: 0;

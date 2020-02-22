@@ -1,0 +1,39 @@
+@mixin radio-normal {
+  display: flex;
+  align-items: center;
+
+  > input[type="radio"],
+  > input[type="checkbox"] {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    transform: translateY(-0.05rem);
+    
+    &:active {
+      + label {
+        outline: $outline-active;
+      }
+    }
+  }
+
+  > label {
+    cursor: pointer;
+    margin: 0 0 0 0.2rem;
+
+    > input[type="radio"],
+    > input[type="checkbox"] {
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 0.2rem 0 -0.2rem;
+      transform: translateY(-0.05rem);
+    }
+    
+    &:active {
+      outline: $outline-active;
+    }
+  }
+}
+
+@mixin checkbox-normal {
+  @include radio-nomal;
+}

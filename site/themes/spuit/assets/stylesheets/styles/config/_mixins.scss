@@ -1,26 +1,20 @@
 @include include-opensans;
 
-@mixin font($size: 1rem, $line-height: normal, $weight: 400) {
+@mixin font($size: null, $line-height: null, $weight: null) {
   font-family: 'Open Sans', $font-sans;
-  font-size: $size;
+  font-size: map-get($font-sizes, $size);
+  line-height: map-get($line-heights, $line-height);
   font-weight: $weight;
-  line-height: $line-height;
 }
 
 @mixin button {
-  @include font;
   @include button-normal;
 }
 
 @mixin input {
-  @include font;
   @include input-normal(100%);
-  @include breakpoint-down(md) {
-    font-size: 16px;
-  }
 }
 
 @mixin table {
-  @include font(1rem);
   @include table-normal;
 }

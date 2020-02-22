@@ -1,15 +1,19 @@
 <div class="info">
-  <span class="date">{{ .Date.Format "2006/01" }}</span>
+  <span class="date">{{ .Date.Format "2006-01-02" }}</span>
 
-  {{ with .Params.categories }}
+  {{ if (isset .Params "categories") }}
+  {{ if lt 0 (len .Params.categories) }}
   {{ range .Params.categories }}
   <a href="/categories/{{ . | urlize }}/">#{{ . }}</a>
   {{ end }}
   {{ end }}
+  {{ end }}
 
-  {{ with .Params.tags }}
+  {{ if (isset .Params "tags") }}
+  {{ if lt 0 (len .Params.tags) }}
   {{ range .Params.tags }}
   <a href="/tags/{{ . | urlize }}/">#{{ . }}</a>
+  {{ end }}
   {{ end }}
   {{ end }}
 </div>
