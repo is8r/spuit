@@ -23,6 +23,10 @@
     color: #ddd;
   }
 
+  &:hover {
+    border-color: $c;
+  }
+
   &:focus {
     border: 1px solid $c;
     outline: 5px solid rgba($c, 0.2);

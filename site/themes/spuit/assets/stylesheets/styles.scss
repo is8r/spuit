@@ -44,6 +44,7 @@ body {
 a,
 button,
 input,
+select,
 td,
 li {
   @include font;
@@ -606,12 +607,18 @@ $width-sidebar: 14rem;
     @include font(-3, 1);
   }
 
-  .red {
-    color: red;
-  }
+  p,
+  small {
+    &.red {
+      color: red;
+    }
 
-  .gray {
-    color: gray;
+    &.small {
+      @include font(-3, 1);
+      color: #aaa;
+      background-color: #f8f8f8;
+      display: inline-block;
+    }
   }
 
   .button {
@@ -667,7 +674,8 @@ $width-sidebar: 14rem;
   }
 
   label,
-  legend {
+  legend,
+  select {
     @include font(0, 1);
   }
 
@@ -715,7 +723,7 @@ $width-sidebar: 14rem;
       @include table-line;
       @include font(-1, 1);
     }
-    
+
     &-stripe {
       @include table-stripe;
       @include font(-1, 1);

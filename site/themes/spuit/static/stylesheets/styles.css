@@ -8668,6 +8668,7 @@ body {
 a,
 button,
 input,
+select,
 td,
 li {
   font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif; }
@@ -8860,6 +8861,8 @@ a {
     font-size: inherit; }
   .modal input::placeholder {
     color: #ddd; }
+  .modal input:hover {
+    border-color: rgba(82, 158, 246, 0.5); }
   .modal input:focus {
     border: 1px solid rgba(82, 158, 246, 0.5);
     outline: 5px solid rgba(82, 158, 246, 0.2); }
@@ -9018,10 +9021,17 @@ a {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
     font-size: calc(1rem * 8 / 11);
     line-height: calc(1em * 50 / 32); }
-  .preview .red {
+  .preview p.red,
+  .preview small.red {
     color: red; }
-  .preview .gray {
-    color: gray; }
+  .preview p.small,
+  .preview small.small {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
+    font-size: calc(1rem * 8 / 11);
+    line-height: calc(1em * 50 / 32);
+    color: #aaa;
+    background-color: #f8f8f8;
+    display: inline-block; }
   .preview .button {
     cursor: pointer;
     appearance: none;
@@ -9266,7 +9276,8 @@ a {
       .preview .fieldset-vertical > *:first-child {
         margin-bottom: 0.5rem; }
   .preview label,
-  .preview legend {
+  .preview legend,
+  .preview select {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
     font-size: 1rem;
     line-height: calc(1em * 50 / 32); }
@@ -9303,6 +9314,9 @@ a {
     .preview input[type="text"]::placeholder,
     .preview textarea::placeholder {
       color: #ddd; }
+    .preview input[type="text"]:hover,
+    .preview textarea:hover {
+      border-color: rgba(82, 158, 246, 0.5); }
     .preview input[type="text"]:focus,
     .preview textarea:focus {
       border: 1px solid rgba(82, 158, 246, 0.5);
@@ -9509,7 +9523,7 @@ a {
     background-repeat: no-repeat;
     background-position: right 12px top 15px;
     background-size: 6px 10px; }
-    .preview .select:hover {
+    .preview .select:focus {
       outline: 3px solid rgba(82, 158, 246, 0.2); }
     .preview .select select {
       padding: 5px 12px;
