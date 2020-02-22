@@ -8918,6 +8918,21 @@ a {
   .layout-preview.c35 {
     background-color: #ffccd5; }
 
+.title-lg {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
+  font-size: calc(1rem * 8 / 5);
+  line-height: calc(1em * 50 / 32);
+  margin-bottom: 0.5rem; }
+
+.title-xs {
+  font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
+  font-size: calc(1rem * 8 / 11);
+  line-height: calc(1em * 50 / 32);
+  color: #aaa;
+  background-color: #f8f8f8;
+  display: inline-block;
+  margin-bottom: 0.5rem; }
+
 .preview {
   white-space: normal;
   word-break: break-all;
@@ -8976,21 +8991,33 @@ a {
     line-height: calc(1em * 50 / 32); }
     .preview p a {
       font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif; }
+    .preview p.has-indent {
+      text-indent: 2rem; }
   .preview small {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
     font-size: calc(1rem * 8 / 11);
     line-height: calc(1em * 50 / 32); }
-  .preview p.red,
-  .preview small.red {
+  .preview .red {
     color: red; }
-  .preview p.small,
-  .preview small.small {
+  .preview blockquote {
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
-    font-size: calc(1rem * 8 / 11);
-    line-height: calc(1em * 50 / 32);
-    color: #aaa;
-    background-color: #f8f8f8;
-    display: inline-block; }
+    font-size: calc(1rem * 8 / 6);
+    font-style: italic;
+    color: #767676; }
+    .preview blockquote cite {
+      font-family: "Open Sans", -apple-system, BlinkMacSystemFont, Helvetica Neue, Hiragino Kaku Gothic Pro, ヒラギノ角ゴ ProN W3, Arial, メイリオ, Meiryo, Osaka, sans-serif;
+      font-size: 1rem;
+      display: block;
+      margin-top: 1rem;
+      text-align: right; }
+      .preview blockquote cite::before {
+        content: '';
+        display: inline-block;
+        width: 5rem;
+        height: 0;
+        border-top: 1px solid #767676;
+        vertical-align: middle;
+        margin-right: 0.2rem; }
   .preview .button {
     cursor: pointer;
     appearance: none;
@@ -9168,6 +9195,55 @@ a {
       cursor: default;
       pointer-events: none;
       opacity: 0.2; }
+  .preview .group-stretch {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    display: flex;
+    justify-content: space-between; }
+    .preview .group-stretch > li {
+      display: inline-block; }
+    .preview .group-stretch > * {
+      flex-grow: 1; }
+      .preview .group-stretch > * + * {
+        margin-left: 0.5rem; }
+  .preview .group-center {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    display: flex;
+    justify-content: center; }
+    .preview .group-center > li {
+      display: inline-block; }
+    .preview .group-center > * + * {
+      margin-left: 0.5rem; }
+  .preview .group-vertical {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    display: flex;
+    flex-wrap: wrap; }
+    .preview .group-vertical > li {
+      display: inline-block; }
+    .preview .group-vertical > * {
+      flex-basis: 100%;
+      flex-grow: 1; }
+      .preview .group-vertical > * + * {
+        margin-top: 0.5rem; }
+  .preview .group-lined {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    display: block;
+    margin: -0.5rem -0.25rem 0; }
+    .preview .group-lined > li {
+      display: inline-block; }
+    .preview .group-lined > * {
+      margin: 0.5rem 0.25rem 0; }
   .preview .fieldset-horizontal {
     display: flex;
     justify-content: flex-start;
@@ -9671,56 +9747,3 @@ a {
     background-size: cover;
     width: 30px;
     height: 30px; }
-
-.group-stretch {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: inline-block;
-  display: flex;
-  justify-content: space-between; }
-  .group-stretch > li {
-    display: inline-block; }
-  .group-stretch > * {
-    flex-grow: 1; }
-    .group-stretch > * + * {
-      margin-left: 0.5rem; }
-
-.group-center {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: inline-block;
-  display: flex;
-  justify-content: center; }
-  .group-center > li {
-    display: inline-block; }
-  .group-center > * + * {
-    margin-left: 0.5rem; }
-
-.group-vertical {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: inline-block;
-  display: flex;
-  flex-wrap: wrap; }
-  .group-vertical > li {
-    display: inline-block; }
-  .group-vertical > * {
-    flex-basis: 100%;
-    flex-grow: 1; }
-    .group-vertical > * + * {
-      margin-top: 0.5rem; }
-
-.group-lined {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: inline-block;
-  display: block;
-  margin: -0.5rem -0.25rem 0; }
-  .group-lined > li {
-    display: inline-block; }
-  .group-lined > * {
-    margin: 0.5rem 0.25rem 0; }

@@ -8,7 +8,7 @@ categories:
 - categoryname
 ---
 
-<h2>Typefaces</h2>
+<h2 class="title-lg">Typefaces</h2>
 
 <section class="preview" id="typefaces">
   <h1>heading 1</h1>
@@ -17,13 +17,16 @@ categories:
   <h4>heading 4</h4>
   <h5>heading 5</h5>
   <h6>heading 6</h6>
-  <p>
+  <p class="has-indent">
     paragrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagrafparagraf
   </p>
   <p><a href="#">linklinklinklinklinklink</a></p>
   <p><b>boldboldboldboldboldboldbold</b></p>
   <p><small>smallsmallsmallsmallsmallsmallsmallsmall</small></p>
-  <blockquote>blockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquote</blockquote>
+  <blockquote>
+    blockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquoteblockquote
+    <cite><a href="#" target="_blank">xxx</a></cite>
+  </blockquote>
 </section>
 
 <div class="mt-5"></div>
@@ -43,23 +46,23 @@ categories:
 </section>
 
 <div class="mt-5"></div>
-<h2>Group</h2>
+<h2 class="title-lg">Group</h2>
 
 <section class="preview" id="groups">
-  <p class="small">.group-stretch</p>
+  <span class="title-xs">.group-stretch</span>
   <div class="group-stretch">
     <a href="#" class="button">ButtonButtonButton</a>
     <a href="#" class="button">Button</a>
     <a href="#" class="button">Button</a>
   </div>
   <div class="mt-5"></div>
-  <p class="small">.group-center</p>
+  <span class="title-xs">.group-center</span>
   <div class="group-center">
     <a href="#" class="button">Button</a>
     <a href="#" class="button-outline">Button</a>
   </div>
   <div class="mt-5"></div>
-  <p class="small">.group-vertical</p>
+  <span class="title-xs">.group-vertical</span>
   <div class="group-vertical">
     <a href="#" class="button">Button</a>
     <a href="#" class="button">Button</a>
@@ -68,7 +71,7 @@ categories:
     <a href="#" class="button">Button</a>
   </div>
   <div class="mt-5"></div>
-  <p class="small">.group-lined</p>
+  <span class="title-xs">.group-lined</span>
   <div class="group-lined">
     <a href="#" class="button">ButtonButton</a>
     <a href="#" class="button">Button</a>
@@ -82,23 +85,23 @@ categories:
 </section>
 
 <div class="mt-5"></div>
-<h2>Form</h2>
+<h2 class="title-lg">Form</h2>
 
 <section class="preview" id="form">
   <form>
-    
-    <p class="small">.fieldset-horizontal</p>
+
+    <span class="title-xs">.fieldset-horizontal</span>
     <div class="fieldset-horizontal has-input">
       <label for="">Label <small class="red">[must]</small></label>
       <div>
         <input type="text" class="input" placeholder="placeholder" />
-        <small>explanation</small>
+        <small>explanation or <span class="red">validation</span></small>
       </div>
     </div>
-    
+
     <div class="mt-5"></div>
-    <p class="small">.fieldset-vertical</p>
-    
+    <span class="title-xs">.fieldset-vertical</span>
+
     <div class="group-vertical">
       <div class="fieldset-vertical">
         <label for="">Label</label>
@@ -107,15 +110,15 @@ categories:
           <small>explanation</small>
         </div>
       </div>
-      
+
       <div class="fieldset-vertical">
         <legend>legend</legend>
         <textarea cols="50" id="field-textarea" placeholder="placeholder" rows="10"></textarea>
       </div>
     </div>
-    
+
     <div class="mt-5"></div>
-    <p class="small">.group-lined / .radio</p>
+    <span class="title-xs">.group-lined / .radio</span>
     <ul class="group-lined">
       <li class="radio">
         <input id="field-radio2-0" name="field-radio2" type="radio" value="0">
@@ -136,9 +139,9 @@ categories:
         </label>
       </li>
     </ul>
-    
+
     <div class="mt-5"></div>
-    <p class="small">.group-lined / .radio(nested)</p>
+    <span class="title-xs">.group-lined / .radio(nested)</span>
     <ul class="group-lined">
       <li class="radio">
         <label for="field-radio3-0">
@@ -159,9 +162,9 @@ categories:
         </label>
       </li>
     </ul>
-    
+
     <div class="mt-5"></div>
-    <p class="small">.group-lined / .custom-radio</p>
+    <span class="title-xs">.group-lined / .custom-radio</span>
     <ul class="group-lined">
       <li class="custom-radio">
         <input id="field-radio4-0" name="field-radio4" type="radio" value="0">
@@ -182,9 +185,9 @@ categories:
         </label>
       </li>
     </ul>
-    
+
     <div class="mt-5"></div>
-    <p class="small">.group-lined / .checkbox</p>
+    <span class="title-xs">.group-lined / .checkbox</span>
     <ul class="group-lined">
       <li class="checkbox">
         <input id="field-checkbox2-0" name="field-checkbox2" type="checkbox" value="0">
@@ -205,9 +208,9 @@ categories:
         </label>
       </li>
     </ul>
-    
+
     <div class="mt-5"></div>
-    <p class="small">.group-lined / .checkbox(nested)</p>
+    <span class="title-xs">.group-lined / .checkbox(nested)</span>
     <ul class="group-lined">
       <li class="checkbox">
         <label for="field-checkbox3-0">
@@ -228,9 +231,9 @@ categories:
         </label>
       </li>
     </ul>
-    
+
     <div class="mt-5"></div>
-    <p class="small">.group-lined / .custom-checkbox</p>
+    <span class="title-xs">.group-lined / .custom-checkbox</span>
     <ul class="group-lined">
       <li class="custom-checkbox">
         <input id="field-checkbox4-0" name="field-checkbox4" type="checkbox" value="0">
@@ -251,9 +254,9 @@ categories:
         </label>
       </li>
     </ul>
-    
+
     <div class="mt-5"></div>
-    <p class="small">.switch(checkbox)</p>
+    <span class="title-xs">.switch(checkbox)</span>
     <div class="fieldset-horizontal">
       <legend>legend</legend>
       <ul class="reset-ul">
@@ -267,7 +270,7 @@ categories:
     </div>
 
     <div class="mt-5"></div>
-    <p class="small">.selectbox</p>
+    <span class="title-xs">.selectbox</span>
     <div class="fieldset-horizontal has-input">
       <legend>legend</legend>
       <div class="select">
@@ -279,9 +282,9 @@ categories:
         </select>
       </div>
     </div>
-    
+
     <div class="mt-5"></div>
-    <p class="small">.fileupload</p>
+    <span class="title-xs">.fileupload</span>
     <div class="fieldset-horizontal has-input">
       <legend>legend</legend>
       <div>
@@ -289,9 +292,9 @@ categories:
         <label for="file-upload"><small>Choose files</small></label>
       </div>
     </div>
-    
+
     <div class="mt-5"></div>
-    <p class="small">.actions</p>
+    <span class="title-xs">.actions</span>
     <div class="group-center">
       <input class="button" type="submit" value="Submit" />
       <input class="button-outline" type="reset" value="Reset" />
@@ -300,10 +303,10 @@ categories:
 </section>
 
 <div class="mt-5"></div>
-<h2>Table</h2>
+<h2 class="title-lg">Table</h2>
 
 <section class="preview" id="table">
-  <p class="small">.table</p>
+  <span class="title-xs">.table</span>
   <table class="table">
     <thead>
       <tr>
@@ -330,9 +333,9 @@ categories:
       </tr>
     </tbody>
   </table>
-  
+
   <div class="mt-5"></div>
-  <p class="small">.table-line</p>
+  <span class="title-xs">.table-line</span>
   <table class="table-line">
     <thead>
       <tr>
@@ -359,9 +362,9 @@ categories:
       </tr>
     </tbody>
   </table>
-  
+
   <div class="mt-5"></div>
-  <p class="small">.table-line</p>
+  <span class="title-xs">.table-line</span>
   <table class="table-stripe">
     <thead>
       <tr>
@@ -391,7 +394,7 @@ categories:
 </section>
 
 <div class="mt-5"></div>
-<h2>Icons</h2>
+<h2 class="title-lg">Icons</h2>
 
 <section class="preview" id="icons">
   <i class="icon-hamburger"></i>
@@ -402,7 +405,7 @@ categories:
 </section>
 
 <div class="mt-5"></div>
-<h2>Balloon</h2>
+<h2 class="title-lg">Balloon</h2>
 
 <section class="preview" id="others">
   <span class="balloon l"></span>
@@ -412,17 +415,28 @@ categories:
 </section>
 
 <div class="mt-5"></div>
-<h2>Utilities</h2>
+<h2 class="title-lg">Utilities</h2>
 
 <section class="preview" id="utilities">
-  <h3>word break</h3>
-  <p class="word-break">.word-break</p>
-  <br>
-  <p class="word-break-none">.word-break-none</p>
-  <h3>text-overflow</h3>
-  <p class="text-overflow">.text-overflow</p>
+  <span class="title-xs">.word-break</span>
+  <div>
+    <p class="word-break">.word-break</p>
+  </div>
 
-  <h3>wordwrap-fadeout</h3>
+  <div class="mt-4"></div>
+  <span class="title-xs">.word-break-none</span>
+  <div>
+    <p class="word-break-none">.word-break-none</p>
+  </div>
+
+  <div class="mt-4"></div>
+  <span class="title-xs">.text-overflow</span>
+  <div>
+    <p class="text-overflow">.text-overflow</p>
+  </div>
+
+  <div class="mt-4"></div>
+  <span class="title-xs">.wordwrap-fadeout</span>
   <div class="wordwrap-fadeout">
     <p>
       .wordwrap-fadeout.wordwrap-fadeout.wordwrap-fadeout.wordwrap-fadeout.wordwrap-fadeout.wordwrap-fadeout.wordwrap-fadeout.wordwrap-fadeout.wordwrap-fadeout.wordwrap-fadeout.wordwrap-fadeout.wordwrap-fadeout.wordwrap-fadeout

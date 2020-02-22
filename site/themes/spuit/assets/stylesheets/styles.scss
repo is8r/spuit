@@ -66,7 +66,7 @@ a {
   &:active {
     outline: $outline-active;
   }
-  
+
   &.no-underline {
     text-decoration: none;
   }
@@ -249,6 +249,19 @@ $width-sidebar: 14rem;
   }
 }
 
+.title-lg {
+  @include font(3, 1);
+  margin-bottom: 0.5rem;
+}
+
+.title-xs {
+  @include font(-3, 1);
+  color: #aaa;
+  background-color: #f8f8f8;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
 .preview {
   @include word-break;
   border: 1px solid #eee;
@@ -292,22 +305,39 @@ $width-sidebar: 14rem;
     a {
       @include font;
     }
+
+    &.has-indent {
+      text-indent: 2rem;
+    }
   }
   small {
     @include font(-3, 1);
   }
 
-  p,
-  small {
-    &.red {
-      color: red;
-    }
+  .red {
+    color: red;
+  }
 
-    &.small {
-      @include font(-3, 1);
-      color: #aaa;
-      background-color: #f8f8f8;
-      display: inline-block;
+  blockquote {
+    @include font(2);
+    font-style: italic;
+    color: $color-gray;
+
+    cite {
+      @include font(0);
+      display: block;
+      margin-top: 1rem;
+      text-align: right;
+      
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 5rem;
+        height: 0;
+        border-top: 1px solid $color-gray;
+        vertical-align: middle;
+        margin-right: 0.2rem;
+      }
     }
   }
 
@@ -333,6 +363,24 @@ $width-sidebar: 14rem;
   }
   .button-link {
     @include button-base;
+  }
+
+  .group {
+    &-stretch {
+      @include group-stretch;
+    }
+
+    &-center {
+      @include group-center;
+    }
+
+    &-vertical {
+      @include group-vertical;
+    }
+
+    &-lined {
+      @include group-lined;
+    }
   }
 
   .fieldset {
@@ -475,24 +523,6 @@ $width-sidebar: 14rem;
         @include background-map-svg($map-svg-star);
       }
     }
-  }
-}
-
-.group {
-  &-stretch {
-    @include group-stretch;
-  }
-
-  &-center {
-    @include group-center;
-  }
-
-  &-vertical {
-    @include group-vertical;
-  }
-
-  &-lined {
-    @include group-lined;
   }
 }
 
