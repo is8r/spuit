@@ -193,6 +193,10 @@ $width-sidebar: 14rem;
   position: sticky;
   top: 0;
   padding: 2rem;
+  
+  ul {
+    @include group-vertical;
+  }
 }
 
 .content {
