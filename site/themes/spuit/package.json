@@ -27,7 +27,7 @@
     "popper.js": "^1.14.3",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.0.1",
-    "spuit": "0.0.13",
+    "spuit": "0.2.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.4.1",
