@@ -24,7 +24,7 @@ jobs:
         flags: '-avzr --delete'
         options: ''
         ssh_options: '-p 2222'
-        src: 'public/'
+        src: 'site/public/'
         dest: 'nrm@ssh-nrm.heteml.net:web/spuit.12px.com'
     - name: Slack Notification
       uses: rtCamp/action-slack-notify@v2.0.0

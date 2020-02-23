@@ -1,8 +1,18 @@
-baseURL = "http://example.org/"
+
+baseURL = "https://spuit.12px.com/"
 languageCode = "ja"
 title = "Spuit"
 theme = "spuit"
 copyright = "🍄"
+
+archetypeDir = "site/archetypes"
+assetDir = "site/assets"
+contentDir = "site/content"
+dataDir = "site/data"
+layoutDir = "site/layouts"
+publishDir = "site/public"
+staticDir = "site/static"
+themesDir = "site/themes"
 
 pygmentsCodefences = true
 pygmentsCodeFencesGuessSyntax = true
