@@ -13,6 +13,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+        path: 'site/*'
+    - name: Check local directory structure
+      run: |
+        cd site
+    - name: Check local directory structure
+      run: |
+        pwd
     - name: Build Site
       uses: chabad360/hugo-actions@master
     - name: Rsync deployments
