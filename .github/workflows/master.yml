@@ -1,0 +1,35 @@
+name: only master branch
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build Site
+      uses: chabad360/hugo-actions@master
+    - name: Rsync deployments
+      id: deploy
+      uses: Pendect/action-rsyncer@v1.1.0
+      env:
+        DEPLOY_KEY: ${{ secrets.heteml }}
+      with:
+        flags: '-avzr --delete'
+        options: ''
+        ssh_options: '-p 2222'
+        src: 'public/'
+        dest: 'nrm@ssh-nrm.heteml.net:web/spuit.12px.com'
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2.0.0
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_COLOR: '#DB6984'
+        SLACK_TITLE: Production URL
+        SLACK_MESSAGE: 'https://spuit.12px.com/ :octopus:'
