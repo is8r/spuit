@@ -10,7 +10,7 @@ assetDir = "site/assets"
 contentDir = "site/content"
 dataDir = "site/data"
 layoutDir = "site/layouts"
-publishDir = "site/public"
+publishDir = "public"
 staticDir = "site/static"
 themesDir = "site/themes"
 
