@@ -3,6 +3,7 @@ Spuit
 
 A Sass Mixin Library from is8r to is8r
 
+demo: https://spuit.12px.com/posts/components/
 
 ## npm
 
