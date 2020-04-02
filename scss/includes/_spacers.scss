@@ -40,8 +40,8 @@ from: https://github.com/twbs/bootstrap/blob/v4-dev/scss/utilities/_spacing.scss
 
         @each $prop, $abbrev in (margin: m, padding: p) {
           @each $size, $lengths in $spacers {
-            $length-x: map-get($lengths, x);
-            $length-y: map-get($lengths, y);
+            $length-x: $lengths;
+            $length-y: $lengths;
 
             .#{$abbrev}-#{$size}  { #{$prop}: $length-y $length-x !important; }
             .#{$abbrev}t-#{$size} { #{$prop}-top: $length-y !important; }
