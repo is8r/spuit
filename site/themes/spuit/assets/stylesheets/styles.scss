@@ -14,7 +14,6 @@
 @import "styles/components/syntax";
 
 @include include-normalize;
-// @include include-animations;
 @include include-spacers;
 
 // basic styles
@@ -32,11 +31,6 @@ html {
 body {
   @include font(0);
   color: $color-black;
-
-  &.noscroll {
-    overflow: hidden;
-    padding-right: 15px;
-  }
 }
 
 a,
@@ -79,18 +73,54 @@ $width-sidebar: 14rem;
 
     > aside {
       width: $width-sidebar;
+      flex: 0 0 $width-sidebar;
     }
 
     > main {
       flex: 1;
       overflow: auto;
+      min-width: 20rem;
     }
+  }
+}
+
+// hamburger
+body {
+  .fader {
+    display: none;
+  }
+  .hamburger {
+    display: none;
   }
 
   @include breakpoint-down(md) {
-    > aside {
+    .hamburger {
+      display: none;
+      @include button-base;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #000;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+
+      .icon-hamburger {
+        @include icon-hamburger;
+        z-index: 101;
+        position: relative;
+        vertical-align: top;
+
+        &::before {
+          vertical-align: top;
+        }
+      }
+    }
+    
+    .sidebar {
+      position: fixed !important;
       transition: all 0.2s ease-out;
-      margin-left: -$width-sidebar;
+      left: -$width-sidebar !important;
       width: $width-sidebar;
       overflow-y: auto;
       height: 100vh;
@@ -100,79 +130,23 @@ $width-sidebar: 14rem;
       background: #fff;
     }
 
-    > main {
-      margin-left: 0;
-      margin-right: 0;
-      transition: all 0.2s ease-out;
-    }
+    &.open-drawer {
+      overflow: hidden;
 
-    &.open {
-      margin-left: 0;
-
-      > aside {
-        margin-left: 0;
-      }
-
-      > main {
-        margin-left: $width-sidebar;
-        margin-right: -$width-sidebar;
-      }
-    }
-  }
-}
-
-.hamburger {
-  @include breakpoint-up(md) {
-    display: none;
-  }
-  @include breakpoint-down(md) {
-    line-height: 1;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    display: inline-block;
-    vertical-align: middle;
-    cursor: pointer;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    transition: all 0.2s ease-out;
-    width: 0;
-    line-height: 0;
-
-    .icon-hamburger {
-      @include icon-hamburger;
-      z-index: 101;
-      position: relative;
-      vertical-align: top;
-
-      &::before {
-        vertical-align: top;
-      }
-    }
-
-    &.on {
-      //overlay
-      &::after {
-        content: "";
+      .fader {
+        background-color: rgba(0, 0, 0, 0.5);
         position: fixed;
+        left: 0;
         top: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(#ddd, 0.5);
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+
+      .sidebar {
+        left: 0 !important;
       }
     }
-  }
-}
-
-.l-2col {
-  > aside {
-    flex: 0 0 $width-sidebar;
-  }
-
-  main {
-    min-width: 20rem;
-    flex-grow: 1;
   }
 }
 
@@ -191,7 +165,7 @@ $width-sidebar: 14rem;
   position: sticky;
   top: 0;
   padding: 2rem;
-  
+
   ul {
     @include group-vertical;
   }
@@ -330,9 +304,9 @@ $width-sidebar: 14rem;
       display: block;
       margin-top: 1rem;
       text-align: right;
-      
+
       &::before {
-        content: '';
+        content: "";
         display: inline-block;
         width: 5rem;
         height: 0;

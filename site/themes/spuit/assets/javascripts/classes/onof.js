@@ -85,11 +85,13 @@ export default class {
     let targetName = this.getTargetName(e)
 
     //TODO: [data-xxx]にも対応したい...
-
+    
     if (targetName.indexOf('#') !== -1) {
       return [document.getElementById(targetName.replace('#', ''))]
     } else if (targetName.indexOf('.') !== -1) {
       return document.querySelectorAll(targetName)
+    } else {
+      return document.getElementsByTagName(targetName)
     }
     return []
   }
